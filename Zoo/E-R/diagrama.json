@@ -1,0 +1,757 @@
+{
+ "nodes": [
+  {
+   "id": "nmwal6mi1bgw1n",
+   "k": "ent",
+   "n": "Especie",
+   "x": 2748,
+   "y": 2212,
+   "f": {}
+  },
+  {
+   "id": "nmwal8kzc14jbo",
+   "k": "attr",
+   "n": "CodEsp",
+   "x": 2827,
+   "y": 2167,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwal905l32u54",
+   "k": "attr",
+   "n": "NomCien",
+   "x": 2748,
+   "y": 2275,
+   "f": {}
+  },
+  {
+   "id": "nmwal966w5jn6s",
+   "k": "attr",
+   "n": "Desc",
+   "x": 2672,
+   "y": 2167,
+   "f": {}
+  },
+  {
+   "id": "nmwal9azs7g3rk",
+   "k": "attr",
+   "n": "NumAni",
+   "x": 2834,
+   "y": 2252,
+   "f": {}
+  },
+  {
+   "id": "nmwalb2d59a004",
+   "k": "ent",
+   "n": "Habitad",
+   "x": 2234,
+   "y": 2212,
+   "f": {}
+  },
+  {
+   "id": "nmwalc10var6t8",
+   "k": "attr",
+   "n": "CodHab",
+   "x": 2155,
+   "y": 2257,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwalc3sgckfay",
+   "k": "attr",
+   "n": "NomHab",
+   "x": 2290,
+   "y": 2267,
+   "f": {}
+  },
+  {
+   "id": "nmwalc7bcerunb",
+   "k": "attr",
+   "n": "Clima",
+   "x": 2136,
+   "y": 2185,
+   "f": {
+    "o": false,
+    "d": false,
+    "m": false,
+    "c": false
+   }
+  },
+  {
+   "id": "nmwalccjsglio2",
+   "k": "attr",
+   "n": "tipoVeg",
+   "x": 2315,
+   "y": 2167,
+   "f": {}
+  },
+  {
+   "id": "nmwalct6gkg4j0",
+   "k": "rel",
+   "n": "esp_hab",
+   "x": 2491,
+   "y": 2212,
+   "f": {}
+  },
+  {
+   "id": "nmwaldyxklmo7h",
+   "k": "ent",
+   "n": "Zonas",
+   "x": 3262,
+   "y": 2212,
+   "f": {}
+  },
+  {
+   "id": "nmwale4s8mzpay",
+   "k": "rel",
+   "n": "esp_zon",
+   "x": 3005,
+   "y": 2212,
+   "f": {}
+  },
+  {
+   "id": "nmwalel48rclla",
+   "k": "attr",
+   "n": "CodZon",
+   "x": 3341,
+   "y": 2257,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwaleu0ote6vf",
+   "k": "attr",
+   "n": "NomZon",
+   "x": 3206,
+   "y": 2267,
+   "f": {}
+  },
+  {
+   "id": "nmwalez2ovaq4b",
+   "k": "attr",
+   "n": "ExtZon",
+   "x": 3363,
+   "y": 2185,
+   "f": {}
+  },
+  {
+   "id": "nmwalfilsxfasm",
+   "k": "ent",
+   "n": "Itinerario",
+   "x": 3262,
+   "y": 1822,
+   "f": {}
+  },
+  {
+   "id": "nmwalfn7zy19rm",
+   "k": "attr",
+   "n": "CodIt",
+   "x": 3185,
+   "y": 1777,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwalfurb10zf5h",
+   "k": "attr",
+   "n": "NomIt",
+   "x": 3317,
+   "y": 1767,
+   "f": {}
+  },
+  {
+   "id": "nmwalg19j12tvn6",
+   "k": "attr",
+   "n": "Duracion",
+   "x": 3154,
+   "y": 1849,
+   "f": {}
+  },
+  {
+   "id": "nmwalg39r14qvm0",
+   "k": "attr",
+   "n": "Longitud",
+   "x": 3347,
+   "y": 1867,
+   "f": {}
+  },
+  {
+   "id": "nmwalg59j16i556",
+   "k": "attr",
+   "n": "MaxVis",
+   "x": 3151,
+   "y": 1811,
+   "f": {}
+  },
+  {
+   "id": "nmwalga6f18xd6t",
+   "k": "attr",
+   "n": "NumEsp",
+   "x": 3235,
+   "y": 1726,
+   "f": {}
+  },
+  {
+   "id": "nmwalguv41crhyp",
+   "k": "rel",
+   "n": "tienen",
+   "x": 3262,
+   "y": 2017,
+   "f": {}
+  },
+  {
+   "id": "nmwalh0211fs19w",
+   "k": "rel",
+   "n": "iti_gui",
+   "x": 3519,
+   "y": 1822,
+   "f": {}
+  },
+  {
+   "id": "nmwalimfe1i1f18",
+   "k": "ent",
+   "n": "Guia",
+   "x": 3776,
+   "y": 1822,
+   "f": {}
+  },
+  {
+   "id": "nmwalird51ji5cn",
+   "k": "attr",
+   "n": "CodGui",
+   "x": 3877,
+   "y": 1795,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwaljnp51m78mk",
+   "k": "attr",
+   "n": "Horario",
+   "x": 3519,
+   "y": 1755,
+   "f": {}
+  },
+  {
+   "id": "nmwalkf6p1o4t7a",
+   "k": "attr",
+   "n": "NomGui",
+   "x": 3786,
+   "y": 1885,
+   "f": {}
+  },
+  {
+   "id": "nmwalkls91q1xb8",
+   "k": "attr",
+   "n": "ApeGui",
+   "x": 3738,
+   "y": 1763,
+   "f": {}
+  },
+  {
+   "id": "nmwall48p1szb13",
+   "k": "attr",
+   "n": "Dir",
+   "x": 3873,
+   "y": 1849,
+   "f": {
+    "d": false,
+    "m": false,
+    "c": false
+   }
+  },
+  {
+   "id": "nmwalm9dl1w5hxx",
+   "k": "attr",
+   "n": "TlfGui",
+   "x": 3697,
+   "y": 1867,
+   "f": {}
+  },
+  {
+   "id": "nmwalmdix1yw3sy",
+   "k": "attr",
+   "n": "FechCon",
+   "x": 3843,
+   "y": 1734,
+   "f": {}
+  },
+  {
+   "id": "nmwalno2i20waol",
+   "k": "ent",
+   "n": "Cuidador",
+   "x": 2748,
+   "y": 1822,
+   "f": {}
+  },
+  {
+   "id": "nmwalo01m21k872",
+   "k": "rel",
+   "n": "Cuida",
+   "x": 2748,
+   "y": 2017,
+   "f": {}
+  },
+  {
+   "id": "nmwalovjm24wucq",
+   "k": "ent",
+   "n": "Continente",
+   "x": 2234,
+   "y": 1822,
+   "f": {}
+  },
+  {
+   "id": "nmwalp0si25t3jd",
+   "k": "rel",
+   "n": "hab_con",
+   "x": 2234,
+   "y": 2017,
+   "f": {}
+  },
+  {
+   "id": "nmwalq8l62aruiu",
+   "k": "attr",
+   "n": "CodCui",
+   "x": 2748,
+   "y": 1759,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwalrd8i2ckkvt",
+   "k": "attr",
+   "n": "ApeGui",
+   "x": 2638,
+   "y": 1833,
+   "f": {}
+  },
+  {
+   "id": "nmwalrig32edhf2",
+   "k": "attr",
+   "n": "DirGui",
+   "x": 2858,
+   "y": 1833,
+   "f": {}
+  },
+  {
+   "id": "nmwalrk032gbicf",
+   "k": "attr",
+   "n": "TlfGui",
+   "x": 2834,
+   "y": 1782,
+   "f": {}
+  },
+  {
+   "id": "nmwalro4z2iziv3",
+   "k": "attr",
+   "n": "fechaInGui",
+   "x": 2652,
+   "y": 1782,
+   "f": {}
+  },
+  {
+   "id": "nmwam43u32o1bny",
+   "k": "attr",
+   "n": "CodCon",
+   "x": 2234,
+   "y": 1759,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwam49xm2q858s",
+   "k": "attr",
+   "n": "NomCon",
+   "x": 2123,
+   "y": 1833,
+   "f": {}
+  },
+  {
+   "id": "nmwam9dyr2uuiwv",
+   "k": "attr",
+   "n": "FechCargo",
+   "x": 2863,
+   "y": 2017,
+   "f": {}
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwal8kzc2ngkg",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwal8kzc14jbo",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwal905l4v7yt",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwal905l32u54",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwal966w64tnb",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwal966w5jn6s",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwal9azs8sfrl",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwal9azs7g3rk",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalc10vb6s4y",
+   "a": "nmwalb2d59a004",
+   "b": "nmwalc10var6t8",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalc3sgd393u",
+   "a": "nmwalb2d59a004",
+   "b": "nmwalc3sgckfay",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalc7bcfrvgu",
+   "a": "nmwalb2d59a004",
+   "b": "nmwalc7bcerunb",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalccjsh37wl",
+   "a": "nmwalb2d59a004",
+   "b": "nmwalccjsglio2",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwale94vn8e4o",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwale4s8mzpay",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalea07oktu8",
+   "a": "nmwale4s8mzpay",
+   "b": "nmwaldyxklmo7h",
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
+  },
+  {
+   "id": "nmwaleat5pvyg2",
+   "a": "nmwal6mi1bgw1n",
+   "b": "nmwalct6gkg4j0",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalebp5q50u0",
+   "a": "nmwalct6gkg4j0",
+   "b": "nmwalb2d59a004",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalel48ss21z",
+   "a": "nmwaldyxklmo7h",
+   "b": "nmwalel48rclla",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwaleu0ou2ghr",
+   "a": "nmwaldyxklmo7h",
+   "b": "nmwaleu0ote6vf",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalez2owwpgl",
+   "a": "nmwaldyxklmo7h",
+   "b": "nmwalez2ovaq4b",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalfn7zz0o2g",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalfn7zy19rm",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalfurb114nf3",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalfurb10zf5h",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalg19j13qsaz",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalg19j12tvn6",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalg39r15mr6u",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalg39r14qvm0",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalg59j17178x",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalg59j16i556",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalga6g19u1q9",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalga6f18xd6t",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalgxtm1dvxkl",
+   "a": "nmwaldyxklmo7h",
+   "b": "nmwalguv41crhyp",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalgyka1etxvt",
+   "a": "nmwalfilsxfasm",
+   "b": "nmwalguv41crhyp",
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
+  },
+  {
+   "id": "nmwalh1aa1gauyw",
+   "a": "nmwalh0211fs19w",
+   "b": "nmwalfilsxfasm",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalird51k29hg",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwalird51ji5cn",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalj1ub1lts1j",
+   "a": "nmwalh0211fs19w",
+   "b": "nmwalimfe1i1f18",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwaljnp51nlmfo",
+   "a": "nmwalh0211fs19w",
+   "b": "nmwaljnp51m78mk",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalkf6p1p20r1",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwalkf6p1o4t7a",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalkls91r4kbe",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwalkls91q1xb8",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwall48p1tkv7y",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwall48p1szb13",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalm9dl1xboq4",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwalm9dl1w5hxx",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalmdix1zqhgk",
+   "a": "nmwalimfe1i1f18",
+   "b": "nmwalmdix1yw3sy",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalosuj22o2eq",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalo01m21k872",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalotej23vkcm",
+   "a": "nmwalo01m21k872",
+   "b": "nmwal6mi1bgw1n",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalp33026csqt",
+   "a": "nmwalp0si25t3jd",
+   "b": "nmwalb2d59a004",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalp7eb27cric",
+   "a": "nmwalovjm24wucq",
+   "b": "nmwalp0si25t3jd",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwalpb6j29grp5",
+   "a": "nmwalp8hm28jtav",
+   "b": "nmwalovjm24wucq",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalq8l62b9mli",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalq8l62aruiu",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalrd8i2dlepq",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalrd8i2ckkvt",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalrig32fz9si",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalrig32edhf2",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalrk032hozcd",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalrk032gbicf",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwalro4z2j9sul",
+   "a": "nmwalno2i20waol",
+   "b": "nmwalro4z2iziv3",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwam43u32pk2p9",
+   "a": "nmwalovjm24wucq",
+   "b": "nmwam43u32o1bny",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwam49xm2rw7ix",
+   "a": "nmwalovjm24wucq",
+   "b": "nmwam49xm2q858s",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwam9dyr2vctfp",
+   "a": "nmwalo01m21k872",
+   "b": "nmwam9dyr2uuiwv",
+   "c": null,
+   "mn": null,
+   "mx": null
+  }
+ ],
+ "notes": []
+}

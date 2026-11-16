@@ -1,0 +1,303 @@
+{
+ "t": [
+  {
+   "id": "nmwdsd3zp1m9b0c4",
+   "n": "Especie",
+   "x": 2619,
+   "y": 2025,
+   "c": [
+    [
+     "CodEsp",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomCien",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Desc",
+     "TEXT",
+     ""
+    ],
+    [
+     "NumAni",
+     "INT",
+     ""
+    ],
+    [
+     "CodZon",
+     "INT",
+     "fk:Zonas"
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1maylsl",
+   "n": "Habitad",
+   "x": 2913,
+   "y": 1811,
+   "c": [
+    [
+     "CodHab",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomHab",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Clima",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "tipoVeg",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mby2q0",
+   "n": "Zonas",
+   "x": 2622,
+   "y": 2279,
+   "c": [
+    [
+     "CodZon",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomZon",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "ExtZon",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodIt",
+     "INT",
+     "fk:Itinerario"
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mc44mk",
+   "n": "Itinerario",
+   "x": 2910,
+   "y": 2259,
+   "c": [
+    [
+     "CodIt",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomIt",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Duracion",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Longitud",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "MaxVis",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "NumEsp",
+     "INT",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mdiodr",
+   "n": "Guia",
+   "x": 3208,
+   "y": 2015,
+   "c": [
+    [
+     "CodGui",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "ApeGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Dir",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "TlfGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "FechCon",
+     "DATE",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1meb2gs",
+   "n": "Cuidador",
+   "x": 2622,
+   "y": 1587,
+   "c": [
+    [
+     "CodCui",
+     "INT",
+     "pk"
+    ],
+    [
+     "ApeGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "DirGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "TlfGui",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "fechaInGui",
+     "DATE",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mfoi6u",
+   "n": "Continente",
+   "x": 3208,
+   "y": 1617,
+   "c": [
+    [
+     "CodCon",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomCon",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mgf1b3",
+   "n": "esp_hab",
+   "x": 2929,
+   "y": 2055,
+   "c": [
+    [
+     "CodEsp",
+     "INT",
+     "pk fk:Especie"
+    ],
+    [
+     "CodHab",
+     "INT",
+     "pk fk:Habitad"
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mhhwmf",
+   "n": "iti_gui",
+   "x": 3219,
+   "y": 2289,
+   "c": [
+    [
+     "CodIt",
+     "INT",
+     "pk fk:Itinerario"
+    ],
+    [
+     "CodGui",
+     "INT",
+     "pk fk:Guia"
+    ],
+    [
+     "Horario",
+     "TIME",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mijpz0",
+   "n": "Cuida",
+   "x": 2634,
+   "y": 1821,
+   "c": [
+    [
+     "CodCui",
+     "INT",
+     "pk fk:Cuidador"
+    ],
+    [
+     "CodEsp",
+     "INT",
+     "pk fk:Especie"
+    ],
+    [
+     "FechCargo",
+     "DATE",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwdsd3zq1mjrmnr",
+   "n": "hab_con",
+   "x": 3219,
+   "y": 1831,
+   "c": [
+    [
+     "CodHab",
+     "INT",
+     "pk fk:Habitad"
+    ],
+    [
+     "CodCon",
+     "INT",
+     "pk fk:Continente"
+    ]
+   ]
+  }
+ ],
+ "notes": []
+}

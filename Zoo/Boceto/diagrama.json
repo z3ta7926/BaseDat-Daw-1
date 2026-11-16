@@ -1,0 +1,180 @@
+{
+ "nodes": [
+  {
+   "id": "nmwdrx4na3xdrq",
+   "k": "ent",
+   "n": "Especie",
+   "x": 2860,
+   "y": 2085,
+   "f": {
+    "at": [
+     "CodEsp",
+     "NomCien",
+     "Desc",
+     "NumAni"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na4kuag",
+   "k": "ent",
+   "n": "Habitad",
+   "x": 2578,
+   "y": 2085,
+   "f": {
+    "at": [
+     "CodHab",
+     "NomHab",
+     "Clima",
+     "tipoVeg"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na5me1f",
+   "k": "ent",
+   "n": "Zonas",
+   "x": 3142,
+   "y": 2085,
+   "f": {
+    "at": [
+     "CodZon",
+     "NomZon",
+     "ExtZon"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na6ob5o",
+   "k": "ent",
+   "n": "Itinerario",
+   "x": 3142,
+   "y": 1915,
+   "f": {
+    "at": [
+     "CodIt",
+     "NomIt",
+     "Duracion",
+     "Longitud",
+     "MaxVis",
+     "NumEsp"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na7s943",
+   "k": "ent",
+   "n": "Guia",
+   "x": 3424,
+   "y": 1915,
+   "f": {
+    "at": [
+     "CodGui",
+     "NomGui",
+     "ApeGui",
+     "Dir",
+     "TlfGui",
+     "FechCon"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na8vwcx",
+   "k": "ent",
+   "n": "Cuidador",
+   "x": 2860,
+   "y": 1915,
+   "f": {
+    "at": [
+     "CodCui",
+     "ApeGui",
+     "DirGui",
+     "TlfGui",
+     "fechaInGui"
+    ]
+   }
+  },
+  {
+   "id": "nmwdrx4na92vlt",
+   "k": "ent",
+   "n": "Continente",
+   "x": 2578,
+   "y": 1915,
+   "f": {
+    "at": [
+     "CodCon",
+     "NomCon"
+    ]
+   }
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwdrx4naa4ihh",
+   "a": "nmwdrx4na3xdrq",
+   "b": "nmwdrx4na4kuag",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "1N"
+  },
+  {
+   "id": "nmwdrx4nabsiz2",
+   "a": "nmwdrx4na3xdrq",
+   "b": "nmwdrx4na5me1f",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "11"
+  },
+  {
+   "id": "nmwdrx4nachmwc",
+   "a": "nmwdrx4na5me1f",
+   "b": "nmwdrx4na6ob5o",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "11"
+  },
+  {
+   "id": "nmwdrx4nad6tky",
+   "a": "nmwdrx4na6ob5o",
+   "b": "nmwdrx4na7s943",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "1N",
+   "at": [
+    "Horario"
+   ]
+  },
+  {
+   "id": "nmwdrx4nae7bfa",
+   "a": "nmwdrx4na8vwcx",
+   "b": "nmwdrx4na3xdrq",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "1N",
+   "at": [
+    "FechCargo"
+   ]
+  },
+  {
+   "id": "nmwdrx4nafz5dk",
+   "a": "nmwdrx4na4kuag",
+   "b": "nmwdrx4na92vlt",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "1N",
+   "eb": "1N"
+  }
+ ],
+ "notes": []
+}
