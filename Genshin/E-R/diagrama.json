@@ -333,9 +333,9 @@
    "id": "nmwjwtqk81lj8m76",
    "a": "nmwjwtqk81libw0t",
    "b": "nmwjwsf7k1l7d4sb",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   },
   {
    "id": "nmwjwtqk81lkywi3",
