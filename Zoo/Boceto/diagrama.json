@@ -106,6 +106,28 @@
      "NomCon"
     ]
    }
+  },
+  {
+   "id": "nmwjwitdq1kk7w0e",
+   "k": "ent",
+   "n": "Especies",
+   "x": 3145,
+   "y": 2183,
+   "f": {}
+  },
+  {
+   "id": "nmwjwitdr1kl3kh9",
+   "k": "ent",
+   "n": "Hábitats",
+   "x": 2975,
+   "y": 2187,
+   "f": {
+    "at": [
+     "; naturales",
+     "continente",
+     "distintas zonas del parque y que una zona puede ser recorrida por diferentes"
+    ]
+   }
   }
  ],
  "links": [
