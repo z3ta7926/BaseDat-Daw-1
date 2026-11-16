@@ -101,6 +101,24 @@
      ""
     ]
    ]
+  },
+  {
+   "id": "nmwjwz5ge1lprkyp",
+   "n": "rareza",
+   "x": 2594,
+   "y": 1951,
+   "c": [
+    [
+     "CodRareza",
+     "INT",
+     "pk"
+    ],
+    [
+     "NombreRareza",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
   }
  ],
  "notes": []
