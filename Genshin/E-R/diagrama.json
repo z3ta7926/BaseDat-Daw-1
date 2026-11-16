@@ -111,16 +111,6 @@
    "f": {}
   },
   {
-   "id": "nmwi1djeb1hjdzvd",
-   "k": "attr",
-   "n": "rarezaArma",
-   "x": 2487,
-   "y": 2107,
-   "f": {
-    "c": false
-   }
-  },
-  {
    "id": "nmwi1djeb1hlork1",
    "k": "attr",
    "n": "codElem",
@@ -156,6 +146,41 @@
    "n": "nomReg",
    "x": 3042,
    "y": 1762,
+   "f": {}
+  },
+  {
+   "id": "nmwjwsf7k1l7d4sb",
+   "k": "ent",
+   "n": "rareza",
+   "x": 2480,
+   "y": 1830,
+   "f": {}
+  },
+  {
+   "id": "nmwjwsq6g1l8y5un",
+   "k": "attr",
+   "n": "CodRareza",
+   "x": 2342,
+   "y": 1788,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwjwsy341le5o4d",
+   "k": "attr",
+   "n": "NombreRareza",
+   "x": 2620,
+   "y": 1775,
+   "f": {}
+  },
+  {
+   "id": "nmwjwtqk81libw0t",
+   "k": "rel",
+   "n": "relacion",
+   "x": 2485,
+   "y": 2000,
    "f": {}
   }
  ],
@@ -257,14 +282,6 @@
    "mx": null
   },
   {
-   "id": "nmwi1djeb1hk2ygs",
-   "a": "nmwi1djea1gv5t70",
-   "b": "nmwi1djeb1hjdzvd",
-   "c": null,
-   "mn": null,
-   "mx": null
-  },
-  {
    "id": "nmwi1djeb1hmgt49",
    "a": "nmwi1djea1gwcody",
    "b": "nmwi1djeb1hlork1",
@@ -292,6 +309,38 @@
    "id": "nmwi1djec1hshpr4",
    "a": "nmwi1djea1gxebqc",
    "b": "nmwi1djec1hr6rin",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwjwsq6g1l9cchu",
+   "a": "nmwjwsf7k1l7d4sb",
+   "b": "nmwjwsq6g1l8y5un",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwjwsy341lff8jv",
+   "a": "nmwjwsf7k1l7d4sb",
+   "b": "nmwjwsy341le5o4d",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwjwtqk81lj8m76",
+   "a": "nmwjwtqk81libw0t",
+   "b": "nmwjwsf7k1l7d4sb",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwjwtqk81lkywi3",
+   "a": "nmwjwtqk81libw0t",
+   "b": "nmwi1djea1gv5t70",
    "c": null,
    "mn": null,
    "mx": null
