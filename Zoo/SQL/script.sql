@@ -1,0 +1,102 @@
+-- Zoo
+-- Generado desde el DED para MySQL con Modelado Bases (17/11/2026)
+
+DROP DATABASE IF EXISTS zoo;
+CREATE DATABASE zoo;
+USE zoo;
+
+CREATE TABLE Itinerario (
+  CodIt INT NOT NULL,
+  NomIt VARCHAR(45) NOT NULL,
+  Duracion VARCHAR(45) NOT NULL,
+  Longitud VARCHAR(45) NOT NULL,
+  MaxVis VARCHAR(45) NOT NULL,
+  NumEsp INT NOT NULL,
+  PRIMARY KEY (CodIt)
+) ENGINE=InnoDB;
+
+CREATE TABLE Zonas (
+  CodZon INT NOT NULL,
+  NomZon VARCHAR(45) NOT NULL,
+  ExtZon VARCHAR(45) NOT NULL,
+  CodIt INT NOT NULL,
+  PRIMARY KEY (CodZon),
+  FOREIGN KEY (CodIt) REFERENCES Itinerario (CodIt)
+) ENGINE=InnoDB;
+
+CREATE TABLE Especie (
+  CodEsp INT NOT NULL,
+  NomCien VARCHAR(45) NOT NULL,
+  `Desc` TEXT NOT NULL,
+  NumAni INT NOT NULL,
+  CodZon INT NOT NULL,
+  PRIMARY KEY (CodEsp),
+  FOREIGN KEY (CodZon) REFERENCES Zonas (CodZon)
+) ENGINE=InnoDB;
+
+CREATE TABLE Habitad (
+  CodHab INT NOT NULL,
+  NomHab VARCHAR(45) NOT NULL,
+  Clima VARCHAR(45) NOT NULL,
+  tipoVeg VARCHAR(45) NOT NULL,
+  PRIMARY KEY (CodHab)
+) ENGINE=InnoDB;
+
+CREATE TABLE Guia (
+  CodGui INT NOT NULL,
+  NomGui VARCHAR(45) NOT NULL,
+  ApeGui VARCHAR(45) NOT NULL,
+  Dir VARCHAR(45) NOT NULL,
+  TlfGui VARCHAR(45) NOT NULL,
+  FechCon DATE NOT NULL,
+  PRIMARY KEY (CodGui)
+) ENGINE=InnoDB;
+
+CREATE TABLE Cuidador (
+  CodCui INT NOT NULL,
+  ApeGui VARCHAR(45) NOT NULL,
+  DirGui VARCHAR(45) NOT NULL,
+  TlfGui VARCHAR(45) NOT NULL,
+  fechaInGui DATE NOT NULL,
+  PRIMARY KEY (CodCui)
+) ENGINE=InnoDB;
+
+CREATE TABLE Continente (
+  CodCon INT NOT NULL,
+  NomCon VARCHAR(45) NOT NULL,
+  PRIMARY KEY (CodCon)
+) ENGINE=InnoDB;
+
+CREATE TABLE esp_hab (
+  CodEsp INT NOT NULL,
+  CodHab INT NOT NULL,
+  PRIMARY KEY (CodEsp, CodHab),
+  FOREIGN KEY (CodEsp) REFERENCES Especie (CodEsp),
+  FOREIGN KEY (CodHab) REFERENCES Habitad (CodHab)
+) ENGINE=InnoDB;
+
+CREATE TABLE iti_gui (
+  CodIt INT NOT NULL,
+  CodGui INT NOT NULL,
+  Horario TIME NOT NULL,
+  PRIMARY KEY (CodIt, CodGui),
+  FOREIGN KEY (CodIt) REFERENCES Itinerario (CodIt),
+  FOREIGN KEY (CodGui) REFERENCES Guia (CodGui)
+) ENGINE=InnoDB;
+
+CREATE TABLE Cuida (
+  CodCui INT NOT NULL,
+  CodEsp INT NOT NULL,
+  FechCargo DATE NOT NULL,
+  PRIMARY KEY (CodCui, CodEsp),
+  FOREIGN KEY (CodCui) REFERENCES Cuidador (CodCui),
+  FOREIGN KEY (CodEsp) REFERENCES Especie (CodEsp)
+) ENGINE=InnoDB;
+
+CREATE TABLE hab_con (
+  CodHab INT NOT NULL,
+  CodCon INT NOT NULL,
+  PRIMARY KEY (CodHab, CodCon),
+  FOREIGN KEY (CodHab) REFERENCES Habitad (CodHab),
+  FOREIGN KEY (CodCon) REFERENCES Continente (CodCon)
+) ENGINE=InnoDB;
