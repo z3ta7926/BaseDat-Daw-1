@@ -1,0 +1,25 @@
+{
+  "app": "modelado-bases",
+  "version": 2,
+  "name": "Actividad · Actividad",
+  "created": 1794870412295,
+  "updated": 1794870510616,
+  "act": {
+    "title": "Actividad",
+    "mins": 45,
+    "parts": [
+      "er",
+      "rel",
+      "ded"
+    ],
+    "state": "run",
+    "show": [
+      "enun",
+      "er",
+      "rel",
+      "ded"
+    ],
+    "start": 1794870418826,
+    "end": 1794873118826
+  }
+}
