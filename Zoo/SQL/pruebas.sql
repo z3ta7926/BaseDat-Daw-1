@@ -1,1 +1,2 @@
-SELECT *; FROM Itinerario;
+SELECT *
+FROM Itinerario;
