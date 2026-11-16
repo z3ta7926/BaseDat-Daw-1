@@ -1,0 +1,16 @@
+Queremos guardar los personajes de una cuenta de Genshin Impact.
+
+De cada personaje: código, nombre, rareza (4 o 5 estrellas), el tipo de arma que puede usar (espada, mandoble, lanza, arco o catalizador) y la fecha de lanzamiento.
+
+Cada personaje tiene un único elemento (Pyro, Hydro, Electro…) y un elemento lo tienen muchos personajes. 
+Del elemento se guarda código y nombre.
+
+Cada personaje procede de una región (Mondstadt, Liyue, Inazuma…), de la que se guarda código, nombre y arconte.
+
+Puede haber regiones anunciadas que aún no tengan personajes jugables.
+
+La cuenta tiene armas concretas (código, nombre, tipo, ataque base y nivel).
+
+Todo personaje lleva siempre exactamente un arma equipada, y un arma solo la puede llevar un personaje a la vez.
+
+Un arma puede estar guardada en el inventario sin que nadie la lleve.

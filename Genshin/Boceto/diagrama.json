@@ -1,0 +1,92 @@
+{
+ "nodes": [
+  {
+   "id": "nmwi125ou1gn0eq8",
+   "k": "ent",
+   "n": "Personaje",
+   "x": 3000,
+   "y": 2085,
+   "f": {
+    "at": [
+     "codPer",
+     "rarezaPer",
+     "fechLanz",
+     "tipoArma"
+    ]
+   }
+  },
+  {
+   "id": "nmwi13euv1go63h9",
+   "k": "ent",
+   "n": "Arma",
+   "x": 2720,
+   "y": 2085,
+   "f": {
+    "at": [
+     "codArm",
+     "nomArm",
+     "rarezaArma"
+    ]
+   }
+  },
+  {
+   "id": "nmwi14ujf1gqwho4",
+   "k": "ent",
+   "n": "Elemento",
+   "x": 3280,
+   "y": 2085,
+   "f": {
+    "at": [
+     "codElem",
+     "nomElem"
+    ]
+   }
+  },
+  {
+   "id": "nmwi15jda1grvgvh",
+   "k": "ent",
+   "n": "Region",
+   "x": 3000,
+   "y": 1915,
+   "f": {
+    "at": [
+     "codReg",
+     "nomReg"
+    ]
+   }
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwi13jbx1gpgd2q",
+   "a": "nmwi13euv1go63h9",
+   "b": "nmwi125ou1gn0eq8",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "11",
+   "eb": "01"
+  },
+  {
+   "id": "nmwi16adp1gs54dr",
+   "a": "nmwi14ujf1gqwho4",
+   "b": "nmwi125ou1gn0eq8",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "11",
+   "eb": "1N"
+  },
+  {
+   "id": "nmwi16bdb1gtf7hd",
+   "a": "nmwi15jda1grvgvh",
+   "b": "nmwi125ou1gn0eq8",
+   "c": null,
+   "mn": null,
+   "mx": null,
+   "ea": "11",
+   "eb": "0N"
+  }
+ ],
+ "notes": []
+}

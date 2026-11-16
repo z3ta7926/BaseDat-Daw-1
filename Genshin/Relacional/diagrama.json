@@ -1,0 +1,107 @@
+{
+ "t": [
+  {
+   "id": "nmwi1m3na1htsgzd",
+   "n": "Personaje",
+   "x": 3055,
+   "y": 1924,
+   "c": [
+    [
+     "codPer",
+     "INT",
+     "pk"
+    ],
+    [
+     "rarezaPer",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "fechLanz",
+     "DATE",
+     ""
+    ],
+    [
+     "tipoArma",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "codArm",
+     "INT",
+     "fk:Arma"
+    ],
+    [
+     "codReg",
+     "INT",
+     "fk:Region"
+    ],
+    [
+     "codElem",
+     "INT",
+     "fk:Elemento"
+    ]
+   ]
+  },
+  {
+   "id": "nmwi1m3na1huhn4x",
+   "n": "Arma",
+   "x": 3284,
+   "y": 1886,
+   "c": [
+    [
+     "codArm",
+     "INT",
+     "pk uq"
+    ],
+    [
+     "nomArm",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "rarezaArma",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwi1m3na1hvfpjr",
+   "n": "Elemento",
+   "x": 2849,
+   "y": 1813,
+   "c": [
+    [
+     "codElem",
+     "INT",
+     "pk"
+    ],
+    [
+     "nomElem",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwi1m3na1hwr70s",
+   "n": "Region",
+   "x": 3222,
+   "y": 2101,
+   "c": [
+    [
+     "codReg",
+     "INT",
+     "pk"
+    ],
+    [
+     "nomReg",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  }
+ ],
+ "notes": []
+}

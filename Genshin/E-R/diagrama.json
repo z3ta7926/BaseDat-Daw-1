@@ -1,0 +1,301 @@
+{
+ "nodes": [
+  {
+   "id": "nmwi1djea1gu5jcw",
+   "k": "ent",
+   "n": "Personaje",
+   "x": 2997,
+   "y": 2170,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1gv5t70",
+   "k": "ent",
+   "n": "Arma",
+   "x": 2485,
+   "y": 2170,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1gwcody",
+   "k": "ent",
+   "n": "Elemento",
+   "x": 3509,
+   "y": 2170,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1gxebqc",
+   "k": "ent",
+   "n": "Region",
+   "x": 2997,
+   "y": 1830,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1gyv2b6",
+   "k": "rel",
+   "n": "tiene",
+   "x": 2741,
+   "y": 2170,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1h18n8o",
+   "k": "rel",
+   "n": "usa",
+   "x": 3253,
+   "y": 2170,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1h4y7y0",
+   "k": "rel",
+   "n": "nació",
+   "x": 2997,
+   "y": 2000,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djea1h7aecu",
+   "k": "attr",
+   "n": "codPer",
+   "x": 3044,
+   "y": 2274,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwi1djeb1h9w7lo",
+   "k": "attr",
+   "n": "rarezaPer",
+   "x": 2957,
+   "y": 2265,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djeb1hbr1m3",
+   "k": "attr",
+   "n": "fechLanz",
+   "x": 2877,
+   "y": 2237,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djeb1hdnr9a",
+   "k": "attr",
+   "n": "tipoArma",
+   "x": 3117,
+   "y": 2247,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djeb1hfnb4t",
+   "k": "attr",
+   "n": "codArm",
+   "x": 2366,
+   "y": 2169,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwi1djeb1hhffl7",
+   "k": "attr",
+   "n": "nomArm",
+   "x": 2483,
+   "y": 2233,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djeb1hjdzvd",
+   "k": "attr",
+   "n": "rarezaArma",
+   "x": 2487,
+   "y": 2107,
+   "f": {
+    "c": false
+   }
+  },
+  {
+   "id": "nmwi1djeb1hlork1",
+   "k": "attr",
+   "n": "codElem",
+   "x": 3643,
+   "y": 2168,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwi1djeb1hnkga7",
+   "k": "attr",
+   "n": "nomElem",
+   "x": 3511,
+   "y": 2263,
+   "f": {}
+  },
+  {
+   "id": "nmwi1djeb1hp755e",
+   "k": "attr",
+   "n": "codReg",
+   "x": 2958,
+   "y": 1764,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwi1djec1hr6rin",
+   "k": "attr",
+   "n": "nomReg",
+   "x": 3042,
+   "y": 1762,
+   "f": {}
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwi1djea1gzp40n",
+   "a": "nmwi1djea1gyv2b6",
+   "b": "nmwi1djea1gv5t70",
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
+  },
+  {
+   "id": "nmwi1djea1h0vk5x",
+   "a": "nmwi1djea1gyv2b6",
+   "b": "nmwi1djea1gu5jcw",
+   "c": "(0,1)",
+   "mn": "0",
+   "mx": "1"
+  },
+  {
+   "id": "nmwi1djea1h2rvt7",
+   "a": "nmwi1djea1h18n8o",
+   "b": "nmwi1djea1gwcody",
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
+  },
+  {
+   "id": "nmwi1djea1h3jr0i",
+   "a": "nmwi1djea1h18n8o",
+   "b": "nmwi1djea1gu5jcw",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwi1djea1h5twin",
+   "a": "nmwi1djea1h4y7y0",
+   "b": "nmwi1djea1gxebqc",
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
+  },
+  {
+   "id": "nmwi1djea1h6yx3l",
+   "a": "nmwi1djea1h4y7y0",
+   "b": "nmwi1djea1gu5jcw",
+   "c": "(0,N)",
+   "mn": "0",
+   "mx": "N"
+  },
+  {
+   "id": "nmwi1djea1h8kvj2",
+   "a": "nmwi1djea1gu5jcw",
+   "b": "nmwi1djea1h7aecu",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hadarb",
+   "a": "nmwi1djea1gu5jcw",
+   "b": "nmwi1djeb1h9w7lo",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hcc5um",
+   "a": "nmwi1djea1gu5jcw",
+   "b": "nmwi1djeb1hbr1m3",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1he0g4v",
+   "a": "nmwi1djea1gu5jcw",
+   "b": "nmwi1djeb1hdnr9a",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hgg2hd",
+   "a": "nmwi1djea1gv5t70",
+   "b": "nmwi1djeb1hfnb4t",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hihqxp",
+   "a": "nmwi1djea1gv5t70",
+   "b": "nmwi1djeb1hhffl7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hk2ygs",
+   "a": "nmwi1djea1gv5t70",
+   "b": "nmwi1djeb1hjdzvd",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hmgt49",
+   "a": "nmwi1djea1gwcody",
+   "b": "nmwi1djeb1hlork1",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hojxpq",
+   "a": "nmwi1djea1gwcody",
+   "b": "nmwi1djeb1hnkga7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djeb1hqyw1r",
+   "a": "nmwi1djea1gxebqc",
+   "b": "nmwi1djeb1hp755e",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwi1djec1hshpr4",
+   "a": "nmwi1djea1gxebqc",
+   "b": "nmwi1djec1hr6rin",
+   "c": null,
+   "mn": null,
+   "mx": null
+  }
+ ],
+ "notes": []
+}

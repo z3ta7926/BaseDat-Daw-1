@@ -1,0 +1,1729 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cuaderno de Modelado E-R</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de lectura (~980px) con fichas de ejercicio; las soluciones se despliegan en pestañas dentro de cada ficha. */
+:root{
+  --bg:#EEF1F6; --surface:#FFFFFF; --surface-2:#F6F8FB; --ink:#141A26; --muted:#586377; --line:#D6DCE7;
+  --accent:#2E47C4; --accent-soft:#E4E9FC;
+  --er-ent:#E6ECFF; --er-rel:#FFF1CF; --er-attr:#FFFFFF; --er-stroke:#273250;
+  --ded-head:#35557F; --ded-head-ink:#FFFFFF; --ded-border:#9AA8BE; --grid:#E7EBF2;
+  --pk:#C2900A; --fk:#C23A55; --col:#25869A;
+  --t-fnaf:#B06508; --t-val:#D2384C; --t-gen:#12867C; --t-fn:#6A43C9; --t-lol:#946F10; --t-norm:#4A586E;
+  --ok:#1C7F46; --warn:#A86A0E; --bad:#BE2E2E;
+  --f-display:"Bricolage Grotesque", "Space Grotesk", system-ui, sans-serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E121A; --surface:#161C27; --surface-2:#1B2230; --ink:#E5E9F1; --muted:#97A2B5; --line:#2A3342;
+  --accent:#93A6FF; --accent-soft:#1F2746;
+  --er-ent:#1D2948; --er-rel:#3A2E12; --er-attr:#131924; --er-stroke:#B6C2DC;
+  --ded-head:#2C4A75; --ded-head-ink:#F2F5FA; --ded-border:#3E4A5E; --grid:#1A2130;
+  --pk:#E8BF46; --fk:#F27D93; --col:#5CC4D6;
+  --t-fnaf:#F2A33C; --t-val:#FF6B7E; --t-gen:#3FC9BA; --t-fn:#AA8CFF; --t-lol:#D9B24C; --t-norm:#9DAAC0;
+  --ok:#4CC07D; --warn:#E3A645; --bad:#F06C6C; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E121A; --surface:#161C27; --surface-2:#1B2230; --ink:#E5E9F1; --muted:#97A2B5; --line:#2A3342;
+  --accent:#93A6FF; --accent-soft:#1F2746;
+  --er-ent:#1D2948; --er-rel:#3A2E12; --er-attr:#131924; --er-stroke:#B6C2DC;
+  --ded-head:#2C4A75; --ded-head-ink:#F2F5FA; --ded-border:#3E4A5E; --grid:#1A2130;
+  --pk:#E8BF46; --fk:#F27D93; --col:#5CC4D6;
+  --t-fnaf:#F2A33C; --t-val:#FF6B7E; --t-gen:#3FC9BA; --t-fn:#AA8CFF; --t-lol:#D9B24C; --t-norm:#9DAAC0;
+  --ok:#4CC07D; --warn:#E3A645; --bad:#F06C6C; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1000px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+code{font-family:var(--f-mono);font-size:.86em;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.05em .35em}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* Cabecera */
+.top{padding-block:44px 28px}
+.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.top h1{font-size:clamp(34px,6vw,56px);font-weight:800;letter-spacing:-.02em;margin-top:12px}
+.top h1 span{color:var(--accent)}
+.lead{max-width:64ch;color:var(--muted);font-size:16px;margin:14px 0 0}
+.nav{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.navg{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.navg h2{font-size:14px;font-family:var(--f-body);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);text-decoration:none;color:var(--ink);font-size:13px;font-weight:500}
+.chip:hover{border-color:var(--tc,var(--accent))}
+.chip b{font-family:var(--f-mono);color:var(--tc,var(--accent))}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--tc,var(--accent))}
+
+/* Leyenda */
+details.legend{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-top:14px}
+details.legend summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.legend summary::after{content:"Mostrar";font-size:13px;color:var(--accent);font-weight:600}
+details.legend[open] summary::after{content:"Ocultar"}
+.legend .in{padding:0 16px 18px;display:grid;gap:18px}
+.legend h4{font-size:17px;margin-bottom:6px}
+.legend p,.legend li{max-width:72ch}
+.method{counter-reset:m;display:grid;gap:8px;padding:0;margin:0;list-style:none}
+.method li{counter-increment:m;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.method li::before{content:counter(m);font:700 13px/26px var(--f-mono);text-align:center;border-radius:50%;background:var(--accent-soft);color:var(--accent);width:26px;height:26px}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.key{display:flex;align-items:center;gap:10px;font-size:13.5px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.key svg{flex:none}
+
+/* Mini chuleta */
+.cheat{margin-top:46px}
+.cheat>h2{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.01em}
+.cheat>p{color:var(--muted);margin:6px 0 0;max-width:68ch}
+.cs-sec{margin-top:22px}
+.cs-sec>h3{font-size:19px;font-weight:800;margin-bottom:10px}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.cs-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.cs-card+.cs-card{margin-top:0}
+.cs-list>.cs-card{margin-top:12px}
+.cs-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-h h4{font-size:17px}
+.cs-card p{margin:.45em 0;max-width:74ch}
+.cs-card ul{margin:.4em 0;padding-left:1.15em}
+.cs-card li{margin:.25em 0;max-width:74ch}
+.cs-dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:10px 0}
+.cs-dg figure{margin:0;min-width:0}
+.cs-dg figure.full{grid-column:1/-1}
+.cs-dg figure.full svg{max-width:560px;margin:0 auto}
+.cs-dg{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.cs-dg figcaption{font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cs-line{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px;margin-top:8px}
+.cs-line svg{flex:none;margin-top:3px}
+.cs-ext{border-style:dashed}
+.cs-ext .tag{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.cs-sum{border-collapse:collapse;width:100%;font-size:13.5px;min-width:700px}
+.cs-sum th{text-align:left;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 12px;background:var(--surface-2)}
+.cs-sum td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+.cs-sum td:first-child{font:700 13px var(--f-mono);color:var(--accent);white-space:nowrap}
+.gojump{display:inline-flex;margin-top:18px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:10px;border:1px solid var(--accent);color:var(--accent)}
+.gojump:hover{background:var(--accent-soft)}
+
+/* Partes */
+.part{margin-top:46px}
+.part>h2{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.01em}
+.part>p{color:var(--muted);margin:6px 0 0;max-width:68ch}
+
+/* Ficha de ejercicio */
+.ex{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:18px;padding:22px 22px 20px;scroll-margin-top:16px;border-top:4px solid var(--tc)}
+.exh{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.exn{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tag{font:700 12px var(--f-body);letter-spacing:.04em;padding:3px 9px;border-radius:999px;color:var(--tc);background:color-mix(in srgb,var(--tc) 13%,transparent)}
+.lv{font:600 12px var(--f-body);padding:3px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.lv1{color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent)}
+.lv2{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.lv3{color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,transparent)}
+.ex h3{font-size:clamp(21px,3vw,26px);font-weight:800;margin-top:10px}
+.enun{margin-top:10px;max-width:74ch}
+.enun p{margin:.5em 0}
+.enun ul{margin:.4em 0;padding-left:1.2em}
+.concepts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.concepts span{font-size:12px;border:1px dashed var(--line);border-radius:6px;padding:2px 8px;color:var(--muted)}
+.reveal{margin-top:16px;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:0;background:var(--ink);color:var(--surface);font-weight:600;cursor:pointer}
+.reveal:hover{background:var(--accent)}
+.sol{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--surface-2);padding:7px 12px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.panel{margin-top:16px}
+.panel h4{font-size:17px}
+
+/* Conclusión */
+.panel[data-p=conc]{counter-reset:st}
+.step{counter-increment:st;display:grid;grid-template-columns:30px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:0}
+.stn::before{content:counter(st)}
+.stn{font:700 13px/28px var(--f-mono);text-align:center;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent)}
+.stb{min-width:0}
+.stb p{margin:.4em 0;max-width:72ch}
+.stb ul{margin:.3em 0;padding-left:1.15em}
+.stb li{margin:.25em 0}
+.relbox{border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden;background:var(--surface-2)}
+.relh{display:flex;gap:10px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line)}
+.rname{font:600 14px var(--f-mono)}
+.rtype{font:700 12px var(--f-mono);background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:6px}
+.tw{overflow-x:auto}
+.rtab{border-collapse:collapse;width:100%;font-size:13.5px;min-width:620px}
+.rtab th{text-align:left;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:7px 12px}
+.rtab td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.rtab td.n{font:600 14px var(--f-mono);text-align:center;width:44px}
+.cd{font:700 13px var(--f-mono);color:var(--accent);white-space:nowrap}
+.rnote{margin:0;padding:8px 12px;border-top:1px solid var(--line);font-size:13.5px}
+.tip{border-left:3px solid var(--accent);background:var(--accent-soft);padding:8px 12px;border-radius:0 8px 8px 0;margin:10px 0;font-size:14px}
+
+/* Diagramas */
+.diag{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:6px}
+.diag.grid{background-color:var(--surface);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.diag svg{display:block;width:100%;height:auto}
+.cap{font-size:13px;color:var(--muted);margin:8px 0 0}
+svg .ln{stroke:var(--er-stroke);stroke-width:1.3}
+svg .mk{stroke:var(--er-stroke);stroke-width:1.6;fill:none}
+svg .mo{fill:var(--surface);stroke:var(--er-stroke);stroke-width:1.6}
+svg .ent{fill:var(--er-ent);stroke:var(--er-stroke);stroke-width:1.6}
+svg .dia{fill:var(--er-rel);stroke:var(--er-stroke);stroke-width:1.6}
+svg .att{fill:var(--er-attr);stroke:var(--er-stroke);stroke-width:1.2}
+svg .att.dr{stroke-dasharray:4 3}
+svg .tx{fill:var(--ink);font:11px var(--f-mono)}
+svg .tb{font:600 13px var(--f-mono);fill:var(--ink)}
+svg .tr{font:600 12px var(--f-mono);fill:var(--ink)}
+svg .tt{font:700 10px var(--f-mono);fill:var(--accent)}
+svg .ul{stroke:var(--ink);stroke-width:1}
+svg .ul.p{stroke-dasharray:3 2}
+svg .card{font:700 11px var(--f-mono);fill:var(--accent);paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
+svg .tbox{fill:var(--surface);stroke:var(--ded-border);stroke-width:1.2}
+svg .thd{fill:var(--ded-head)}
+svg .thx{font:700 12.5px var(--f-mono);fill:var(--ded-head-ink)}
+svg .cx{font:11.5px var(--f-mono);fill:var(--ink)}
+svg .cty{fill:var(--muted)}
+svg .uq{font:700 9px var(--f-mono);fill:var(--accent)}
+svg .lk{stroke:var(--muted);stroke-width:1.5;fill:none}
+svg .lk.dash{stroke-dasharray:6 4}
+svg .lkm{stroke:var(--muted);stroke-width:1.6;fill:none}
+svg .lko{fill:var(--surface);stroke:var(--muted);stroke-width:1.6}
+svg .ipk{fill:var(--pk)} svg .ifk{fill:var(--fk)} svg .icol{fill:var(--col)} svg .inul{fill:none;stroke:var(--col);stroke-width:1.3}
+
+
+/* Pistas y atributos */
+.ptab,.atab{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+.ptab th,.atab th{text-align:left;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:7px 12px;background:var(--surface-2)}
+.ptab td,.atab td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.ptab td.q{font-style:italic;width:38%}
+.ptab td.dec{font-weight:600;color:var(--accent)}
+.tbw{border:1px solid var(--line);border-radius:10px;overflow-x:auto;margin:10px 0}
+.atab td.an{font:600 13px var(--f-mono);white-space:nowrap}
+.atab td.en{font:12.5px var(--f-mono);color:var(--muted);white-space:nowrap}
+.ch{display:inline-block;font:700 11px var(--f-body);padding:2px 8px;border-radius:6px;white-space:nowrap}
+.ch.pk{color:var(--pk);background:color-mix(in srgb,var(--pk) 15%,transparent)}
+.ch.uq{color:var(--accent);background:var(--accent-soft)}
+.ch.opt{color:var(--col);background:color-mix(in srgb,var(--col) 14%,transparent)}
+.ch.der{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent);border:1px dashed currentColor}
+.ch.esp{color:var(--t-fn);background:color-mix(in srgb,var(--t-fn) 13%,transparent)}
+.ch.rel{color:var(--t-gen);background:color-mix(in srgb,var(--t-gen) 13%,transparent)}
+.ch.fk{color:var(--fk);background:color-mix(in srgb,var(--fk) 13%,transparent)}
+.ch.simple{color:var(--muted);background:var(--surface-2);border:1px solid var(--line)}
+.summary{font-size:15.5px;font-weight:500}
+/* Editor del alumno */
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.actions .reveal{margin-top:0}
+.dowork{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1.5px solid var(--accent);background:var(--surface);color:var(--accent);font-weight:600;cursor:pointer}
+.dowork:hover,.dowork[aria-expanded="true"]{background:var(--accent-soft)}
+.work{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.ed-top{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.ed-modes,.ed-tools{display:flex;flex-wrap:wrap;gap:6px}
+.ed-tools{margin-top:10px;align-items:center}
+.ebtn{border:1px solid var(--line);background:var(--surface-2);padding:7px 12px;border-radius:8px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink)}
+.ebtn:hover{border-color:var(--accent)}
+.ebtn.on,.ebtn[aria-selected="true"],.ebtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.ebtn.danger{color:var(--bad)}
+.ebtn.add::before{content:"+ ";}
+.ed-sep{width:1px;align-self:stretch;background:var(--line);margin:0 4px}
+.ed-hint{font-size:13.5px;color:var(--muted);margin:8px 0 10px;min-height:1.6em}
+.ed-hint b{color:var(--ink)}
+.ed-main{display:grid;grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"cv in";gap:12px;align-items:start}
+.ed-main.cmp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"cv so" "in in"}
+.ed-cv{grid-area:cv;max-height:74vh;padding:0;overflow:auto}
+.ed-cv svg{width:1200px;height:720px;max-width:none;display:block}
+.ed-so{grid-area:so;min-width:0}
+.ed-so-h{font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ed-in{grid-area:in;min-width:0;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.in-h{font:700 15px var(--f-display);margin-bottom:8px}
+.in-p{font-size:13.5px;color:var(--muted);margin:.4em 0}
+.in-sub{font:600 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:12px 0 6px}
+.fld{display:grid;gap:4px;margin-bottom:10px;font-size:13px;font-weight:600}
+.ed-in input[type=text],.ed-in select{font:13px var(--f-mono);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 8px;width:100%;min-width:0}
+.chk{display:flex;gap:8px;align-items:center;font-size:13.5px;margin:6px 0;cursor:pointer}
+.colrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-bottom:6px}
+.colrow input[type=text]{flex:1 1 100px;width:auto}
+.colrow select{flex:1 1 100%;width:auto}
+.tg{display:inline-flex;gap:3px;align-items:center;font:600 11.5px var(--f-mono);cursor:pointer}
+.xbtn{margin-left:auto;border:0;background:none;color:var(--bad);font-weight:700;cursor:pointer;padding:2px 6px;border-radius:6px}
+.in-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+svg .hitl{stroke:transparent;stroke-width:14;cursor:pointer}
+svg .lsel{stroke:var(--accent);stroke-width:2.6}
+svg .selbox{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:5 3}
+svg .frombox{fill:none;stroke:var(--warn);stroke-width:2.2}
+svg .hitbox{fill:transparent;cursor:move}
+svg .node{cursor:move}
+svg .node,svg .hitbox{touch-action:none}
+svg .card,svg .mk,svg .mo,svg .lkm,svg .lko{pointer-events:none}
+svg .cardq{fill:var(--muted)}
+svg .emp{font:14px var(--f-body);fill:var(--muted)}
+@media (max-width:900px){.ed-main,.ed-main.cmp{grid-template-columns:minmax(0,1fr);grid-template-areas:"cv" "in" "so"}}
+
+/* Espacio de trabajo a pantalla completa */
+.ws{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.ws-head{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--surface);border-top:3px solid var(--tc)}
+.ws-title{font:700 16px var(--f-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ws-sp{flex:1}
+.ws-body{flex:1;min-height:0;display:grid;grid-template-columns:340px minmax(0,1fr) 310px;grid-template-areas:"side center insp"}
+.ws-body.sol{grid-template-columns:minmax(0,.9fr) minmax(0,1fr) 310px}
+.ws-side{grid-area:side;overflow:auto;padding:14px 16px;background:var(--surface);border-right:1px solid var(--line);min-width:0}
+.ws-stabs{display:flex;gap:6px;margin-bottom:12px;position:sticky;top:-14px;background:var(--surface);padding:6px 0;z-index:1}
+.ws-sc .enun{margin:0;font-size:14.5px}
+.ws-center{grid-area:center;display:flex;flex-direction:column;min-width:0;min-height:0;padding:12px 14px}
+.ws-center .ed-cv{flex:1;min-height:0;max-height:none}
+.ws-insp{grid-area:insp;overflow:auto;border:0;border-left:1px solid var(--line);border-radius:0}
+.in-q{font-size:14px;margin:8px 0 6px}
+.cq{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;margin:8px 0}
+.cq .in-p{margin:4px 0 2px}
+.cardrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0;font-size:14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.segb{border:0;background:var(--surface);padding:7px 16px;font:700 14px var(--f-mono);cursor:pointer;color:var(--ink)}
+.segb+.segb{border-left:1px solid var(--line)}
+.segb[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+@media (max-width:1150px){
+  .ws-body,.ws-body.sol{grid-template-columns:minmax(0,1fr) 290px;grid-template-rows:auto minmax(0,1fr);grid-template-areas:"side side" "center insp"}
+  .ws-side{max-height:32vh;border-right:0;border-bottom:1px solid var(--line)}
+  .ws-body.sol .ws-side{max-height:45vh}
+}
+@media (max-width:760px){
+  .ws-body,.ws-body.sol{display:block;overflow:auto}
+  .ws-side{max-height:none}
+  .ws-center .ed-cv{height:62vh;flex:none}
+  .ws-insp{border-left:0;border-top:1px solid var(--line)}
+  .ws-title{display:none}
+}
+
+/* Relacional */
+svg .rbox{fill:var(--surface);stroke:var(--ink);stroke-width:1.2}
+svg .rnm{font:600 12.5px var(--f-mono);fill:var(--ink)}
+svg .rcol{font:12px var(--f-mono);fill:var(--ink)}
+svg .rpk{font-weight:700}
+svg .rul{stroke:var(--ink);stroke-width:1.2}
+svg .rtag{font:600 9.5px var(--f-mono);fill:var(--muted)}
+svg .rarr{fill:none;stroke:var(--ink);stroke-width:1.2}
+svg .rhead{fill:var(--ink)}
+.rel-list{display:grid;gap:8px}
+.rt{font:13.5px/1.7 var(--f-mono);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px 12px;overflow-x:auto;white-space:nowrap}
+.rt .tn{font-weight:700;color:var(--accent)}
+.rt u{text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
+.rt .fk{color:var(--fk)}
+.rt .o{color:var(--muted);font-size:11.5px}
+.fklist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.fklist li{font:13px var(--f-mono);overflow-x:auto;white-space:nowrap}
+.fklist .ar{color:var(--fk)}
+.fklist .q{color:var(--muted)}
+.notes{margin-top:14px}
+.notes p,.notes li{max-width:74ch}
+
+/* Alternativas */
+.alt{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:12px;background:var(--surface-2)}
+.alt h4{font-size:16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.alt h4 small{font:600 11px var(--f-body);letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px}
+.alt h4 small.good{color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+.alt h4 small.meh{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.alt h4 small.no{color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,transparent)}
+.alt p{margin:.5em 0;max-width:74ch}
+.alt .diag{margin-top:10px}
+
+@media (max-width:640px){
+  .nav{grid-template-columns:1fr}
+  .ex{padding:18px 14px}
+  .step{grid-template-columns:1fr;gap:6px}
+}
+@media (prefers-reduced-motion:no-preference){ .chip,.reveal,.tab{transition:background .15s,border-color .15s,color .15s} }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Bases de datos · Diseño conceptual y lógico</div>
+    <h1>Cuaderno de <span>Modelado E-R</span></h1>
+    <p class="lead">10 ejercicios resueltos, ordenados de menos a más difícil. Primero 5 temáticos de videojuegos y después 5 clásicos de examen. Hazlos en papel y pulsa «Ver solución» solo para corregirte. Cada solución trae la conclusión razonada, el E-R, el modelo relacional, el DED y otras soluciones válidas cuando las hay.</p>
+    <a class="gojump" href="#chuleta">Empieza por la mini chuleta</a>
+    <nav class="nav" aria-label="Ejercicios" id="nav"></nav>
+    <details class="legend" id="legend">
+      <summary>Cómo leer las soluciones (método y notación)</summary>
+      <div class="in" id="legendIn"></div>
+    </details>
+  </header>
+  <main id="app"></main>
+</div>
+
+<script>
+/* ===================== Helpers de contenido ===================== */
+const R=(name,type,rows,note='')=>`<div class="relbox"><div class="relh"><span class="rname">${name}</span><span class="rtype">${type}</span></div><div class="tw"><table class="rtab"><thead><tr><th>Pregunta</th><th>Mín</th><th>Máx</th><th>Se anota junto a</th><th>Por qué</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1]}</td><td class="n">${r[2]}</td><td><b>${r[3]}</b> <span class="cd">(${r[1]},${r[2]})</span></td><td>${r[4]}</td></tr>`).join('')}</tbody></table></div>${note?`<p class="rnote">${note}</p>`:''}</div>`;
+const S=(n,t,b)=>`<div class="step"><div class="stn"></div><div class="stb"><h4>${t}</h4>${b}</div></div>`;
+const TIP=t=>`<div class="tip">${t}</div>`;
+
+/* ===================== Ejercicios ===================== */
+const EX=[
+/* ---------- 1 · FNAF ---------- */
+{part:1, tag:'FNAF', tc:'--t-fnaf', lv:1, title:'Fazbear Entertainment: inventario de animatrónicos',
+concepts:['1:N','Atributo derivado','Atributo opcional'],
+enun:`<p>Fazbear Entertainment quiere controlar los animatrónicos de sus locales. De cada <b>pizzería</b> se guarda un código, el nombre, la ciudad y el año de apertura. De cada <b>animatrónico</b> se guarda un código, el nombre, la especie (oso, conejo, pollo, zorro…), la fecha de fabricación y, si lo tiene, un apodo.</p>
+<p>Cada animatrónico está instalado en una única pizzería y en una pizzería puede haber muchos animatrónicos. Una pizzería recién inaugurada puede no tener todavía ninguno. También se quiere conocer la antigüedad (en años) de cada animatrónico.</p>`,
+concl:
+S(1,'Entidades',`<p>Busco los «sustantivos» que tienen datos propios y que hay que distinguir unos de otros: <b>pizzeria</b> y <b>animatronico</b>. La especie no es entidad: es solo un dato del animatrónico y no se pide guardar nada más sobre ella.</p>`)+
+S(2,'Relación y cardinalidades',`<p>Siempre leo la relación desde los dos lados y me hago la misma pregunta: «uno de estos, ¿con cuántos de los otros como mínimo y como máximo?». La respuesta se anota junto a la entidad que estoy contando.</p>`+
+R('tiene','1:N',[
+ ['¿En cuántas pizzerías está instalado <b>un</b> animatrónico?','1','1','pizzeria','Siempre está en alguna y solo en una.'],
+ ['¿Cuántos animatrónicos tiene <b>una</b> pizzería?','0','N','animatronico','Una pizzería recién inaugurada puede no tener ninguno.']],
+ 'Los máximos son 1 y N, así que es una relación <b>1:N</b>.'))+
+S(3,'Atributos',`<ul>
+<li><b>CodPiz</b> y <b>CodAni</b> son la clave primaria (PK): un código inventado que nunca se repite. El nombre no sirve, porque dos pizzerías podrían llamarse igual.</li>
+<li><b>Apodo (O)</b> es opcional: el enunciado dice «si lo tiene», así que puede quedar vacío (NULL).</li>
+<li><b>Antigüedad</b> es derivada (óvalo discontinuo): se calcula a partir de la fecha de fabricación. No se guarda porque cambiaría sola cada año; guardamos FecFab.</li>
+<li>Ciudad y año de apertura son atributos simples de la pizzería.</li></ul>`)+
+S(4,'Paso a tablas',`<p>En una 1:N, la PK del lado «1» viaja como clave ajena (FK) a la tabla del lado «N». Así que <code>CodPiz</code> pasa a <code>animatronico</code>. Como el mínimo junto a pizzería es 1 (todo animatrónico está en una), la FK es <b>NOT NULL</b>.</p>`),
+er:{W:900,H:340,ents:[
+ {n:'pizzeria',x:220,y:170,a:[['l',['_CodPiz','NomPiz','CiuPiz','AnioApe']]]},
+ {n:'animatronico',x:660,y:170,a:[['r',['_CodAni','NomAni','EspAni','FecFab','ApoAni?','~Antiguedad']]]}],
+ rels:[{n:'tiene',t:'1:N',x:440,y:170,e:[{to:'pizzeria',c:'(1,1)'},{to:'animatronico',c:'(0,N)'}]}]},
+ded:{W:640,H:220,t:[
+ {n:'pizzeria',x:30,y:40,c:[['CodPiz','INT','pk'],['NomPiz','VARCHAR(50)'],['CiuPiz','VARCHAR(45)'],['AnioApe','SMALLINT']]},
+ {n:'animatronico',x:400,y:40,c:[['CodAni','INT','pk'],['NomAni','VARCHAR(45)'],['EspAni','VARCHAR(30)'],['FecFab','DATE'],['ApoAni','VARCHAR(45)','null'],['CodPiz','INT','fk:pizzeria']]}]},
+notes:`<p>La antigüedad no es una columna: se calcula en la consulta.</p><p><code>SELECT NomAni, TIMESTAMPDIFF(YEAR, FecFab, CURDATE()) AS Antiguedad FROM animatronico;</code></p>`,
+alts:[
+ {h:'Ciudad como entidad (3FN)',k:'good',kt:'También válida',p:'Si muchas pizzerías comparten ciudad, escribir el nombre una y otra vez provoca repeticiones y erratas. Se puede sacar la ciudad a su propia tabla, igual que en el Ejercicio 10 de clase. La versión principal es más sencilla y también es correcta, porque el enunciado no pide datos de la ciudad.',
+  ded:{W:780,H:220,t:[
+   {n:'ciudad',x:20,y:40,c:[['CodCiu','INT','pk'],['NomCiu','VARCHAR(45)']]},
+   {n:'pizzeria',x:290,y:40,c:[['CodPiz','INT','pk'],['NomPiz','VARCHAR(50)'],['AnioApe','SMALLINT'],['CodCiu','INT','fk:ciudad']]},
+   {n:'animatronico',x:570,y:40,c:[['CodAni','INT','pk'],['…','…'],['CodPiz','INT','fk:pizzeria']]}]}},
+ {h:'¿Y si el animatrónico cambiara de pizzería?',k:'meh',kt:'Otro enunciado',p:'Si se pidiera el historial de traslados (en qué pizzería estuvo y desde cuándo), la relación pasaría a ser N:M con atributos: <code>instalacion(<u>CodAni</u>, <u>CodPiz</u>, <u>FecIni</u>, FecFin)</code>. La fecha entra en la PK porque el mismo animatrónico puede volver a la misma pizzería. Con el enunciado actual no hace falta.'}]
+},
+
+/* ---------- 2 · VALORANT ---------- */
+{part:1, tag:'Valorant', tc:'--t-val', lv:2, title:'Escena competitiva de Valorant',
+concepts:['1:N con FK nula','N:M con atributo','3FN (entidad rol)','Clave alternativa (UNIQUE)'],
+enun:`<p>Una liga de esports quiere gestionar su escena de Valorant.</p>
+<ul><li>De cada <b>equipo</b>: código, nombre, país y fecha de fundación.</li>
+<li>De cada <b>jugador</b>: código, nick (no se puede repetir), nombre real, fecha de nacimiento, edad y rango actual (Hierro, Oro, Radiante…).</li>
+<li>Un jugador puede estar en un equipo o ser agente libre (sin equipo) durante un tiempo. Un equipo tiene varios jugadores, pero se puede registrar antes de fichar a ninguno.</li>
+<li>De cada <b>agente</b> del juego (Jett, Sage, Omen…) se guarda código, nombre y su rol (Duelista, Iniciador, Controlador, Centinela). De cada rol interesa también una descripción.</li>
+<li>Se quiere saber qué agentes domina cada jugador y cuántas horas lleva con cada uno. Para registrarse, un jugador debe dominar al menos un agente; un agente recién lanzado puede no dominarlo nadie todavía.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>equipo</b>, <b>jugador</b>, <b>agente</b> y <b>rol</b>. El rol parece un simple dato del agente, pero tiene su propia descripción: si lo dejara como atributo de agente, la descripción de «Duelista» se repetiría en cada duelista. Eso rompe la 3FN, así que lo modelo directamente como entidad.</p>`)+
+S(2,'Relaciones y cardinalidades',
+R('pertenece','1:N',[
+ ['¿En cuántos equipos está <b>un</b> jugador?','0','1','equipo','Puede ser agente libre (0) y nunca está en dos equipos (1).'],
+ ['¿Cuántos jugadores tiene <b>un</b> equipo?','0','N','jugador','Se puede registrar sin fichajes.']],
+ 'Mínimo 0 junto a equipo ⇒ la FK <code>CodEqu</code> en jugador <b>admite NULL</b>.')+
+R('domina','N:M',[
+ ['¿Cuántos agentes domina <b>un</b> jugador?','1','N','agente','Debe dominar al menos uno para registrarse.'],
+ ['¿Cuántos jugadores dominan <b>un</b> agente?','0','N','jugador','Un agente recién lanzado puede no tener a nadie.']],
+ 'Máximo N en los dos lados ⇒ <b>N:M</b>. Las horas no son del jugador ni del agente, sino de la pareja jugador-agente: son un <b>atributo de la relación</b>.')+
+R('es_de','1:N',[
+ ['¿Cuántos roles tiene <b>un</b> agente?','1','1','rol','Cada agente tiene exactamente un rol.'],
+ ['¿Cuántos agentes tiene <b>un</b> rol?','1','N','agente','Todos los roles del juego tienen agentes.']]))+
+S(3,'Atributos',`<ul>
+<li><b>NickJug</b> no se repite: es una clave candidata. Elijo CodJug como PK (un número no cambia; el nick sí podría) y el nick queda como <b>clave alternativa</b> ⇒ <code>UNIQUE</code>.</li>
+<li><b>Edad</b> es derivada: guardo la fecha de nacimiento y la calculo.</li>
+<li><b>HorasJug</b> va en la relación domina, como NumDes en el Ejercicio 10 de clase.</li></ul>`)+
+S(4,'Paso a tablas',`<ul>
+<li><b>pertenece (1:N)</b>: CodEqu viaja a jugador, con NULL permitido.</li>
+<li><b>es_de (1:N)</b>: CodRol viaja a agente, NOT NULL.</li>
+<li><b>domina (N:M)</b>: la relación se convierte en tabla nueva <code>domina</code> con las dos FK y el atributo HorasJug. La PK compuesta (CodJug, CodAge) vale porque la misma pareja nunca tiene sentido repetirla: si juega más horas, se actualiza la fila.</li></ul>`+
+TIP('El mínimo 1 de «un jugador domina al menos un agente» no se puede obligar solo con claves ajenas: lo controla el programa o un trigger.')),
+er:{W:1160,H:400,ents:[
+ {n:'equipo',x:190,y:140,a:[['l',['_CodEqu','NomEqu','PaisEqu','FecFun']]]},
+ {n:'jugador',x:560,y:140,a:[['u',['_CodJug','NickJug','NomReal']],['d',['FecNac','~Edad','RangoJug']]]},
+ {n:'agente',x:980,y:140,a:[['u',['_CodAge','NomAge']]]},
+ {n:'rol',x:980,y:330,a:[['r',['_CodRol','NomRol','DesRol']]]}],
+ rels:[
+ {n:'pertenece',t:'1:N',x:370,y:140,e:[{to:'equipo',c:'(0,1)'},{to:'jugador',c:'(0,N)'}]},
+ {n:'domina',t:'N:M',x:780,y:140,a:[['d',['HorasJug']]],e:[{to:'jugador',c:'(0,N)'},{to:'agente',c:'(1,N)'}]},
+ {n:'es_de',t:'1:N',x:980,y:235,e:[{to:'agente',c:'(1,N)'},{to:'rol',c:'(1,1)'}]}]},
+ded:{W:1090,H:330,t:[
+ {n:'equipo',x:20,y:30,c:[['CodEqu','INT','pk'],['NomEqu','VARCHAR(50)'],['PaisEqu','VARCHAR(40)'],['FecFun','DATE']]},
+ {n:'jugador',x:290,y:30,c:[['CodJug','INT','pk'],['NickJug','VARCHAR(30)','uq'],['NomReal','VARCHAR(60)'],['FecNac','DATE'],['RangoJug','VARCHAR(20)'],['CodEqu','INT','null fk:equipo']]},
+ {n:'domina',x:590,y:30,c:[['CodJug','INT','pk fk:jugador'],['CodAge','INT','pk fk:agente'],['HorasJug','INT']]},
+ {n:'agente',x:870,y:30,c:[['CodAge','INT','pk'],['NomAge','VARCHAR(30)'],['CodRol','INT','fk:rol']]},
+ {n:'rol',x:870,y:210,c:[['CodRol','INT','pk'],['NomRol','VARCHAR(20)'],['DesRol','VARCHAR(150)']]}]},
+notes:`<p>Línea continua en el DED = la FK forma parte de la PK (relación identificadora). Discontinua = la FK es un campo normal.</p>`,
+alts:[
+ {h:'Historial de fichajes',k:'meh',kt:'Si el enunciado lo pidiera',p:'Si se quisiera saber en qué equipos ha estado cada jugador y entre qué fechas, pertenece pasaría a ser N:M. Ojo: un jugador puede volver al mismo equipo, así que la pareja (CodJug, CodEqu) se repetiría y <b>no vale como PK</b>. Hay que poner una PK propia, como en el Ejercicio 5 de clase.',
+  ded:{W:760,H:220,t:[
+   {n:'jugador',x:20,y:40,c:[['CodJug','INT','pk'],['NickJug','VARCHAR(30)','uq'],['…','…']]},
+   {n:'contrato',x:290,y:40,c:[['CodCon','INT','pk'],['FecIni','DATE'],['FecFin','DATE','null'],['CodJug','INT','fk:jugador'],['CodEqu','INT','fk:equipo']]},
+   {n:'equipo',x:560,y:40,c:[['CodEqu','INT','pk'],['NomEqu','VARCHAR(50)']]}]}},
+ {h:'Rol como simple atributo',k:'meh',kt:'Solo sin descripción',p:'Si del rol solo se guardara el nombre, podría ser una columna <code>RolAge VARCHAR(20)</code> en agente. En cuanto tiene datos propios (la descripción) lo correcto es la entidad aparte.'}]
+},
+
+/* ---------- 3 · GENSHIN ---------- */
+{part:1, tag:'Genshin Impact', tc:'--t-gen', lv:2, title:'Genshin Impact: personajes, elementos y armas',
+concepts:['1:N','1 a 0 (1:1 con mínimo 0)','FK + UNIQUE','Dónde colocar la FK'],
+enun:`<p>Queremos guardar los personajes de una cuenta de Genshin Impact.</p>
+<ul><li>De cada <b>personaje</b>: código, nombre, rareza (4 o 5 estrellas), el tipo de arma que puede usar (espada, mandoble, lanza, arco o catalizador) y la fecha de lanzamiento.</li>
+<li>Cada personaje tiene un único <b>elemento</b> (Pyro, Hydro, Electro…) y un elemento lo tienen muchos personajes. Del elemento se guarda código y nombre.</li>
+<li>Cada personaje procede de una <b>región</b> (Mondstadt, Liyue, Inazuma…), de la que se guarda código, nombre y arconte. Puede haber regiones anunciadas que aún no tengan personajes jugables.</li>
+<li>La cuenta tiene <b>armas</b> concretas (código, nombre, tipo, ataque base y nivel). Todo personaje lleva siempre exactamente un arma equipada, y un arma solo la puede llevar un personaje a la vez. Un arma puede estar guardada en el inventario sin que nadie la lleve.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>personaje</b>, <b>elemento</b>, <b>region</b> y <b>arma</b>. Elemento y región son entidades porque el enunciado nos da su código y sus propios datos (el arconte, por ejemplo).</p>`)+
+S(2,'Relaciones y cardinalidades',
+R('tiene','1:N',[
+ ['¿Cuántos elementos tiene <b>un</b> personaje?','1','1','elemento','Uno y solo uno.'],
+ ['¿Cuántos personajes tiene <b>un</b> elemento?','1','N','personaje','Todos los elementos tienen personajes.']])+
+R('procede','1:N',[
+ ['¿De cuántas regiones procede <b>un</b> personaje?','1','1','region','Siempre de una.'],
+ ['¿Cuántos personajes tiene <b>una</b> región?','0','N','personaje','Hay regiones anunciadas sin personajes.']])+
+R('equipa','1:1 (1 a 0)',[
+ ['¿Cuántas armas lleva <b>un</b> personaje?','1','1','arma','Siempre exactamente una.'],
+ ['¿Cuántos personajes llevan <b>un</b> arma?','0','1','personaje','Puede estar en el inventario (0) y nunca la llevan dos a la vez (1).']],
+ 'Máximos 1 y 1 ⇒ 1:1. Como uno de los mínimos es 0, es el caso <b>1 a 0</b> del Ejercicio 7 de clase.'))+
+S(3,'¿Dónde pongo la FK de la 1 a 0?',`<p>La pongo en la tabla cuya participación es <b>obligatoria</b>: el personaje siempre tiene arma. Así <code>personaje.CodArm</code> es NOT NULL y nunca hay huecos vacíos. Para que siga siendo 1:1 (y no 1:N) le añado <code>UNIQUE</code>: dos personajes no pueden apuntar a la misma arma.</p>`+
+TIP('Regla: FK + UNIQUE = relación 1:1. Sin UNIQUE, varios personajes podrían compartir la misma arma y sería 1:N.'))+
+S(4,'Atributos',`<ul>
+<li><b>Rareza</b> es un número pequeño (4 o 5) ⇒ TINYINT.</li>
+<li><b>TipArmPer</b> (lo que el personaje puede usar) y <b>TipArm</b> (lo que es el arma) son datos distintos. Que coincidan se controla con un trigger.</li>
+<li>Las PK son códigos inventados (CodPer, CodEle, CodReg, CodArm).</li></ul>`),
+er:{W:1170,H:500,ents:[
+ {n:'elemento',x:200,y:120,a:[['l',['_CodEle','NomEle']]]},
+ {n:'region',x:200,y:420,a:[['l',['_CodReg','NomReg','Arconte']]]},
+ {n:'personaje',x:560,y:270,a:[['u',['_CodPer','NomPer','Rareza'],45],['d',['TipArmPer','FecLan']]]},
+ {n:'arma',x:990,y:270,a:[['r',['_CodArm','NomArm','TipArm','AtqBase','NivArm']]]}],
+ rels:[
+ {n:'tiene',t:'1:N',x:370,y:195,e:[{to:'elemento',c:'(1,1)'},{to:'personaje',c:'(1,N)'}]},
+ {n:'procede',t:'1:N',x:370,y:345,e:[{to:'region',c:'(1,1)'},{to:'personaje',c:'(0,N)'}]},
+ {n:'equipa',t:'1:1',x:790,y:270,e:[{to:'personaje',c:'(0,1)'},{to:'arma',c:'(1,1)'}]}]},
+ded:{W:840,H:320,t:[
+ {n:'elemento',x:20,y:30,c:[['CodEle','INT','pk'],['NomEle','VARCHAR(20)']]},
+ {n:'region',x:20,y:190,c:[['CodReg','INT','pk'],['NomReg','VARCHAR(30)'],['Arconte','VARCHAR(45)']]},
+ {n:'personaje',x:300,y:70,c:[['CodPer','INT','pk'],['NomPer','VARCHAR(45)'],['Rareza','TINYINT'],['TipArmPer','VARCHAR(20)'],['FecLan','DATE'],['CodEle','INT','fk:elemento'],['CodReg','INT','fk:region'],['CodArm','INT','uq fk:arma']]},
+ {n:'arma',x:620,y:70,c:[['CodArm','INT','pk'],['NomArm','VARCHAR(45)'],['TipArm','VARCHAR(20)'],['AtqBase','SMALLINT'],['NivArm','TINYINT']]}]},
+notes:`<p>Fíjate en el extremo de la línea personaje-arma en el DED: «o|» en vez de «o&lt;», porque gracias al UNIQUE cada arma aparece como mucho en un personaje.</p>`,
+alts:[
+ {h:'FK en arma en vez de en personaje',k:'meh',kt:'Funciona, pero peor',p:'También se podría poner <code>arma.CodPer</code> (NULL + UNIQUE). Tiene dos pegas: todas las armas del inventario tendrían el campo a NULL, y ya no podemos obligar a que cada personaje tenga arma. Por eso la principal es mejor.',
+  ded:{W:620,H:230,t:[
+   {n:'personaje',x:20,y:40,c:[['CodPer','INT','pk'],['NomPer','VARCHAR(45)'],['…','…']]},
+   {n:'arma',x:340,y:40,c:[['CodArm','INT','pk'],['NomArm','VARCHAR(45)'],['…','…'],['CodPer','INT','null uq fk:personaje']]}]}},
+ {h:'Tipo de arma como entidad',k:'good',kt:'También válida',p:'El tipo de arma aparece en personaje y en arma. Si lo sacamos a una tabla <code>tipo_arma</code> y ambas tablas apuntan a ella, los nombres no se escriben dos veces y es más fácil comprobar que coinciden. Solo se muestran las columnas afectadas.',
+  ded:{W:780,H:300,t:[
+   {n:'tipo_arma',x:300,y:20,c:[['CodTip','INT','pk'],['NomTip','VARCHAR(20)']]},
+   {n:'personaje',x:20,y:150,c:[['CodPer','INT','pk'],['…','…'],['CodTip','INT','fk:tipo_arma'],['CodArm','INT','uq fk:arma']]},
+   {n:'arma',x:560,y:150,c:[['CodArm','INT','pk'],['…','…'],['CodTip','INT','fk:tipo_arma']]}]}}]
+},
+
+/* ---------- 4 · FORTNITE ---------- */
+{part:1, tag:'Fortnite', tc:'--t-fn', lv:3, title:'Fortnite: skins, temporadas y partidas',
+concepts:['Dos relaciones entre las mismas entidades','N:M con atributos','FK que admite nulos','Atributo calculado'],
+enun:`<ul><li>De cada <b>jugador</b>: código, nombre de usuario y email (ninguno de los dos se repite), fecha de registro y pavos disponibles.</li>
+<li>De cada <b>skin</b>: código, nombre, precio en pavos y su <b>rareza</b> (Común, Rara, Épica, Legendaria…). De cada rareza guardamos código, nombre y color del marco.</li>
+<li>De cada <b>temporada</b>: código, nombre (ej. «Capítulo 5 – Temporada 1»), fecha de inicio y de fin. Algunas skins son del pase de batalla de una temporada; otras solo salen en la tienda y no pertenecen a ninguna. Cada temporada tiene varias skins en su pase.</li>
+<li>Un jugador puede comprar muchas skins y una skin la compran muchos jugadores. Se guarda la fecha de compra y el precio pagado (puede haber descuento). Nadie compra la misma skin dos veces. Un jugador puede no haber comprado nada.</li>
+<li>Además, cada jugador lleva <b>equipada</b> en este momento una skin, o ninguna si usa el personaje por defecto. Muchos jugadores pueden llevar la misma.</li>
+<li>De cada <b>partida</b>: código, fecha y hora, modo (Solo, Dúos, Escuadrones) y temporada en la que se jugó. De cada jugador en cada partida se guarda el puesto final y las eliminaciones. Una partida tiene al menos un jugador.</li>
+<li>Se quiere conocer el número de victorias (puesto 1) de cada jugador.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>jugador</b>, <b>skin</b>, <b>rareza</b>, <b>temporada</b> y <b>partida</b>. La rareza es entidad porque tiene su propio dato (color del marco), igual que el rol en Valorant.</p>`)+
+S(2,'Dos relaciones entre jugador y skin',`<p>Aquí está la trampa del ejercicio. «Comprar» y «llevar equipada» son dos hechos diferentes, con cardinalidades diferentes, así que son <b>dos relaciones</b> distintas entre las mismas entidades (como «tiene» y «es_jefe» en el Ejercicio 9 de clase).</p>`+
+R('compra','N:M',[
+ ['¿Cuántas skins compra <b>un</b> jugador?','0','N','skin','Puede no haber comprado nada.'],
+ ['¿Cuántos jugadores compran <b>una</b> skin?','0','N','jugador','Una skin nueva aún no la ha comprado nadie.']],
+ 'N:M con atributos FecCom y PrecioPag. Como nadie compra dos veces la misma skin, la pareja (CodJug, CodSkin) no se repite ⇒ PK compuesta.')+
+R('lleva_equipada','1:N',[
+ ['¿Cuántas skins lleva equipadas <b>un</b> jugador?','0','1','skin','Ninguna (por defecto) o una.'],
+ ['¿Cuántos jugadores llevan <b>una</b> skin?','0','N','jugador','Muchos pueden llevar la misma.']],
+ 'Mínimo 0 junto a skin ⇒ la FK <code>SkinEquip</code> en jugador admite NULL.'))+
+S(3,'El resto de relaciones',
+R('pertenece','1:N',[
+ ['¿A cuántas temporadas pertenece <b>una</b> skin?','0','1','temporada','Las de tienda no pertenecen a ninguna.'],
+ ['¿Cuántas skins tiene el pase de <b>una</b> temporada?','1','N','skin','Cada temporada tiene varias.']],
+ 'Mínimo 0 junto a temporada ⇒ <code>skin.CodTem</code> admite NULL.')+
+R('es_de','1:N',[
+ ['¿Cuántas rarezas tiene <b>una</b> skin?','1','1','rareza','Siempre una.'],
+ ['¿Cuántas skins hay de <b>una</b> rareza?','0','N','skin','Puede haber una rareza sin skins todavía.']])+
+R('participa','N:M',[
+ ['¿Cuántas partidas juega <b>un</b> jugador?','0','N','partida','Un jugador recién registrado no ha jugado.'],
+ ['¿Cuántos jugadores tiene <b>una</b> partida?','1','N','jugador','Al menos uno.']],
+ 'Atributos de la relación: Puesto y Elim (dependen del jugador <i>y</i> de la partida).')+
+R('se_juega','1:N',[
+ ['¿En cuántas temporadas se juega <b>una</b> partida?','1','1','temporada','En una.'],
+ ['¿Cuántas partidas tiene <b>una</b> temporada?','0','N','partida','Al empezar, ninguna.']]))+
+S(4,'Atributos',`<ul>
+<li><b>NomUsu</b> y <b>Email</b> no se repiten ⇒ claves alternativas (<code>UNIQUE</code>). La PK es CodJug.</li>
+<li><b>NumVictorias</b> es un <b>atributo calculado</b> (como NumDesOcu en el Ejercicio 10): se puede contar con una consulta sobre participa y cambia en cada partida. No lo guardo; si lo guardara, tendría que mantenerlo con un trigger.</li>
+<li><b>PrecioPag</b> no es lo mismo que PrecioPav: el primero es lo que pagó ese jugador (con descuento), por eso va en la relación compra.</li></ul>`)+
+S(5,'Paso a tablas',`<ul><li>N:M ⇒ tablas nuevas <code>compra</code> y <code>participa</code>, con PK compuesta.</li><li>1:N ⇒ FK en el lado N: SkinEquip y CodTem (nulas), CodRar y partida.CodTem (no nulas).</li></ul>`+
+TIP('Que la skin equipada sea una que el jugador ha comprado no lo garantiza ninguna FK: se comprueba con un trigger.')),
+er:{W:1240,H:640,ents:[
+ {n:'jugador',x:240,y:250,a:[['l',['_CodJug','NomUsu','Email','FecReg','Pavos','~NumVictorias']]]},
+ {n:'skin',x:820,y:240,a:[['r',['_CodSkin','NomSkin','PrecioPav']]]},
+ {n:'rareza',x:1100,y:410,a:[['d',['_CodRar','NomRar','ColorMarco']]]},
+ {n:'temporada',x:820,y:560,a:[['r',['_CodTem','NomTem','FecIni','FecFin']]]},
+ {n:'partida',x:240,y:560,a:[['l',['_CodPar','FecHora','Modo']]]}],
+ rels:[
+ {n:'compra',t:'N:M',x:520,y:140,a:[['u',['FecCom','PrecioPag']]],e:[{to:'jugador',c:'(0,N)'},{to:'skin',c:'(0,N)'}]},
+ {n:'lleva_equipada',t:'1:N',x:520,y:330,e:[{to:'jugador',c:'(0,N)'},{to:'skin',c:'(0,1)'}]},
+ {n:'es_de',t:'1:N',x:960,y:330,e:[{to:'skin',c:'(0,N)'},{to:'rareza',c:'(1,1)'}]},
+ {n:'pertenece',t:'1:N',x:820,y:400,e:[{to:'skin',c:'(1,N)'},{to:'temporada',c:'(0,1)'}]},
+ {n:'participa',t:'N:M',x:240,y:405,a:[['l',['Puesto','Elim']]],e:[{to:'jugador',c:'(1,N)'},{to:'partida',c:'(0,N)'}]},
+ {n:'se_juega',t:'1:N',x:530,y:560,e:[{to:'partida',c:'(0,N)'},{to:'temporada',c:'(1,1)'}]}]},
+ded:{W:1160,H:580,t:[
+ {n:'jugador',x:20,y:30,c:[['CodJug','INT','pk'],['NomUsu','VARCHAR(30)','uq'],['Email','VARCHAR(100)','uq'],['FecReg','DATE'],['Pavos','INT'],['SkinEquip','INT','null fk:skin']]},
+ {n:'compra',x:330,y:210,c:[['CodJug','INT','pk fk:jugador'],['CodSkin','INT','pk fk:skin'],['FecCom','DATE'],['PrecioPag','SMALLINT']]},
+ {n:'skin',x:640,y:30,c:[['CodSkin','INT','pk'],['NomSkin','VARCHAR(50)'],['PrecioPav','SMALLINT'],['CodRar','INT','fk:rareza'],['CodTem','INT','null fk:temporada']]},
+ {n:'rareza',x:960,y:30,c:[['CodRar','INT','pk'],['NomRar','VARCHAR(20)'],['ColorMarco','CHAR(7)']]},
+ {n:'temporada',x:640,y:330,c:[['CodTem','INT','pk'],['NomTem','VARCHAR(40)'],['FecIni','DATE'],['FecFin','DATE']]},
+ {n:'partida',x:330,y:430,c:[['CodPar','INT','pk'],['FecHora','DATETIME'],['Modo','VARCHAR(15)'],['CodTem','INT','fk:temporada']]},
+ {n:'participa',x:20,y:330,c:[['CodJug','INT','pk fk:jugador'],['CodPar','INT','pk fk:partida'],['Puesto','TINYINT'],['Elim','TINYINT']]}]},
+notes:`<p>Número de victorias de cada jugador, sin guardarlo:</p><p><code>SELECT NomUsu, COUNT(*) AS Victorias FROM jugador J JOIN participa P ON (J.CodJug=P.CodJug) WHERE Puesto = 1 GROUP BY J.CodJug, NomUsu;</code></p>`,
+alts:[
+ {h:'Guardar NumVictorias en jugador',k:'meh',kt:'Válida con trigger',p:'Si las victorias se consultan muchísimo, el diseñador puede guardar <code>NumVictorias SMALLINT</code> en jugador para que la consulta sea instantánea. A cambio, hay que crear un trigger que lo actualice cada vez que se inserta una fila en participa con Puesto = 1. Es el mismo razonamiento del atributo calculado del Ejercicio 10.'},
+ {h:'PK propia en compra',k:'meh',kt:'Si se pudiera repetir',p:'Si el juego permitiera comprar la misma skin varias veces (por ejemplo, para regalarla), la pareja (CodJug, CodSkin) se repetiría y habría que usar una PK propia: <code>compra(<u>CodCom</u>, FecCom, PrecioPag, CodJug, CodSkin)</code>.'},
+ {h:'Marcar la equipada dentro de compra',k:'no',kt:'No recomendada',p:'Otra idea sería añadir un campo <code>Equipada BOOLEAN</code> en compra y quitar SkinEquip. Funciona, pero luego habría que vigilar que cada jugador tenga solo una fila a TRUE, y eso es más difícil de controlar que una simple FK.'}]
+},
+
+/* ---------- 5 · LEAGUE OF LEGENDS ---------- */
+{part:1, tag:'League of Legends', tc:'--t-lol', lv:3, title:'League of Legends: campeones, counters y partidas',
+concepts:['Relación ternaria','Relación reflexiva N:M','Entidad débil','UNIQUE compuesto','Atributo derivado en una relación'],
+enun:`<ul><li>De cada <b>campeón</b>: código, nombre (único), título (ej. «la Mano de Noxus»), fecha de lanzamiento y precio en Esencia Azul.</li>
+<li>De cada <b>rol</b>: código y nombre (Top, Jungla, Mid, ADC, Support). Un campeón puede jugarse en varios roles (al menos uno) y en un rol se juegan muchos campeones.</li>
+<li>Cada campeón tiene varias <b>habilidades</b> (pasiva, Q, W, E y R). De cada una se guarda la tecla, el nombre y el enfriamiento. Una habilidad pertenece a un solo campeón y se identifica por su tecla <i>dentro de su campeón</i> (todos tienen una «Q»).</li>
+<li>Se quiere registrar qué campeones son <b>counter</b> de otros, con una dificultad del 1 al 5.</li>
+<li>De cada <b>jugador</b>: código, nombre de invocador (único), servidor (EUW, NA…) y nivel.</li>
+<li>De cada <b>partida</b>: código, fecha, duración en minutos y equipo ganador (azul o rojo).</li>
+<li>En cada partida participan jugadores. De cada participación interesa con qué campeón jugó, en qué lado (azul o rojo), kills, muertes y asistencias. En una misma partida un campeón no puede repetirse. También se quiere el KDA, que es (kills + asistencias) / muertes.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>campeon</b>, <b>rol</b>, <b>jugador</b>, <b>partida</b> y <b>habilidad</b>. Habilidad es una <b>entidad débil</b>: no se puede identificar sola (hay cientos de «Q»), solo junto al campeón al que pertenece. Se dibuja con doble rectángulo y su relación con doble rombo.</p>`)+
+S(2,'Relaciones sencillas',
+R('juega_en','N:M',[
+ ['¿En cuántos roles se juega <b>un</b> campeón?','1','N','rol','Al menos uno.'],
+ ['¿Cuántos campeones se juegan en <b>un</b> rol?','1','N','campeon','Todos los roles tienen campeones.']])+
+R('tiene (identificadora)','1:N',[
+ ['¿De cuántos campeones es <b>una</b> habilidad?','1','1','campeon','De uno solo.'],
+ ['¿Cuántas habilidades tiene <b>un</b> campeón?','1','N','habilidad','Varias.']],
+ 'PK de habilidad = PK del campeón + su clave parcial: <code>(CodCam, Tecla)</code>.'))+
+S(3,'Relación reflexiva: counter',`<p>Relaciona campeón con <b>campeón</b>. Se distinguen los dos papeles: el que counterea y el counterado. Un campeón puede counterear a muchos y ser counterado por muchos ⇒ <b>N:M reflexiva</b>, con el atributo Dificultad.</p>`+
+R('counter','N:M',[
+ ['¿A cuántos campeones counterea <b>un</b> campeón?','0','N','campeon (papel «counterado»)','Puede no ser counter de nadie.'],
+ ['¿Por cuántos campeones es counterado <b>un</b> campeón?','0','N','campeon (papel «counter»)','Puede que nadie lo counteree.']],
+ 'Se convierte en tabla <code>counter(CodCam, CodCamCounter, Dificultad)</code>: dos FK a la <b>misma</b> tabla campeón.'))+
+S(4,'Relación ternaria: participa',`<p>Un dato (kills, lado…) depende a la vez de jugador, partida <b>y</b> campeón, así que la relación une a los tres. En una ternaria la pregunta cambia: <b>fijo dos</b> entidades y cuento la tercera.</p>`+
+R('participa','ternaria',[
+ ['Fijados un jugador y una partida, ¿con cuántos campeones juega?','1','1','campeon','Exactamente uno.'],
+ ['Fijados una partida y un campeón, ¿cuántos jugadores lo llevan?','0','1','jugador','Nadie (si no se eligió) o uno: no se repite en la partida.'],
+ ['Fijados un jugador y un campeón, ¿en cuántas partidas?','0','N','partida','Las que quiera.']],
+ 'Truco para la PK: las parejas cuya tercera entidad tiene máximo 1 identifican la fila. (jugador, partida) ⇒ <b>PK</b>. (partida, campeón) ⇒ también única ⇒ <b>UNIQUE</b>.'))+
+S(5,'Atributos',`<ul>
+<li><b>NomCam</b> y <b>NomInv</b> son únicos ⇒ claves alternativas (UNIQUE).</li>
+<li><b>Tecla</b> es la clave parcial de la entidad débil (subrayado discontinuo).</li>
+<li><b>KDA</b> es derivado y pertenece a la participación: se calcula en la consulta.</li>
+<li>Lado, Kills, Muertes y Asist son atributos de la ternaria: no son ni del jugador ni del campeón, sino de esa participación.</li></ul>`),
+er:{W:1240,H:660,ents:[
+ {n:'campeon',x:620,y:330,a:[['u',['_CodCam','NomCam','TitCam','FecLan','PrecioEA'],-50]]},
+ {n:'rol',x:1090,y:170,a:[['d',['_CodRol','NomRol']]]},
+ {n:'habilidad',x:1090,y:480,weak:1,a:[['d',['-Tecla','NomHab','Enfriam']]]},
+ {n:'jugador',x:270,y:130,a:[['l',['_CodJug','NomInv','Servidor','Nivel']]]},
+ {n:'partida',x:270,y:560,a:[['l',['_CodPar','FecPar','DurMin','Ganador']]]}],
+ rels:[
+ {n:'juega_en',t:'N:M',x:870,y:170,e:[{to:'campeon',c:'(1,N)'},{to:'rol',c:'(1,N)'}]},
+ {n:'tiene',t:'1:N',x:870,y:480,id:1,e:[{to:'campeon',c:'(1,1)'},{to:'habilidad',c:'(1,N)'}]},
+ {n:'counter',t:'N:M',x:620,y:540,a:[['d',['Dificultad']]],e:[{to:'campeon',c:'(0,N)',anc:[-38,20]},{to:'campeon',c:'(0,N)',anc:[38,20]}]},
+ {n:'participa',t:'ternaria',x:330,y:330,a:[['l',['Lado','Kills','Muertes','Asist','~KDA']]],e:[{to:'jugador',c:'(0,1)'},{to:'partida',c:'(0,N)'},{to:'campeon',c:'(1,1)'}]}]},
+ded:{W:1380,H:540,t:[
+ {n:'jugador',x:20,y:30,c:[['CodJug','INT','pk'],['NomInv','VARCHAR(30)','uq'],['Servidor','VARCHAR(5)'],['Nivel','SMALLINT']]},
+ {n:'partida',x:20,y:340,c:[['CodPar','INT','pk'],['FecPar','DATETIME'],['DurMin','TINYINT'],['Ganador','VARCHAR(4)']]},
+ {n:'participacion',x:320,y:160,c:[['CodJug','INT','pk fk:jugador'],['CodPar','INT','pk fk:partida'],['CodCam','INT','fk:campeon'],['Lado','VARCHAR(4)'],['Kills','TINYINT'],['Muertes','TINYINT'],['Asist','TINYINT']]},
+ {n:'campeon',x:620,y:160,c:[['CodCam','INT','pk'],['NomCam','VARCHAR(30)','uq'],['TitCam','VARCHAR(60)'],['FecLan','DATE'],['PrecioEA','SMALLINT']]},
+ {n:'cam_rol',x:930,y:30,c:[['CodCam','INT','pk fk:campeon'],['CodRol','INT','pk fk:rol']]},
+ {n:'rol',x:1180,y:30,c:[['CodRol','INT','pk'],['NomRol','VARCHAR(10)']]},
+ {n:'habilidad',x:930,y:300,c:[['CodCam','INT','pk fk:campeon'],['Tecla','CHAR(1)','pk'],['NomHab','VARCHAR(50)'],['Enfriam','DECIMAL(4,1)']]},
+ {n:'counter',x:620,y:420,c:[['CodCam','INT','pk fk:campeon'],['CodCamCounter','INT','pk fk:campeon'],['Dificultad','TINYINT']]}]},
+notes:`<ul>
+<li><code>participacion</code>: además de la PK (CodJug, CodPar), lleva <code>UNIQUE (CodPar, CodCam)</code> para que un campeón no se repita en la misma partida.</li>
+<li><code>counter</code>: conviene un <code>CHECK (CodCam &lt;&gt; CodCamCounter)</code>; un campeón no es counter de sí mismo.</li>
+<li>KDA en la consulta: <code>SELECT CodJug, CodPar, (Kills + Asist) / GREATEST(Muertes, 1) AS KDA FROM participacion;</code></li>
+<li>Que haya exactamente 10 jugadores por partida lo controla el programa o un trigger.</li></ul>`,
+alts:[
+ {h:'Participación con PK propia',k:'good',kt:'También válida',p:'Se puede tratar la participación como una entidad con su propio código. Entonces hay que poner a mano las dos reglas de unicidad que antes nos daba la PK: <code>UNIQUE (CodJug, CodPar)</code> y <code>UNIQUE (CodPar, CodCam)</code>.',
+  ded:{W:560,H:230,t:[{n:'participacion',x:20,y:20,c:[['CodPart','INT','pk'],['CodJug','INT','fk:jugador'],['CodPar','INT','fk:partida'],['CodCam','INT','fk:campeon'],['Lado','VARCHAR(4)'],['Kills','TINYINT'],['…','…']]}]}},
+ {h:'Habilidad como entidad normal (no débil)',k:'good',kt:'También válida',p:'Si le damos a cada habilidad su propio código <code>CodHab</code> como PK, deja de ser débil y la relación con campeón es una 1:N normal: <code>habilidad(<u>CodHab</u>, Tecla, NomHab, Enfriam, CodCam)</code> con <code>UNIQUE (CodCam, Tecla)</code>. Es lo mismo que hace la clase cuando añade una PK propia.'},
+ {h:'Dos binarias en vez de la ternaria',k:'meh',kt:'Cuidado',p:'Algunos dibujan participa como N:M entre jugador y partida, con el campeón como 1:N hacia esa tabla. Las tablas que salen son idénticas a la solución principal. Lo que no vale es separar «jugador juega con campeón» y «jugador juega en partida» como dos relaciones independientes: así se pierde con qué campeón jugó en <i>cada</i> partida.'}]
+},
+
+/* ---------- 6 · VETERINARIA ---------- */
+{part:2, tag:'Clásico', tc:'--t-norm', lv:1, title:'Clínica veterinaria',
+concepts:['1:N','Clave natural (DNI)','Derivado y opcional'],
+enun:`<p>Una clínica veterinaria quiere registrar a los <b>propietarios</b> y sus <b>mascotas</b>. De cada propietario se guarda el DNI, el nombre, los apellidos y un teléfono. De cada mascota se guarda un código, el nombre, la especie, la raza (si es mestiza se deja vacía), la fecha de nacimiento y la edad.</p>
+<p>Cada mascota tiene un único propietario registrado. Un propietario puede tener varias mascotas, y solo se da de alta a un propietario cuando trae al menos una.</p>`,
+concl:
+S(1,'Entidades',`<p><b>propietario</b> y <b>mascota</b>. Evito llamar a la tabla «dueño» para no tener problemas con la ñ en SQL.</p>`)+
+S(2,'Relación y cardinalidades',
+R('tiene','1:N',[
+ ['¿Cuántos propietarios tiene <b>una</b> mascota?','1','1','propietario','Uno y solo uno.'],
+ ['¿Cuántas mascotas tiene <b>un</b> propietario?','1','N','mascota','Solo se registra si trae al menos una.']],
+ 'Máximos 1 y N ⇒ 1:N. FK en mascota, NOT NULL.'))+
+S(3,'Atributos',`<ul>
+<li><b>DNIPro</b> como PK: es un dato real que nunca se repite y siempre lo tenemos. Se llama <b>clave natural</b>.</li>
+<li><b>CodMas</b> como PK de mascota: dos perros pueden llamarse «Toby».</li>
+<li><b>Raza (O)</b>: opcional ⇒ admite NULL.</li>
+<li><b>Edad</b>: derivada de FecNac, no se guarda.</li></ul>`)+
+S(4,'Paso a tablas',`<p>La PK del lado 1 (DNIPro) viaja a mascota. Como la PK es un DNI, la FK tiene el mismo tipo: <code>CHAR(9)</code>.</p>`+
+TIP('El mínimo 1 junto a mascota («todo propietario tiene al menos una») no se fuerza con la FK; lo controla el programa al dar de alta.')),
+er:{W:900,H:330,ents:[
+ {n:'propietario',x:230,y:165,a:[['l',['_DNIPro','NomPro','ApePro','TfnPro']]]},
+ {n:'mascota',x:660,y:165,a:[['r',['_CodMas','NomMas','Especie','Raza?','FecNac','~Edad']]]}],
+ rels:[{n:'tiene',t:'1:N',x:445,y:165,e:[{to:'propietario',c:'(1,1)'},{to:'mascota',c:'(1,N)'}]}]},
+ded:{W:640,H:220,t:[
+ {n:'propietario',x:30,y:40,c:[['DNIPro','CHAR(9)','pk'],['NomPro','VARCHAR(45)'],['ApePro','VARCHAR(60)'],['TfnPro','VARCHAR(15)']]},
+ {n:'mascota',x:400,y:40,c:[['CodMas','INT','pk'],['NomMas','VARCHAR(45)'],['Especie','VARCHAR(30)'],['Raza','VARCHAR(40)','null'],['FecNac','DATE'],['DNIPro','CHAR(9)','fk:propietario']]}]},
+notes:'',
+alts:[
+ {h:'Código como PK y DNI como clave alternativa',k:'good',kt:'También válida',p:'Muchos diseñadores prefieren un código numérico (<code>CodPro INT</code>) como PK y el DNI como <code>UNIQUE</code>. Ventaja: la FK en mascota es un número pequeño y, si un DNI estuviera mal escrito, se corrige en un solo sitio.'},
+ {h:'Varios teléfonos por propietario',k:'meh',kt:'Si el enunciado lo pidiera',p:'Si un propietario pudiera tener varios teléfonos, el teléfono sería <b>multivaluado</b>. Meterlos todos en una columna rompe la 1FN, así que se crea una tabla aparte con PK compuesta.',
+  ded:{W:620,H:200,t:[
+   {n:'propietario',x:20,y:40,c:[['DNIPro','CHAR(9)','pk'],['NomPro','VARCHAR(45)'],['ApePro','VARCHAR(60)']]},
+   {n:'telefono',x:360,y:40,c:[['DNIPro','CHAR(9)','pk fk:propietario'],['NumTfn','VARCHAR(15)','pk']]}]}}]
+},
+
+/* ---------- 7 · GIMNASIO ---------- */
+{part:2, tag:'Clásico', tc:'--t-norm', lv:2, title:'Gimnasio: socios, tarjetas y clases',
+concepts:['1:1 (1 a 1)','N:M con atributo','1:N'],
+enun:`<ul><li>De cada <b>socio</b>: código, nombre, apellidos, fecha de alta y email (no se repite).</li>
+<li>Cada socio tiene una <b>tarjeta</b> de acceso (número de tarjeta y fecha de caducidad). Una tarjeta pertenece a un solo socio y todo socio tiene la suya. Los datos de la tarjeta solo se consultan en el torno de entrada.</li>
+<li>De cada <b>monitor</b>: código, nombre y especialidad.</li>
+<li>De cada <b>clase</b>: código, nombre, sala, día de la semana y hora. Cada clase la imparte un monitor; un monitor puede impartir varias o ninguna (si es nuevo).</li>
+<li>Los socios se inscriben en clases. Un socio puede apuntarse a varias o a ninguna y una clase puede tener muchos socios o estar vacía. Interesa la fecha de inscripción.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>socio</b>, <b>tarjeta</b>, <b>monitor</b> y <b>clase</b>.</p>`)+
+S(2,'Relaciones y cardinalidades',
+R('posee','1:1',[
+ ['¿Cuántas tarjetas tiene <b>un</b> socio?','1','1','tarjeta','Todo socio tiene la suya.'],
+ ['¿Cuántos socios tiene <b>una</b> tarjeta?','1','1','socio','Pertenece a un solo socio.']],
+ 'Máximos y mínimos a 1 en los dos lados ⇒ <b>1 a 1</b> (Ejercicio 6 de clase).')+
+R('inscribe','N:M',[
+ ['¿En cuántas clases se inscribe <b>un</b> socio?','0','N','clase','Puede no apuntarse a ninguna.'],
+ ['¿Cuántos socios tiene <b>una</b> clase?','0','N','socio','Puede estar vacía.']],
+ 'Atributo de la relación: FecIns.')+
+R('imparte','1:N',[
+ ['¿Cuántos monitores imparten <b>una</b> clase?','1','1','monitor','Uno.'],
+ ['¿Cuántas clases imparte <b>un</b> monitor?','0','N','clase','Un monitor nuevo, ninguna.']]))+
+S(3,'¿Cómo paso la 1:1 a tablas?',`<p>Hay tres opciones (las mismas del Ejercicio 6). Elijo <b>dos tablas con la FK en tarjeta</b> porque el enunciado dice que la tarjeta solo se consulta en el torno: casi nunca la necesito al mirar al socio, así que no me la traigo. La FK <code>CodSoc</code> lleva <code>UNIQUE</code> para que siga siendo 1:1.</p>`)+
+S(4,'Atributos',`<ul><li><b>EmailSoc</b> no se repite ⇒ UNIQUE (clave alternativa).</li><li><b>NumTar</b> es PK de tarjeta: es un número real y único.</li><li><b>FecIns</b> va en la tabla de la N:M.</li></ul>`),
+er:{W:1060,H:400,ents:[
+ {n:'tarjeta',x:300,y:80,a:[['r',['_NumTar','FecCad']]]},
+ {n:'socio',x:300,y:290,a:[['d',['_CodSoc','NomSoc','ApeSoc','FecAlta','EmailSoc']]]},
+ {n:'monitor',x:810,y:80,a:[['r',['_CodMon','NomMon','Especialidad']]]},
+ {n:'clase',x:810,y:290,a:[['d',['_CodCla','NomCla','Sala','DiaSem','Hora']]]}],
+ rels:[
+ {n:'posee',t:'1:1',x:300,y:185,e:[{to:'tarjeta',c:'(1,1)'},{to:'socio',c:'(1,1)'}]},
+ {n:'inscribe',t:'N:M',x:560,y:290,a:[['u',['FecIns']]],e:[{to:'socio',c:'(0,N)'},{to:'clase',c:'(0,N)'}]},
+ {n:'imparte',t:'1:N',x:810,y:185,e:[{to:'monitor',c:'(1,1)'},{to:'clase',c:'(0,N)'}]}]},
+ded:{W:880,H:380,t:[
+ {n:'tarjeta',x:20,y:20,c:[['NumTar','VARCHAR(16)','pk'],['FecCad','DATE'],['CodSoc','INT','uq fk:socio']]},
+ {n:'socio',x:20,y:180,c:[['CodSoc','INT','pk'],['NomSoc','VARCHAR(45)'],['ApeSoc','VARCHAR(60)'],['FecAlta','DATE'],['EmailSoc','VARCHAR(100)','uq']]},
+ {n:'inscripcion',x:330,y:200,c:[['CodSoc','INT','pk fk:socio'],['CodCla','INT','pk fk:clase'],['FecIns','DATE']]},
+ {n:'monitor',x:620,y:20,c:[['CodMon','INT','pk'],['NomMon','VARCHAR(45)'],['Especialidad','VARCHAR(40)']]},
+ {n:'clase',x:620,y:180,c:[['CodCla','INT','pk'],['NomCla','VARCHAR(40)'],['Sala','VARCHAR(10)'],['DiaSem','VARCHAR(10)'],['Hora','TIME'],['CodMon','INT','fk:monitor']]}]},
+notes:`<p>En tarjeta también se podría usar <code>CodSoc</code> como PK (y quitar NumTar de la PK), porque CodSoc tampoco se repite. Es la variante que comenta el Ejercicio 6.</p>`,
+alts:[
+ {h:'Caso 1: todo en una tabla',k:'good',kt:'También válida',p:'Si cada vez que miramos un socio quisiéramos ver también su tarjeta, lo lógico sería meterlo todo en socio. NumTar pasa a ser una columna con UNIQUE.',
+  ded:{W:440,H:240,t:[{n:'socio',x:20,y:20,c:[['CodSoc','INT','pk'],['NomSoc','VARCHAR(45)'],['ApeSoc','VARCHAR(60)'],['FecAlta','DATE'],['EmailSoc','VARCHAR(100)','uq'],['NumTar','VARCHAR(16)','uq'],['FecCad','DATE']]}]}},
+ {h:'Caso 3: FK en socio',k:'no',kt:'No la usamos',p:'Poner <code>socio.NumTar</code> como FK hacia tarjeta también es correcto en teoría, pero si separamos en dos tablas es porque casi nunca necesitamos la tarjeta: no tiene sentido cargar esa FK cada vez que leemos un socio. Es el mismo argumento del Ejercicio 6.'}]
+},
+
+/* ---------- 8 · CLÍNICA ---------- */
+{part:2, tag:'Clásico', tc:'--t-norm', lv:2, title:'Centro médico: pacientes y citas',
+concepts:['Atributo compuesto','Atributo multivaluado (1FN)','N:M que se repite ⇒ PK propia','UNIQUE compuesto'],
+enun:`<ul><li>De cada <b>paciente</b>: código, nombre, apellidos, fecha de nacimiento, edad, dirección completa (calle, número, piso si lo hay, código postal y localidad) y <b>uno o varios teléfonos</b>.</li>
+<li>De cada <b>médico</b>: código, nombre, apellidos, número de colegiado (no se repite) y su especialidad. Cada médico tiene una sola <b>especialidad</b>, de la que se guarda código, nombre y planta del hospital.</li>
+<li>Los pacientes piden <b>citas</b> con los médicos. Un paciente puede tener citas con muchos médicos y <b>repetir con el mismo médico</b> en fechas distintas. De cada cita se guarda fecha, hora, motivo y diagnóstico (vacío hasta que se atiende). Un médico no puede tener dos citas a la misma hora.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>paciente</b>, <b>medico</b> y <b>especialidad</b>. La cita no la dibujo como entidad en el E-R: es la relación N:M entre paciente y médico, con atributos.</p>`)+
+S(2,'Relaciones y cardinalidades',
+R('cita','N:M',[
+ ['¿Con cuántos médicos tiene cita <b>un</b> paciente?','0','N','medico','Puede no haber pedido ninguna aún.'],
+ ['¿Cuántos pacientes atiende <b>un</b> médico?','0','N','paciente','Un médico nuevo, ninguno.']],
+ 'N:M con atributos FecCit, HoraCit, Motivo y Diagnostico (O).')+
+R('pertenece','1:N',[
+ ['¿Cuántas especialidades tiene <b>un</b> médico?','1','1','especialidad','Una sola.'],
+ ['¿Cuántos médicos hay en <b>una</b> especialidad?','0','N','medico','Puede no haber médicos todavía.']]))+
+S(3,'La clave de la tabla cita',`<p>Al pasar la N:M a tabla, la PK por defecto sería (CodPac, CodMed). Pero el enunciado dice que un paciente puede <b>repetir</b> con el mismo médico, así que esa pareja se repetiría. Igual que en el Ejercicio 5 (reservas de hotel), añado una PK propia: <code>CodCit</code>, y CodPac y CodMed quedan solo como FK.</p>`+
+TIP('Pregunta clave en toda N:M: «¿puede repetirse la misma pareja?». Si sí, o si no estás seguro, PK propia.'))+
+S(4,'Atributos especiales',`<ul>
+<li><b>Dirección</b> es <b>compuesta</b>: en el E-R va entre paréntesis con sus partes colgando. En la tabla desaparece y quedan solo sus partes: Calle, Numero, Piso, CP y Localidad.</li>
+<li><b>Teléfonos</b> es <b>multivaluado</b> (doble óvalo). Un campo no puede tener varios valores (1FN), así que se crea la tabla <code>telefono(CodPac, NumTfn)</code> con PK compuesta.</li>
+<li><b>Piso</b> y <b>Diagnostico</b> son opcionales ⇒ NULL. <b>Edad</b> es derivada.</li>
+<li><b>NumCol</b> no se repite ⇒ UNIQUE.</li></ul>`),
+er:{W:1100,H:290,ents:[
+ {n:'paciente',x:330,y:100,a:[['u',['_CodPac','NomPac','ApePac']],['l',['FecNac','~Edad','*TfnPac']],['d',[{n:'DirPac',c:['Calle','Numero','Piso?','CP','Localidad'],cs:'d'}]]]},
+ {n:'medico',x:900,y:100,a:[['u',['_CodMed','NomMed','ApeMed']],['r',['NumCol']]]},
+ {n:'especialidad',x:900,y:230,a:[['r',['_CodEsp','NomEsp','Planta']]]}],
+ rels:[
+ {n:'cita',t:'N:M',x:620,y:100,a:[['u',['FecCit','HoraCit']],['d',['Motivo','Diagnostico?']]],e:[{to:'paciente',c:'(0,N)'},{to:'medico',c:'(0,N)'}]},
+ {n:'pertenece',t:'1:N',x:740,y:230,e:[{to:'medico',c:'(0,N)'},{to:'especialidad',c:'(1,1)'}]}]},
+ded:{W:900,H:430,t:[
+ {n:'telefono',x:20,y:30,c:[['CodPac','INT','pk fk:paciente'],['NumTfn','VARCHAR(15)','pk']]},
+ {n:'paciente',x:20,y:150,c:[['CodPac','INT','pk'],['NomPac','VARCHAR(45)'],['ApePac','VARCHAR(60)'],['FecNac','DATE'],['Calle','VARCHAR(100)'],['Numero','VARCHAR(5)'],['Piso','VARCHAR(5)','null'],['CP','CHAR(5)'],['Localidad','VARCHAR(45)']]},
+ {n:'cita',x:330,y:110,c:[['CodCit','INT','pk'],['FecCit','DATE'],['HoraCit','TIME'],['Motivo','VARCHAR(150)'],['Diagnostico','TEXT','null'],['CodPac','INT','fk:paciente'],['CodMed','INT','fk:medico']]},
+ {n:'medico',x:650,y:110,c:[['CodMed','INT','pk'],['NomMed','VARCHAR(45)'],['ApeMed','VARCHAR(60)'],['NumCol','VARCHAR(12)','uq'],['CodEsp','INT','fk:especialidad']]},
+ {n:'especialidad',x:650,y:320,c:[['CodEsp','INT','pk'],['NomEsp','VARCHAR(45)'],['Planta','TINYINT']]}]},
+notes:`<p>En cita conviene <code>UNIQUE (CodMed, FecCit, HoraCit)</code>: así el sistema impide que un médico tenga dos citas a la misma hora.</p>`,
+alts:[
+ {h:'PK compuesta con la fecha y la hora',k:'good',kt:'También válida',p:'En vez de CodCit, la PK puede ser <code>(CodMed, FecCit, HoraCit)</code>: un médico nunca tiene dos citas en el mismo momento, así que eso identifica la cita. Es correcta, pero la PK es más larga; por eso en clase solemos preferir el código.'},
+ {h:'Localidad como entidad (3FN)',k:'good',kt:'También válida',p:'Igual que en el Ejercicio 4 de clase, la localidad puede sacarse a su propia tabla <code>localidad(<u>CodLoc</u>, NomLoc)</code> y paciente guardaría <code>CodLoc</code> como FK. Evita escribir «Málaga» mil veces.'},
+ {h:'Tfn1, Tfn2, Tfn3 en paciente',k:'no',kt:'Incorrecta',p:'Poner varias columnas de teléfono parece fácil, pero limita el número de teléfonos, deja muchos NULL y complica buscar «quién tiene este número». La tabla telefono es la forma correcta de un atributo multivaluado.'}]
+},
+
+/* ---------- 9 · AEROLÍNEA ---------- */
+{part:2, tag:'Clásico', tc:'--t-norm', lv:3, title:'Aerolínea: vuelos, aviones y reservas',
+concepts:['Dos relaciones con la misma entidad (origen/destino)','Dos N:M con atributos','3FN','CHECK y UNIQUE'],
+enun:`<ul><li>De cada <b>aeropuerto</b>: código IATA (MAD, AGP…), nombre y la <b>ciudad</b> en la que está. De cada ciudad: código, nombre y país. Solo se guardan ciudades que tienen aeropuerto, y una ciudad puede tener varios.</li>
+<li>De cada <b>modelo</b> de avión: código, fabricante, nombre y capacidad. De cada <b>avión</b>: matrícula, fecha de fabricación y su modelo.</li>
+<li>De cada <b>vuelo</b>: código, número de vuelo (IB3456), fecha y hora de salida y duración. Cada vuelo sale de un aeropuerto, llega a otro distinto y lo opera un avión.</li>
+<li>De cada <b>empleado</b> de tripulación: código, nombre, apellidos y puesto. En cada vuelo trabajan varios tripulantes y cada uno trabaja en muchos vuelos; se guarda la función que hace en ese vuelo (comandante, copiloto, TCP…).</li>
+<li>De cada <b>pasajero</b>: número de documento, nombre, apellidos y nacionalidad. Solo se guardan pasajeros con al menos una reserva. En cada reserva se guarda el asiento y el precio. Un asiento no se repite en el mismo vuelo y un pasajero no reserva dos veces el mismo vuelo.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>ciudad</b>, <b>aeropuerto</b>, <b>modelo</b>, <b>avion</b>, <b>vuelo</b>, <b>empleado</b> y <b>pasajero</b>. Ciudad y modelo son entidades aparte para no repetir el país o la capacidad en cada fila (modelar directamente en 3FN).</p>`)+
+S(2,'Origen y destino: dos relaciones',`<p>Un vuelo se relaciona <b>dos veces</b> con aeropuerto: una como salida y otra como llegada. Son dos relaciones distintas, cada una con su FK.</p>`+
+R('sale_de / llega_a (cada una)','1:N',[
+ ['¿De cuántos aeropuertos sale (o a cuántos llega) <b>un</b> vuelo?','1','1','aeropuerto','Exactamente uno.'],
+ ['¿Cuántos vuelos salen (o llegan) a <b>un</b> aeropuerto?','0','N','vuelo','Puede no tener vuelos ahora.']],
+ 'En vuelo quedan dos FK hacia aeropuerto: <code>CodOri</code> y <code>CodDes</code>. Con un <code>CHECK (CodOri &lt;&gt; CodDes)</code> evito que sean el mismo.'))+
+S(3,'El resto de relaciones',
+R('esta_en','1:N',[
+ ['¿En cuántas ciudades está <b>un</b> aeropuerto?','1','1','ciudad','Una.'],
+ ['¿Cuántos aeropuertos tiene <b>una</b> ciudad?','1','N','aeropuerto','Solo se guardan ciudades con aeropuerto.']])+
+R('es_modelo','1:N',[
+ ['¿Cuántos modelos tiene <b>un</b> avión?','1','1','modelo','Uno.'],
+ ['¿Cuántos aviones hay de <b>un</b> modelo?','0','N','avion','Puede no quedar ninguno en la flota.']])+
+R('opera','1:N',[
+ ['¿Cuántos aviones operan <b>un</b> vuelo?','1','1','avion','Uno.'],
+ ['¿Cuántos vuelos opera <b>un</b> avión?','0','N','vuelo','Muchos, o ninguno si es nuevo.']])+
+R('tripula','N:M',[
+ ['¿En cuántos vuelos trabaja <b>un</b> empleado?','0','N','vuelo','Puede no tener vuelos asignados.'],
+ ['¿Cuántos tripulantes tiene <b>un</b> vuelo?','1','N','empleado','Varios (al menos uno).']],
+ 'Atributo de la relación: Funcion (la misma persona puede ser comandante en un vuelo y copiloto en otro).')+
+R('reserva','N:M',[
+ ['¿Cuántos vuelos reserva <b>un</b> pasajero?','1','N','vuelo','Solo se guarda si tiene alguna reserva.'],
+ ['¿Cuántos pasajeros tiene <b>un</b> vuelo?','0','N','pasajero','Un vuelo recién creado está vacío.']],
+ 'Atributos: Asiento y Precio. Un pasajero no repite vuelo ⇒ PK compuesta (CodVue, DocPas). Además <code>UNIQUE (CodVue, Asiento)</code>.'))+
+S(4,'Atributos',`<ul>
+<li><b>CodIATA</b> y <b>Matricula</b> son claves naturales (códigos reales que no se repiten) ⇒ las uso de PK.</li>
+<li><b>CodVue</b> es un código inventado porque el número de vuelo (IB3456) se repite cada día. La pareja (NumVue, FecSal) sí es única ⇒ UNIQUE.</li></ul>`),
+er:{W:1280,H:720,ents:[
+ {n:'aeropuerto',x:650,y:120,a:[['u',['_CodIATA','NomAer']]]},
+ {n:'ciudad',x:1010,y:120,a:[['u',['_CodCiu','NomCiu','Pais']]]},
+ {n:'vuelo',x:650,y:390,a:[['r',['_CodVue','NumVue','FecSal','HoraSal','DurMin']]]},
+ {n:'avion',x:650,y:660,a:[['l',['_Matricula','FecFab']]]},
+ {n:'modelo',x:1070,y:660,a:[['u',['_CodMod','Fabricante','NomMod','Capacidad']]]},
+ {n:'empleado',x:210,y:240,a:[['l',['_CodEmp','NomEmp','ApeEmp','Puesto']]]},
+ {n:'pasajero',x:210,y:560,a:[['l',['_DocPas','NomPas','ApePas','Nacional']]]}],
+ rels:[
+ {n:'esta_en',t:'1:N',x:830,y:120,e:[{to:'aeropuerto',c:'(1,N)'},{to:'ciudad',c:'(1,1)'}]},
+ {n:'sale_de',t:'1:N',x:545,y:250,e:[{to:'aeropuerto',c:'(1,1)'},{to:'vuelo',c:'(0,N)'}]},
+ {n:'llega_a',t:'1:N',x:755,y:250,e:[{to:'aeropuerto',c:'(1,1)'},{to:'vuelo',c:'(0,N)'}]},
+ {n:'opera',t:'1:N',x:650,y:530,e:[{to:'vuelo',c:'(0,N)'},{to:'avion',c:'(1,1)'}]},
+ {n:'es_modelo',t:'1:N',x:860,y:660,e:[{to:'avion',c:'(0,N)'},{to:'modelo',c:'(1,1)'}]},
+ {n:'tripula',t:'N:M',x:420,y:315,a:[['u',['Funcion']]],e:[{to:'empleado',c:'(1,N)'},{to:'vuelo',c:'(0,N)'}]},
+ {n:'reserva',t:'N:M',x:420,y:470,a:[['u',['Asiento','Precio']]],e:[{to:'pasajero',c:'(0,N)'},{to:'vuelo',c:'(1,N)'}]}]},
+ded:{W:1200,H:640,t:[
+ {n:'empleado',x:20,y:40,c:[['CodEmp','INT','pk'],['NomEmp','VARCHAR(45)'],['ApeEmp','VARCHAR(60)'],['Puesto','VARCHAR(30)']]},
+ {n:'tripulacion',x:330,y:110,c:[['CodVue','INT','pk fk:vuelo'],['CodEmp','INT','pk fk:empleado'],['Funcion','VARCHAR(30)']]},
+ {n:'pasajero',x:20,y:420,c:[['DocPas','VARCHAR(15)','pk'],['NomPas','VARCHAR(45)'],['ApePas','VARCHAR(60)'],['Nacional','VARCHAR(40)']]},
+ {n:'reserva',x:330,y:420,c:[['CodVue','INT','pk fk:vuelo'],['DocPas','VARCHAR(15)','pk fk:pasajero'],['Asiento','VARCHAR(4)'],['Precio','DECIMAL(7,2)']]},
+ {n:'aeropuerto',x:650,y:30,c:[['CodIATA','CHAR(3)','pk'],['NomAer','VARCHAR(60)'],['CodCiu','INT','fk:ciudad']]},
+ {n:'ciudad',x:970,y:30,c:[['CodCiu','INT','pk'],['NomCiu','VARCHAR(45)'],['Pais','VARCHAR(45)']]},
+ {n:'vuelo',x:650,y:220,c:[['CodVue','INT','pk'],['NumVue','VARCHAR(7)'],['FecSal','DATE'],['HoraSal','TIME'],['DurMin','SMALLINT'],['CodOri','CHAR(3)','fk:aeropuerto'],['CodDes','CHAR(3)','fk:aeropuerto'],['Matricula','VARCHAR(10)','fk:avion']]},
+ {n:'avion',x:650,y:500,c:[['Matricula','VARCHAR(10)','pk'],['FecFab','DATE'],['CodMod','INT','fk:modelo']]},
+ {n:'modelo',x:970,y:500,c:[['CodMod','INT','pk'],['Fabricante','VARCHAR(40)'],['NomMod','VARCHAR(40)'],['Capacidad','SMALLINT']]}]},
+notes:`<ul><li><code>vuelo</code>: <code>CHECK (CodOri &lt;&gt; CodDes)</code> y <code>UNIQUE (NumVue, FecSal)</code>.</li><li><code>reserva</code>: <code>UNIQUE (CodVue, Asiento)</code>.</li><li>Que el número de reservas no supere la capacidad del modelo se controla con un trigger.</li></ul>`,
+alts:[
+ {h:'Separar ruta y vuelo',k:'good',kt:'Más normalizada',p:'El IB3456 sale todos los días de MAD a AGP. Con el diseño principal, origen y destino se repiten en cada fila diaria. Se puede crear una entidad <b>ruta</b> (número de vuelo, origen, destino) y que cada vuelo concreto apunte a su ruta. Es más normalizada; la principal es más fácil de leer.',
+  ded:{W:900,H:250,t:[
+   {n:'aeropuerto',x:20,y:40,c:[['CodIATA','CHAR(3)','pk'],['NomAer','VARCHAR(60)']]},
+   {n:'ruta',x:330,y:40,c:[['NumVue','VARCHAR(7)','pk'],['CodOri','CHAR(3)','fk:aeropuerto'],['CodDes','CHAR(3)','fk:aeropuerto']]},
+   {n:'vuelo',x:640,y:40,c:[['CodVue','INT','pk'],['FecSal','DATE'],['HoraSal','TIME'],['NumVue','VARCHAR(7)','fk:ruta'],['Matricula','VARCHAR(10)','fk:avion']]}]}},
+ {h:'Reserva con PK propia',k:'meh',kt:'Si se pudiera repetir',p:'Si un pasajero pudiera tener dos reservas en el mismo vuelo (por ejemplo, un asiento extra para un instrumento), la pareja se repetiría y habría que usar <code>reserva(<u>CodRes</u>, Asiento, Precio, CodVue, DocPas)</code>.'}]
+},
+
+/* ---------- 10 · EMPRESA ---------- */
+{part:2, tag:'Clásico', tc:'--t-norm', lv:3, title:'Empresa de software: el ejercicio de examen',
+concepts:['Reflexiva 1:N','Dos relaciones entre las mismas entidades','1 a 0 con FK nula','Entidad débil','FK circulares (ALTER TABLE)','Atributo calculado'],
+enun:`<ul><li>De cada <b>empleado</b>: código, DNI (no se repite), nombre, apellidos, fecha de nacimiento, edad, y salario.</li>
+<li>Un empleado puede tener un <b>supervisor</b>, que es otro empleado. Un supervisor puede supervisar a varios.</li>
+<li>De cada <b>departamento</b>: código, nombre y presupuesto. Cada empleado trabaja en un departamento, aunque puede estar un tiempo sin asignar. Cada departamento tiene un <b>director</b>, que es uno de los empleados; puede quedarse un tiempo sin director, y un empleado dirige como mucho un departamento.</li>
+<li>De cada <b>proyecto</b>: código, nombre, fecha de inicio y fecha de fin (vacía si sigue abierto). Lo gestiona un departamento. Los empleados participan en proyectos y se guardan las horas semanales que dedica cada uno.</li>
+<li>Para el seguro médico se guardan los <b>familiares</b> de cada empleado: nombre, parentesco y fecha de nacimiento. Un familiar se identifica por su empleado y su nombre.</li>
+<li>Se quiere saber cuántos empleados tiene cada departamento.</li></ul>`,
+concl:
+S(1,'Entidades',`<p><b>empleado</b>, <b>departamento</b>, <b>proyecto</b> y <b>familiar</b>. Familiar es <b>débil</b>: sin su empleado no tiene identidad («María» puede ser la hija de cualquiera). El supervisor y el director <b>no</b> son entidades nuevas: son empleados, así que se modelan como relaciones con empleado.</p>`)+
+S(2,'Relación reflexiva: supervisa',`<p>Empleado se relaciona con empleado. Tiene dos papeles: supervisor y supervisado.</p>`+
+R('supervisa','1:N reflexiva',[
+ ['¿Cuántos supervisores tiene <b>un</b> empleado?','0','1','empleado (papel supervisor)','Puede no tener (el jefe de todos).'],
+ ['¿A cuántos supervisa <b>un</b> empleado?','0','N','empleado (papel supervisado)','A nadie o a varios.']],
+ 'Como es 1:N, basta con una FK en la propia tabla: <code>empleado.CodSup → empleado.CodEmp</code>, que admite NULL.'))+
+S(3,'Empleado y departamento: dos relaciones',`<p>Igual que en el Ejercicio 9 de clase, entre empleado y departamento hay <b>dos</b> relaciones distintas.</p>`+
+R('trabaja_en','1:N',[
+ ['¿En cuántos departamentos trabaja <b>un</b> empleado?','0','1','departamento','Puede estar sin asignar.'],
+ ['¿Cuántos empleados tiene <b>un</b> departamento?','0','N','empleado','Puede estar vacío.']],
+ 'FK <code>empleado.CodDep</code>, admite NULL.')+
+R('dirige','1:1 (1 a 0)',[
+ ['¿Cuántos directores tiene <b>un</b> departamento?','0','1','empleado','Puede estar sin director.'],
+ ['¿Cuántos departamentos dirige <b>un</b> empleado?','0','1','departamento','Como mucho uno; la mayoría, ninguno.']],
+ 'La FK va en departamento (<code>CodDir</code>, NULL + UNIQUE): pocos departamentos frente a muchos empleados, así hay muchos menos NULL.'))+
+S(4,'Resto de relaciones',
+R('participa','N:M',[
+ ['¿En cuántos proyectos participa <b>un</b> empleado?','0','N','proyecto','Puede no estar en ninguno.'],
+ ['¿Cuántos empleados tiene <b>un</b> proyecto?','0','N','empleado','Uno recién creado, ninguno.']],
+ 'Atributo HorasSem. La pareja no se repite ⇒ PK compuesta.')+
+R('gestiona','1:N',[
+ ['¿Cuántos departamentos gestionan <b>un</b> proyecto?','1','1','departamento','Uno.'],
+ ['¿Cuántos proyectos gestiona <b>un</b> departamento?','0','N','proyecto','Puede no tener.']])+
+
+R('tiene (identificadora)','1:N',[
+ ['¿De cuántos empleados es <b>un</b> familiar?','1','1','empleado','De uno.'],
+ ['¿Cuántos familiares tiene <b>un</b> empleado?','0','N','familiar','Ninguno o varios.']],
+ 'PK de familiar = (CodEmp, NomFam).'))+
+S(5,'Atributos y problemas al crear las tablas',`<ul>
+<li><b>DNIEmp</b> único ⇒ UNIQUE. <b>Edad</b> derivada. <b>FecFin (O)</b> opcional.</li>
+<li><b>NumEmpleados</b> es un atributo <b>calculado</b>: se obtiene con <code>COUNT</code> sobre empleado, así que no se guarda.</li>
+<li>empleado apunta a departamento y departamento apunta a empleado: son <b>FK circulares</b>. Como en el Ejercicio 9, se crea departamento sin la FK, luego empleado, y al final <code>ALTER TABLE departamento ADD CONSTRAINT fk_dir FOREIGN KEY (CodDir) REFERENCES empleado(CodEmp);</code></li></ul>`),
+er:{W:1200,H:690,ents:[
+ {n:'empleado',x:560,y:380,a:[['l',['_CodEmp','DNIEmp','NomEmp','ApeEmp','FecNac','~Edad','Salario']]]},
+ {n:'proyecto',x:560,y:90,a:[['l',['_CodPro','NomPro','FecIni','FecFin?']]]},
+ {n:'departamento',x:980,y:380,a:[['r',['_CodDep','NomDep','Presupuesto','~NumEmpleados']]]},
+ {n:'familiar',x:1010,y:580,weak:1,a:[['d',['-NomFam','Parentesco','FecNacFam']]]}],
+ rels:[
+ {n:'participa',t:'N:M',x:560,y:230,a:[['r',['HorasSem']]],e:[{to:'proyecto',c:'(0,N)'},{to:'empleado',c:'(0,N)'}]},
+ {n:'gestiona',t:'1:N',x:980,y:220,e:[{to:'proyecto',c:'(0,N)'},{to:'departamento',c:'(1,1)'}]},
+ {n:'trabaja_en',t:'1:N',x:770,y:320,e:[{to:'empleado',c:'(0,N)'},{to:'departamento',c:'(0,1)'}]},
+ {n:'dirige',t:'1:1',x:770,y:440,e:[{to:'empleado',c:'(0,1)'},{to:'departamento',c:'(0,1)'}]},
+ {n:'supervisa',t:'1:N',x:560,y:575,e:[{to:'empleado',c:'(0,1)',anc:[-38,20]},{to:'empleado',c:'(0,N)',anc:[38,20]}]},
+ {n:'tiene',t:'1:N',x:800,y:580,id:1,e:[{to:'empleado',c:'(1,1)',anc:[50,20],side:-1},{to:'familiar',c:'(0,N)'}]}]},
+ded:{W:1060,H:520,t:[
+ {n:'empleado',x:330,y:60,c:[['CodEmp','INT','pk'],['DNIEmp','CHAR(9)','uq'],['NomEmp','VARCHAR(45)'],['ApeEmp','VARCHAR(60)'],['FecNac','DATE'],['Salario','DECIMAL(7,2)'],['CodDep','INT','null fk:departamento'],['CodSup','INT','null fk:empleado']]},
+ {n:'departamento',x:780,y:60,c:[['CodDep','INT','pk'],['NomDep','VARCHAR(45)'],['Presupuesto','DECIMAL(10,2)'],['CodDir','INT','null uq fk:empleado']]},
+ {n:'proyecto',x:780,y:360,c:[['CodPro','INT','pk'],['NomPro','VARCHAR(60)'],['FecIni','DATE'],['FecFin','DATE','null'],['CodDep','INT','fk:departamento']]},
+ {n:'participa',x:330,y:380,c:[['CodEmp','INT','pk fk:empleado'],['CodPro','INT','pk fk:proyecto'],['HorasSem','TINYINT']]},
+ {n:'familiar',x:20,y:330,c:[['CodEmp','INT','pk fk:empleado'],['NomFam','VARCHAR(45)','pk'],['Parentesco','VARCHAR(20)'],['FecNacFam','DATE']]}]},
+notes:`<p>El lazo en la esquina de empleado es la FK reflexiva <code>CodSup</code>. Número de empleados por departamento:</p><p><code>SELECT NomDep, COUNT(E.CodEmp) AS NumEmpleados FROM departamento D LEFT JOIN empleado E ON (D.CodDep=E.CodDep) GROUP BY D.CodDep, NomDep;</code></p><p>Con <code>LEFT JOIN</code> también salen los departamentos vacíos (con 0).</p>`,
+alts:[
+ {h:'FK del director en empleado',k:'no',kt:'Peor opción',p:'Se podría poner <code>empleado.DepDirige</code> (NULL + UNIQUE) en vez de <code>departamento.CodDir</code>. Funciona, pero el 95 % de los empleados no dirige nada y tendría ese campo a NULL. En una 1 a 0 la FK va donde haya menos huecos.'},
+ {h:'Supervisión en tabla aparte',k:'meh',kt:'Válida, sin NULL',p:'Para no tener <code>CodSup</code> a NULL en los empleados sin supervisor, se puede crear <code>supervision(<u>CodEmp</u>, CodSup)</code>, con las dos FK a empleado. La PK es CodEmp porque cada empleado tiene como mucho un supervisor.',
+  ded:{W:640,H:230,t:[
+   {n:'empleado',x:20,y:40,c:[['CodEmp','INT','pk'],['DNIEmp','CHAR(9)','uq'],['…','…']]},
+   {n:'supervision',x:360,y:40,c:[['CodEmp','INT','pk fk:empleado'],['CodSup','INT','fk:empleado']]}]}},
+ {h:'Familiar como entidad fuerte',k:'good',kt:'También válida',p:'Dándole un código propio, familiar deja de ser débil: <code>familiar(<u>CodFam</u>, NomFam, Parentesco, FecNacFam, CodEmp)</code>. Es más cómodo si dos familiares del mismo empleado pudieran llamarse igual.'}]
+}
+];
+
+
+/* ===================== Explicaciones extra ===================== */
+const XP=[
+{res:'Dos entidades (pizzeria y animatronico) unidas por una relación 1:N. La FK CodPiz va a animatronico y no admite nulos.',
+pis:[['Cada animatrónico está instalado en una única pizzería','Un animatrónico está siempre en una, y solo en una','(1,1) junto a pizzeria'],
+['en una pizzería puede haber muchos animatrónicos','Una pizzería puede tener N','máximo N junto a animatronico ⇒ 1:N'],
+['puede no tener todavía ninguno','El mínimo es 0','(0,N) junto a animatronico'],
+['si lo tiene, un apodo','No todos tienen apodo','ApoAni opcional (O) ⇒ admite NULL'],
+['se quiere conocer la antigüedad','Se puede calcular con la fecha de fabricación','Antigüedad derivada: no se guarda']],
+at:[['pizzeria','CodPiz','PK','Código inventado. Nunca se repite ni cambia; el nombre sí podría repetirse.'],
+['pizzeria','NomPiz, CiuPiz, AnioApe','Simple','Un solo valor y obligatorio.'],
+['animatronico','CodAni','PK','Identifica a cada animatrónico.'],
+['animatronico','ApoAni','Opcional','«si lo tiene» ⇒ puede quedar vacío (NULL).'],
+['animatronico','Antiguedad','Derivado','Se calcula con FecFab y la fecha de hoy. Si se guardara, habría que cambiarlo cada año a mano.'],
+['animatronico','NomAni, EspAni, FecFab','Simple','Un solo valor y obligatorio. FecFab se guarda precisamente para poder calcular la antigüedad.']]},
+{res:'Cuatro entidades. equipo–jugador es 1:N con FK nula (hay agentes libres). jugador–agente es N:M con las horas como atributo (tabla domina). agente–rol es 1:N.',
+pis:[['Un jugador puede estar en un equipo o ser agente libre','Máximo 1 equipo, mínimo 0','(0,1) junto a equipo ⇒ CodEqu admite NULL'],
+['se puede registrar antes de fichar a ninguno','Un equipo puede tener 0 jugadores','(0,N) junto a jugador'],
+['qué agentes domina cada jugador','Un jugador domina varios y un agente lo dominan varios','N:M ⇒ tabla nueva domina'],
+['cuántas horas lleva con cada uno','El dato depende del jugador y del agente a la vez','HorasJug es atributo de la relación'],
+['debe dominar al menos un agente','Mínimo 1','(1,N) junto a agente'],
+['un agente recién lanzado puede no dominarlo nadie','Mínimo 0','(0,N) junto a jugador'],
+['De cada rol interesa también una descripción','El rol tiene datos propios','rol es entidad, no atributo (3FN)'],
+['nick (no se puede repetir)','Es clave candidata, pero no la elijo como PK','NickJug UNIQUE (clave alternativa)']],
+at:[['jugador','CodJug','PK','Un número que no cambia nunca. Es mejor PK que el nick, que el jugador podría cambiarse.'],
+['jugador','NickJug','Clave alternativa','No se repite ⇒ UNIQUE.'],
+['jugador','Edad','Derivado','Se calcula con FecNac.'],
+['jugador','NomReal, RangoJug','Simple','Un solo valor cada uno.'],
+['domina','HorasJug','De la relación','No es del jugador (tiene horas distintas con cada agente) ni del agente: es de la pareja.'],
+['agente','CodAge, NomAge','PK / Simple','Datos básicos del agente.'],
+['rol','DesRol','Simple','Es el motivo de que rol sea entidad: así la descripción se guarda una sola vez.'],
+['equipo','CodEqu','PK','Código inventado.']]},
+{res:'Cuatro entidades. personaje–elemento y personaje–region son 1:N. personaje–arma es 1 a 0: la FK CodArm va en personaje, con NOT NULL y UNIQUE.',
+pis:[['Cada personaje tiene un único elemento y un elemento lo tienen muchos personajes','1 por personaje, N por elemento','1:N, FK CodEle en personaje'],
+['Puede haber regiones anunciadas que aún no tengan personajes','Mínimo 0 en ese lado','(0,N) junto a personaje'],
+['Todo personaje lleva siempre exactamente un arma','Mínimo 1 y máximo 1','(1,1) junto a arma ⇒ FK obligatoria en personaje'],
+['un arma solo la puede llevar un personaje a la vez','Máximo 1 también en este lado','Es 1:1, no 1:N ⇒ UNIQUE'],
+['Un arma puede estar guardada en el inventario sin que nadie la lleve','Mínimo 0','(0,1) junto a personaje ⇒ caso 1 a 0'],
+['el tipo de arma que puede usar','Es un dato del personaje, distinto del tipo de cada arma','TipArmPer en personaje y TipArm en arma']],
+at:[['personaje','CodPer','PK','Código inventado.'],
+['personaje','Rareza','Simple','Solo vale 4 o 5 ⇒ TINYINT.'],
+['personaje','TipArmPer','Simple','Lo que el personaje sabe usar. Que coincida con el arma equipada se comprueba con un trigger.'],
+['personaje','CodArm','FK + UNIQUE','Sale de la relación equipa. NOT NULL porque siempre lleva arma; UNIQUE para que nadie más lleve esa misma arma.'],
+['region','Arconte','Simple','Dato propio de la región: por eso region es entidad.'],
+['arma','TipArm, AtqBase, NivArm','Simple','Datos de cada arma concreta de la cuenta.']]},
+{res:'Cinco entidades. Entre jugador y skin hay dos relaciones: compra (N:M) y lleva_equipada (1:N con FK nula). participa es N:M con puesto y eliminaciones. NumVictorias no se guarda.',
+pis:[['nombre de usuario y email (ninguno de los dos se repite)','Dos claves candidatas','NomUsu y Email UNIQUE; la PK es CodJug'],
+['De cada rareza guardamos código, nombre y color','Tiene datos propios','rareza es entidad'],
+['otras solo salen en la tienda y no pertenecen a ninguna','Una skin puede tener 0 temporadas','(0,1) junto a temporada ⇒ CodTem admite NULL'],
+['Un jugador puede comprar muchas skins y una skin la compran muchos','N en los dos lados','compra es N:M'],
+['fecha de compra y el precio pagado','Dependen del jugador y de la skin a la vez','Son atributos de compra'],
+['Nadie compra la misma skin dos veces','La pareja no se repite','PK compuesta (CodJug, CodSkin)'],
+['lleva equipada en este momento una skin, o ninguna','Es otro hecho distinto de comprar: máximo 1, mínimo 0','Segunda relación 1:N ⇒ SkinEquip admite NULL'],
+['Una partida tiene al menos un jugador','Mínimo 1','(1,N) junto a jugador en participa'],
+['número de victorias de cada jugador','Se puede contar con una consulta','Atributo calculado: no se guarda']],
+at:[['jugador','CodJug','PK','Código inventado.'],
+['jugador','NomUsu, Email','Clave alternativa','No se repiten ⇒ UNIQUE.'],
+['jugador','Pavos','Simple','Saldo actual del jugador.'],
+['jugador','NumVictorias','Calculado','Se obtiene contando en participa las filas con Puesto = 1. Cambia en cada partida: guardarlo obligaría a mantenerlo con un trigger.'],
+['skin','PrecioPav','Simple','Precio oficial de la skin.'],
+['compra','FecCom, PrecioPag','De la relación','Cada jugador la compra un día y a un precio (puede haber descuento). Por eso no van en skin.'],
+['participa','Puesto, Elim','De la relación','Dependen del jugador y de la partida a la vez.'],
+['rareza','ColorMarco','Simple','Dato propio que justifica que rareza sea entidad.'],
+['temporada','FecIni, FecFin','Simple','Fechas de la temporada.']]},
+{res:'Cinco entidades, una de ellas débil (habilidad). campeon–rol es N:M, counter es una N:M reflexiva y participa es una ternaria entre jugador, partida y campeón.',
+pis:[['Un campeón puede jugarse en varios roles (al menos uno)','N y mínimo 1','(1,N) junto a rol; tabla cam_rol'],
+['se identifica por su tecla dentro de su campeón','No se puede identificar sola','habilidad es débil; PK (CodCam, Tecla)'],
+['qué campeones son counter de otros','Relaciona campeón con campeón','Relación reflexiva'],
+['con una dificultad del 1 al 5','Depende de la pareja de campeones','Dificultad es atributo de counter'],
+['con qué campeón jugó, en qué lado, kills, muertes y asistencias','Depende de jugador, partida y campeón a la vez','Relación ternaria participa'],
+['En una misma partida un campeón no puede repetirse','partida + campeón no se repite','UNIQUE (CodPar, CodCam)'],
+['el KDA, que es (kills + asistencias) / muertes','Es una fórmula','KDA derivado: no se guarda'],
+['nombre (único) / nombre de invocador (único)','Claves candidatas','NomCam y NomInv UNIQUE']],
+at:[['campeon','CodCam','PK','Código inventado.'],
+['campeon','NomCam','Clave alternativa','Único ⇒ UNIQUE.'],
+['habilidad','Tecla','Clave parcial','Solo identifica dentro del campeón: la Q de Ahri no es la Q de Garen. Junto con CodCam forma la PK.'],
+['counter','Dificultad','De la relación','Es de la pareja «A counterea a B».'],
+['participa','Lado, Kills, Muertes, Asist','De la relación','Cambian en cada partida y para cada jugador.'],
+['participa','KDA','Derivado','Se calcula con Kills, Asist y Muertes.'],
+['jugador','NomInv','Clave alternativa','Único ⇒ UNIQUE.'],
+['partida','Ganador','Simple','Solo dos valores posibles: azul o rojo.']]},
+{res:'Dos entidades unidas por una 1:N. La FK DNIPro va a mascota y no admite nulos.',
+pis:[['Cada mascota tiene un único propietario registrado','Siempre tiene uno, y solo uno','(1,1) junto a propietario'],
+['Un propietario puede tener varias mascotas','Máximo N','1:N'],
+['solo se da de alta a un propietario cuando trae al menos una','Mínimo 1','(1,N) junto a mascota'],
+['la raza (si es mestiza se deja vacía)','Puede no tener valor','Raza opcional (O)'],
+['la fecha de nacimiento y la edad','La edad sale de la fecha','Edad derivada'],
+['el DNI','Dato real que no se repite','DNI como PK (clave natural)']],
+at:[['propietario','DNIPro','PK','Clave natural: es único y siempre lo tenemos.'],
+['propietario','NomPro, ApePro, TfnPro','Simple','Un solo valor cada uno.'],
+['mascota','CodMas','PK','Código inventado: los nombres de mascota se repiten muchísimo.'],
+['mascota','Raza','Opcional','Vacía en las mestizas.'],
+['mascota','Edad','Derivado','Se calcula con FecNac.'],
+['mascota','Especie, FecNac','Simple','Un solo valor y obligatorio.']]},
+{res:'Cuatro entidades. socio–tarjeta es 1:1 (dos tablas, FK con UNIQUE en tarjeta), socio–clase es N:M con la fecha de inscripción y monitor–clase es 1:N.',
+pis:[['Una tarjeta pertenece a un solo socio y todo socio tiene la suya','1 y 1 en los dos lados, mínimos también 1','1 a 1'],
+['Los datos de la tarjeta solo se consultan en el torno','Casi nunca hacen falta junto al socio','Dos tablas, FK en tarjeta'],
+['un monitor puede impartir varias o ninguna','Máximo N, mínimo 0','(0,N) junto a clase'],
+['Un socio puede apuntarse a varias o a ninguna y una clase puede tener muchos socios o estar vacía','N en los dos lados, mínimos 0','N:M con (0,N) y (0,N)'],
+['Interesa la fecha de inscripción','Depende del socio y de la clase','FecIns es atributo de inscribe'],
+['email (no se repite)','Clave candidata','EmailSoc UNIQUE']],
+at:[['socio','CodSoc','PK','Código inventado.'],
+['socio','EmailSoc','Clave alternativa','No se repite ⇒ UNIQUE.'],
+['tarjeta','NumTar','PK','Número real impreso en la tarjeta, único.'],
+['tarjeta','CodSoc','FK + UNIQUE','Sale de la 1:1. UNIQUE para que un socio no tenga dos tarjetas.'],
+['inscribe','FecIns','De la relación','Cada socio se apunta a cada clase en una fecha distinta.'],
+['clase','Sala, DiaSem, Hora','Simple','Horario de la clase.']]},
+{res:'Tres entidades. paciente–medico es N:M (cita), pero con PK propia porque la pareja se repite. La dirección es compuesta y los teléfonos son multivaluados (tabla telefono).',
+pis:[['dirección completa (calle, número, piso si lo hay, código postal y localidad)','Un dato formado por varias partes','Atributo compuesto; en la tabla, una columna por parte'],
+['uno o varios teléfonos','Varios valores para un mismo paciente','Multivaluado ⇒ tabla telefono (1FN)'],
+['número de colegiado (no se repite)','Clave candidata','NumCol UNIQUE'],
+['Cada médico tiene una sola especialidad','Siempre una, y solo una','(1,1) junto a especialidad'],
+['repetir con el mismo médico en fechas distintas','La pareja paciente-médico se repite','PK propia CodCit'],
+['diagnóstico (vacío hasta que se atiende)','Puede no tener valor','Diagnostico opcional (O)'],
+['Un médico no puede tener dos citas a la misma hora','médico + fecha + hora no se repite','UNIQUE (CodMed, FecCit, HoraCit)']],
+at:[['paciente','DirPac','Compuesto','Se dibuja con sus partes colgando. En la tabla desaparece y quedan Calle, Numero, Piso, CP y Localidad.'],
+['paciente','Piso','Opcional','«si lo hay»: las casas no tienen piso.'],
+['paciente','TfnPac','Multivaluado','Varios teléfonos ⇒ tabla telefono(CodPac, NumTfn) con PK compuesta.'],
+['paciente','Edad','Derivado','Se calcula con FecNac.'],
+['medico','NumCol','Clave alternativa','No se repite ⇒ UNIQUE.'],
+['cita','FecCit, HoraCit, Motivo','De la relación','Cada cita tiene los suyos.'],
+['cita','Diagnostico','De la relación, opcional','Vacío hasta que el médico atiende.'],
+['especialidad','Planta','Simple','Dato propio de la especialidad: por eso es entidad.']]},
+{res:'Siete entidades. vuelo se une dos veces con aeropuerto (origen y destino). Hay dos N:M con atributos: tripula (Funcion) y reserva (Asiento, Precio).',
+pis:[['sale de un aeropuerto, llega a otro distinto','El aeropuerto aparece con dos papeles distintos','Dos relaciones ⇒ dos FK (CodOri, CodDes) + CHECK'],
+['Solo se guardan ciudades que tienen aeropuerto','Mínimo 1','(1,N) junto a aeropuerto'],
+['De cada ciudad: código, nombre y país','Tiene datos propios','ciudad es entidad (3FN)'],
+['De cada modelo de avión: … capacidad','Si estuviera en avion se repetiría en cada avión','modelo es entidad (3FN)'],
+['la función que hace en ese vuelo','Depende del empleado y del vuelo','Funcion es atributo de tripula'],
+['Solo se guardan pasajeros con al menos una reserva','Mínimo 1','(1,N) junto a vuelo en reserva'],
+['Un asiento no se repite en el mismo vuelo','vuelo + asiento es único','UNIQUE (CodVue, Asiento)'],
+['un pasajero no reserva dos veces el mismo vuelo','La pareja no se repite','PK compuesta (CodVue, DocPas)']],
+at:[['aeropuerto','CodIATA','PK','Código real de 3 letras que no se repite (clave natural).'],
+['avion','Matricula','PK','Clave natural, única.'],
+['vuelo','CodVue','PK','Inventado, porque el número de vuelo se repite cada día.'],
+['vuelo','NumVue + FecSal','Clave alternativa','Juntos no se repiten ⇒ UNIQUE.'],
+['tripula','Funcion','De la relación','La misma persona puede tener funciones distintas en vuelos distintos.'],
+['reserva','Asiento, Precio','De la relación','Son de esa reserva, no del pasajero ni del vuelo.'],
+['pasajero','DocPas','PK','DNI o pasaporte: clave natural.']]},
+{res:'Cuatro entidades y muchas relaciones: una reflexiva (supervisa), dos entre empleado y departamento (trabaja_en 1:N y dirige 1 a 0), una N:M con proyecto y una entidad débil (familiar).',
+pis:[['un supervisor, que es otro empleado','Relaciona empleado con empleado','Relación reflexiva ⇒ FK CodSup dentro de empleado'],
+['puede estar un tiempo sin asignar','Mínimo 0','CodDep en empleado admite NULL'],
+['Cada departamento tiene un director, que es uno de los empleados','Segunda relación entre las mismas entidades','dirige, aparte de trabaja_en'],
+['puede quedarse un tiempo sin director, y un empleado dirige como mucho un departamento','0 o 1 en los dos lados','1 a 0 ⇒ CodDir NULL + UNIQUE'],
+['las horas semanales que dedica cada uno','Depende del empleado y del proyecto','HorasSem es atributo de participa'],
+['Un familiar se identifica por su empleado y su nombre','No se identifica solo','familiar es débil; PK (CodEmp, NomFam)'],
+['fecha de fin (vacía si sigue abierto)','Puede no tener valor','FecFin opcional (O)'],
+['cuántos empleados tiene cada departamento','Se cuenta con una consulta','NumEmpleados calculado: no se guarda']],
+at:[['empleado','CodEmp','PK','Código inventado.'],
+['empleado','DNIEmp','Clave alternativa','No se repite ⇒ UNIQUE.'],
+['empleado','Edad','Derivado','Se calcula con FecNac.'],
+['departamento','NumEmpleados','Calculado','Es un COUNT de los empleados del departamento. Cambia con cada alta o baja.'],
+['departamento','CodDir','FK + UNIQUE','Sale de dirige. NULL porque puede no haber director; UNIQUE porque nadie dirige dos.'],
+['proyecto','FecFin','Opcional','Vacía mientras el proyecto sigue abierto.'],
+['participa','HorasSem','De la relación','Un empleado dedica horas distintas a cada proyecto.'],
+['familiar','NomFam','Clave parcial','Solo distingue a los familiares de un mismo empleado.']]}
+];
+const chipCls=t=>/^PK \//.test(t)?'pk':/^PK|parcial/.test(t)?'pk':/alternativa/.test(t)?'uq':/^Opcional/.test(t)?'opt':/Derivado|Calculado/.test(t)?'der':/Compuesto|Multivaluado/.test(t)?'esp':/relación/.test(t)?'rel':/FK/.test(t)?'fk':'simple';
+const pisTable=rows=>`<div class="tbw"><table class="ptab"><thead><tr><th>El enunciado dice…</th><th>Qué significa</th><th>Decisión</th></tr></thead><tbody>${rows.map(r=>`<tr><td class="q">«${r[0]}»</td><td>${r[1]}</td><td class="dec">${r[2]}</td></tr>`).join('')}</tbody></table></div>`;
+const attrTable=rows=>`<p>Cada atributo, qué tipo es y por qué. Los que no aparecen son simples (un valor, obligatorio).</p><div class="tbw"><table class="atab"><thead><tr><th>Dónde</th><th>Atributo</th><th>Tipo</th><th>Por qué</th></tr></thead><tbody>${rows.map(r=>`<tr><td class="en">${r[0]}</td><td class="an">${r[1]}</td><td><span class="ch ${chipCls(r[2])}">${r[2]}</span></td><td>${r[3]}</td></tr>`).join('')}</tbody></table></div>`;
+function buildConcl(e,i){
+  const x=XP[i];
+  const parts=e.concl.split('<div class="step">').filter(Boolean).map(p=>'<div class="step">'+p);
+  const atStep=S(0,'Atributos uno a uno',attrTable(x.at));
+  const idx=parts.findIndex(p=>/<h4>Atributos(?: especiales)?<\/h4>/.test(p));
+  if(idx>=0) parts[idx]=atStep; else parts.splice(parts.length-1,0,atStep);
+  return S(0,'En resumen',`<p class="summary">${x.res}</p>`+TIP('Cómo leer las tablas de relación: cada fila es una frase. «<b>Uno</b> de A se relaciona con <b>mínimo</b> __ y <b>máximo</b> __ de B». Esos dos números, (mín,máx), se escriben en el diagrama <b>junto a B</b>.'))
+   +S(0,'Pistas del enunciado',`<p>Estas son las frases que deciden el modelo. Subráyalas cuando hagas el ejercicio en papel:</p>`+pisTable(x.pis))
+   +parts.join('');
+}
+
+/* ===================== Dibujo E-R ===================== */
+const CH=6.6; // ancho aprox. de carácter mono 11px
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const f1=n=>Math.round(n*10)/10;
+const seg=(a,b,c='mk')=>`<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" class="${c}"/>`;
+function parseAttr(a){
+  if(typeof a==='object') return {label:'( '+a.n+' )',comp:a.c,cs:a.cs||'d'};
+  let s=a,o={};
+  while('_-~*'.includes(s[0])){o[s[0]]=1;s=s.slice(1);}
+  if(s.endsWith('?')){o.opt=1;s=s.slice(0,-1);}
+  o.label=s+(o.opt?' (O)':''); o.k=o['_'];o.p=o['-'];o.d=o['~'];o.m=o['*'];
+  return o;
+}
+const rxOf=l=>Math.max(30,l.length*3.45+14);
+function placeGroup(g,cx,cy,ew,eh){
+  const [s,items,dx=0,dy=0]=g, at=items.map(parseAttr);
+  at.forEach(a=>a.rx=rxOf(a.label));
+  const gap=26;
+  if(s==='l'||s==='r'){
+    const step=32,h=(at.length-1)*step;
+    at.forEach((a,i)=>{a.y=cy+dy-h/2+i*step;a.x=s==='l'?cx-ew/2-gap-a.rx+dx:cx+ew/2+gap+a.rx+dx;});
+  } else {
+    const tot=at.reduce((t,a)=>t+2*a.rx,0)+12*(at.length-1); let x=cx+dx-tot/2;
+    at.forEach(a=>{a.x=x+a.rx;x+=2*a.rx+12;a.y=s==='u'?cy-eh/2-gap-13+dy:cy+eh/2+gap+13+dy;});
+  }
+  return at;
+}
+function ovalSVG(a){
+  let s='';
+  if(a.m) s+=`<ellipse cx="${f1(a.x)}" cy="${f1(a.y)}" rx="${f1(a.rx+4)}" ry="17" class="att"/>`;
+  s+=`<ellipse cx="${f1(a.x)}" cy="${f1(a.y)}" rx="${f1(a.rx)}" ry="13" class="att${a.d?' dr':''}"/>`;
+  s+=`<text x="${f1(a.x)}" y="${f1(a.y+3.8)}" text-anchor="middle" class="tx">${esc(a.label)}</text>`;
+  if(a.k||a.p){const w=(a.p?a.label:a.label).length*CH;s+=`<line x1="${f1(a.x-w/2)}" y1="${f1(a.y+6.5)}" x2="${f1(a.x+w/2)}" y2="${f1(a.y+6.5)}" class="ul${a.p?' p':''}"/>`;}
+  return s;
+}
+function hitRect(cx,cy,w,h,dx,dy){
+  const tx=dx?(w/2)/Math.abs(dx):Infinity, ty=dy?(h/2)/Math.abs(dy):Infinity, t=Math.min(tx,ty);
+  return [cx+dx*t,cy+dy*t];
+}
+function marker(P,u,many,min0,cls='mk',ocls='mo'){
+  const n=[-u[1],u[0]], at=d=>[P[0]+u[0]*d,P[1]+u[1]*d], off=(p,k)=>[p[0]+n[0]*k,p[1]+n[1]*k];
+  let s='';
+  if(many){const A=at(14);s+=seg(A,off(P,7),cls)+seg(A,P,cls)+seg(A,off(P,-7),cls);}
+  else {const B=at(7);s+=seg(off(B,7),off(B,-7),cls);}
+  if(min0){const C=at(many?21:17);s+=`<circle cx="${f1(C[0])}" cy="${f1(C[1])}" r="4.5" class="${ocls}"/>`;}
+  else {const B=at(many?19:13);s+=seg(off(B,7),off(B,-7),cls);}
+  return s;
+}
+function drawER(er){
+  let L='',SH='',MK='',TX='';
+  const E={};
+  er.ents.forEach(e=>{e.w=Math.max(110,e.n.length*7.8+34);e.h=40;E[e.n]=e;});
+  const doAttrs=(o,w,h)=>(o.a||[]).forEach(g=>placeGroup(g,o.x,o.y,w,h).forEach(a=>{
+    L+=seg([o.x,o.y],[a.x,a.y],'ln'); SH+=ovalSVG(a);
+    if(a.comp) placeGroup([a.cs,a.comp],a.x,a.y,2*a.rx,26).forEach(c=>{L+=seg([a.x,a.y],[c.x,c.y],'ln');SH+=ovalSVG(c);});
+  }));
+  er.ents.forEach(e=>{
+    doAttrs(e,e.w,e.h);
+    SH+=`<rect x="${f1(e.x-e.w/2)}" y="${e.y-e.h/2}" width="${f1(e.w)}" height="${e.h}" class="ent"/>`;
+    if(e.weak) SH+=`<rect x="${f1(e.x-e.w/2+4)}" y="${e.y-e.h/2+4}" width="${f1(e.w-8)}" height="${e.h-8}" class="ent" style="fill:none"/>`;
+    SH+=`<text x="${e.x}" y="${e.y+4.5}" text-anchor="middle" class="tb">${esc(e.n)}</text>`;
+  });
+  er.rels.forEach(r=>{
+    const dw=Math.max(96,r.n.length*7.6+40), dh=48;
+    doAttrs(r,dw,dh);
+    r.e.forEach(en=>{
+      const e=E[en.to];
+      let P = en.anc ? [e.x+en.anc[0],e.y+en.anc[1]] : hitRect(e.x,e.y,e.w,e.h,r.x-e.x,r.y-e.y);
+      L+=seg([r.x,r.y],P,'ln');
+      const len=Math.hypot(r.x-P[0],r.y-P[1]), u=[(r.x-P[0])/len,(r.y-P[1])/len];
+      const m=en.c.match(/\((\w),(\w)\)/), min0=m[1]==='0', many=m[2]!=='1';
+      MK+=marker(P,u,many,min0);
+      const sd=en.side||1, n=[-u[1]*sd,u[0]*sd];
+      const lp=[P[0]+u[0]*32+n[0]*13,P[1]+u[1]*32+n[1]*13];
+      const anchor=n[0]<-.35?'end':n[0]>.35?'start':'middle';
+      TX+=`<text x="${f1(lp[0])}" y="${f1(lp[1]+4)}" text-anchor="${anchor}" class="card">${esc((en.role?en.role+' ':'')+en.c)}</text>`;
+    });
+    const pts=`${r.x},${r.y-dh/2} ${r.x+dw/2},${r.y} ${r.x},${r.y+dh/2} ${r.x-dw/2},${r.y}`;
+    SH+=`<polygon points="${pts}" class="dia"/>`;
+    if(r.id) SH+=`<polygon points="${r.x},${r.y-dh/2+6} ${r.x+dw/2-11},${r.y} ${r.x},${r.y+dh/2-6} ${r.x-dw/2+11},${r.y}" class="dia" style="fill:none"/>`;
+    SH+=`<text x="${r.x}" y="${r.y+1}" text-anchor="middle" class="tr">${esc(r.n)}</text><text x="${r.x}" y="${r.y+14}" text-anchor="middle" class="tt">${esc(r.t)}</text>`;
+  });
+  return `<svg viewBox="0 0 ${er.W} ${er.H}" style="min-width:${Math.round(er.W*0.72)}px" role="img" aria-label="Diagrama entidad-relación">${L}${SH}${MK}${TX}</svg>`;
+}
+
+/* ===================== Dibujo DED ===================== */
+function prepTables(d){
+  const T={};
+  d.t.forEach(t=>{
+    t.cols=t.c.map(c=>{const f=(c[2]||'').split(' ');const o={n:c[0],ty:c[1],pk:f.includes('pk'),nul:f.includes('null'),uq:f.includes('uq')};const fk=f.find(x=>x.startsWith('fk:'));if(fk)o.fk=fk.slice(3);return o;});
+    t.w=Math.max(150,t.n.length*8+40,...t.cols.map(c=>(c.n.length+1+c.ty.length+(c.uq?3:0))*7.2+44));
+    t.h=26+t.cols.length*20+8; t.cx=t.x+t.w/2; t.cy=t.y+t.h/2; T[t.n]=t;
+  });
+  return T;
+}
+function icon(c,x,y){
+  if(c.pk){const cl=c.fk?'ifk':'ipk';return `<circle cx="${x+3}" cy="${y}" r="3.4" class="${cl}"/><rect x="${x+5}" y="${y-1.2}" width="7" height="2.4" class="${cl}"/><rect x="${x+9.5}" y="${y}" width="2" height="3" class="${cl}"/>`;}
+  const p=`${x+6},${y-4.5} ${x+10.5},${y} ${x+6},${y+4.5} ${x+1.5},${y}`;
+  if(c.fk) return `<polygon points="${p}" class="ifk"/>`;
+  if(c.nul) return `<polygon points="${p}" class="inul"/>`;
+  return `<polygon points="${p}" class="icol"/>`;
+}
+function rectExit(t,p,q){
+  const vx=q[0]-p[0],vy=q[1]-p[1];
+  const tx=vx>0?(t.x+t.w-p[0])/vx:vx<0?(t.x-p[0])/vx:Infinity;
+  const ty=vy>0?(t.y+t.h-p[1])/vy:vy<0?(t.y-p[1])/vy:Infinity;
+  const k=Math.min(tx,ty);return [p[0]+vx*k,p[1]+vy*k];
+}
+function drawDED(d){
+  const T=prepTables(d); let LK='',BX='',MK='';
+  const links=[]; d.t.forEach(t=>t.cols.forEach(c=>{if(c.fk&&T[c.fk])links.push({ch:t,pa:T[c.fk],c});}));
+  const pairs={}; links.forEach(l=>{const k=[l.ch.n,l.pa.n].sort().join('|');(pairs[k]=pairs[k]||[]).push(l);});
+  Object.values(pairs).forEach(arr=>arr.forEach((l,j)=>l.off=(j-(arr.length-1)/2)*26));
+  links.forEach(l=>{
+    const {ch,pa,c}=l, dash=c.pk?'':' dash';
+    const childOne=(c.pk&&ch.cols.filter(x=>x.pk).length===1)||c.uq;
+    if(ch===pa){
+      const x2=ch.x+ch.w,y2=ch.y+ch.h;
+      LK+=`<path d="M${x2-34},${y2} V${y2+26} H${x2+26} V${y2-34} H${x2}" class="lk${dash}"/>`;
+      MK+=marker([x2-34,y2],[0,1],!childOne,true,'lkm','lko')+marker([x2,y2-34],[1,0],false,c.nul,'lkm','lko');
+      return;
+    }
+    let p=[ch.cx,ch.cy],q=[pa.cx,pa.cy]; const len=Math.hypot(q[0]-p[0],q[1]-p[1]), n=[-(q[1]-p[1])/len,(q[0]-p[0])/len];
+    p=[p[0]+n[0]*l.off,p[1]+n[1]*l.off]; q=[q[0]+n[0]*l.off,q[1]+n[1]*l.off];
+    const A=rectExit(ch,p,q), B=rectExit(pa,q,p);
+    LK+=`<line x1="${f1(A[0])}" y1="${f1(A[1])}" x2="${f1(B[0])}" y2="${f1(B[1])}" class="lk${dash}"/>`;
+    const u=[(B[0]-A[0])/Math.hypot(B[0]-A[0],B[1]-A[1]),(B[1]-A[1])/Math.hypot(B[0]-A[0],B[1]-A[1])];
+    MK+=marker(A,u,!childOne,true,'lkm','lko')+marker(B,[-u[0],-u[1]],false,c.nul,'lkm','lko');
+  });
+  d.t.forEach(t=>{
+    BX+=`<rect x="${t.x}" y="${t.y}" width="${f1(t.w)}" height="${t.h}" rx="6" class="tbox"/>`;
+    BX+=`<path d="M${t.x},${t.y+26} V${t.y+6} a6,6 0 0 1 6,-6 H${f1(t.x+t.w-6)} a6,6 0 0 1 6,6 V${t.y+26} Z" class="thd"/>`;
+    BX+=`<text x="${t.x+10}" y="${t.y+17.5}" class="thx">${esc(t.n)}</text>`;
+    t.cols.forEach((c,i)=>{const y=t.y+26+10+i*20;
+      BX+=icon(c,t.x+9,y);
+      BX+=`<text x="${t.x+27}" y="${y+4}" class="cx">${esc(c.n)} <tspan class="cty">${esc(c.ty)}</tspan>${c.uq?' <tspan class="uq">UQ</tspan>':''}</text>`;});
+  });
+  return `<svg viewBox="0 0 ${d.W} ${d.H}" style="min-width:${Math.round(d.W*0.72)}px" role="img" aria-label="Diagrama de estructura de datos">${LK}${MK}${BX}</svg>`;
+}
+
+/* ===================== Relacional (diagrama referencial) ===================== */
+function drawRef(d,fixed){
+  const T=prepTables(d), RH=18;
+  const tagsOf=c=>(c.nul?'(O)':'')+(c.uq?'(UQ)':'')+(c.fk?'(FK)':'');
+  d.t.forEach(t=>{
+    t.rw=Math.max(120,t.n.length*7.6+20,...t.cols.map(c=>c.n.length*7.2+(tagsOf(c)?tagsOf(c).length*6+14:0)+22));
+    t.ry=t.y+18; t.rh=t.cols.length*RH+8;
+    t.rowY=i=>t.ry+4+i*RH+RH/2;
+  });
+  let LN='',BX='';
+  d.t.forEach(t=>t.cols.forEach((c,i)=>{
+    if(!c.fk||!T[c.fk])return; const pa=T[c.fk], pi=Math.max(0,pa.cols.findIndex(x=>x.pk));
+    const sy=t.rowY(i), ey=pa.rowY(pi);
+    let pts, ex, dir;
+    if(pa===t){const x=t.x;pts=[[x,sy],[x-22,sy],[x-22,ey],[x,ey]];ex=x;dir=1;}
+    else if(pa.x>=t.x+t.rw){pts=[[t.x+t.rw,sy],[t.x+t.rw+14,sy],[pa.x-16,ey],[pa.x,ey]];ex=pa.x;dir=1;}
+    else if(pa.x+pa.rw<=t.x){pts=[[t.x,sy],[t.x-14,sy],[pa.x+pa.rw+16,ey],[pa.x+pa.rw,ey]];ex=pa.x+pa.rw;dir=-1;}
+    else {const xl=Math.min(t.x,pa.x)-18;pts=[[t.x,sy],[xl,sy],[xl,ey],[pa.x,ey]];ex=pa.x;dir=1;}
+    LN+=`<polyline points="${pts.map(p=>f1(p[0])+','+f1(p[1])).join(' ')}" class="rarr"/>`;
+    LN+=`<polygon points="${ex},${ey} ${ex-8*dir},${ey-4.5} ${ex-8*dir},${ey+4.5}" class="rhead"/>`;
+  }));
+  d.t.forEach(t=>{
+    BX+=`<text x="${f1(t.x+t.rw/2)}" y="${t.ry-5}" text-anchor="middle" class="rnm">${esc(t.n)}</text>`;
+    BX+=`<rect x="${t.x}" y="${t.ry}" width="${f1(t.rw)}" height="${t.rh}" class="rbox"/>`;
+    t.cols.forEach((c,i)=>{const y=t.rowY(i)+4, tg=tagsOf(c);
+      BX+=`<text x="${t.x+8}" y="${y}" class="rcol${c.pk?' rpk':''}">${esc(c.n)}${tg?`<tspan class="rtag" dx="8">${tg}</tspan>`:''}</text>`;
+      if(c.pk) BX+=`<line x1="${t.x+8}" y1="${y+3}" x2="${f1(t.x+8+c.n.length*7.2)}" y2="${y+3}" class="rul"/>`;});
+  });
+  if(fixed) return `<svg>${LN}${BX}</svg>`;
+  const H=Math.max(...d.t.map(t=>t.ry+t.rh))+20, W=Math.max(...d.t.map(t=>t.x+t.rw))+20;
+  return `<svg viewBox="-30 0 ${W+30} ${H}" style="min-width:${Math.round((W+30)*0.72)}px" role="img" aria-label="Diagrama referencial">${LN}${BX}</svg>`;
+}
+function relHTML(d){
+  const T=prepTables(d);
+  const lines=d.t.map(t=>`<div class="rt"><span class="tn">${esc(t.n)}</span> ( ${t.cols.map(c=>{
+    let s=esc(c.n); if(c.pk)s=`<u>${s}</u>`; if(c.fk)s=`<span class="fk">${s}</span>`;
+    let tags=[]; if(c.fk)tags.push('FK'); if(c.nul)tags.push('O'); if(c.uq)tags.push('UQ');
+    return s+(tags.length?` <span class="o">(${tags.join(', ')})</span>`:'');}).join(', ')} )</div>`).join('');
+  const fks=[]; d.t.forEach(t=>t.cols.forEach(c=>{if(c.fk){const pa=T[c.fk];const pk=pa?pa.cols.find(x=>x.pk).n:'?';
+    fks.push(`<li>${esc(t.n)}.${esc(c.n)} <span class="ar">→</span> ${esc(c.fk)}(${esc(pk)}) <span class="q">· ${c.nul?'admite NULL':'NOT NULL'}${c.uq?' · UNIQUE':''}${c.pk?' · forma parte de la PK':''}</span></li>`);}}));
+  return `<div class="diag">${drawRef(d)}</div><p class="cap">Diagrama referencial (como el que genera ERD Plus): PK en negrita y subrayada, (FK) = clave ajena, (O) = opcional (admite NULL), (UQ) = UNIQUE. Cada flecha va de la FK a la PK de la tabla a la que apunta.</p>${fks.length?`<h4 style="margin-top:18px">Claves ajenas</h4><ul class="fklist">${fks.join('')}</ul>`:''}`;
+}
+
+/* ===================== Página ===================== */
+const LVN={1:'Fácil',2:'Medio',3:'Difícil'};
+const dots=lv=>`<span class="dots">${[1,2,3].map(i=>`<i class="${i<=lv?'on':''}"></i>`).join('')}</span>`;
+function nav(){
+  const g=p=>EX.map((e,i)=>({e,i})).filter(o=>o.e.part===p).map(({e,i})=>`<a class="chip" href="#ej${i+1}" style="--tc:var(${e.tc})"><b>${i+1}</b>${esc(e.tag==='Clásico'?e.title.split(':')[0]:e.tag)} ${dots(e.lv)}</a>`).join('');
+  document.getElementById('nav').innerHTML=`<div class="navg"><h2>Parte 1 · Temáticos</h2><div class="chips">${g(1)}</div></div><div class="navg"><h2>Parte 2 · Clásicos</h2><div class="chips">${g(2)}</div></div>`;
+}
+function article(e,i){
+  const tabs=[['conc','Conclusión'],['er','Entidad-Relación'],['rel','Relacional'],['ded','DED'],['alt','Otras soluciones']];
+  return `<article class="ex" id="ej${i+1}" style="--tc:var(${e.tc})">
+  <div class="exh"><span class="exn">Ejercicio ${i+1}</span><span class="tag">${esc(e.tag)}</span><span class="lv lv${e.lv}">${dots(e.lv)} ${LVN[e.lv]}</span></div>
+  <h3>${esc(e.title)}</h3>
+  <div class="enun">${e.enun}</div>
+  <div class="concepts">${e.concepts.map(c=>`<span>${esc(c)}</span>`).join('')}</div>
+  <div class="actions"><button class="reveal" id="rv${i}" data-i="${i}" aria-expanded="false">Ver solución</button><button class="dowork" data-i="${i}" aria-expanded="false">Hacer mi solución</button></div>
+  <div class="sol" id="sol${i}" hidden>
+    <div class="tabs" role="tablist">${tabs.map((t,k)=>`<button class="tab" role="tab" id="tab${i}-${t[0]}" aria-selected="${k===0}" data-p="${t[0]}">${t[1]}</button>`).join('')}</div>
+    <div class="panel" data-p="conc">${buildConcl(e,i)}</div>
+    <div class="panel" data-p="er" hidden><div class="diag">${drawER(e.er)}</div><p class="cap">Junto a cada entidad: (mínimo, máximo) de esa entidad para una ocurrencia de la otra. Las marcas de las líneas dicen lo mismo en notación pata de gallo.</p></div>
+    <div class="panel" data-p="rel" hidden>${relHTML(e.ded)}${e.notes?`<div class="notes"><h4 style="margin-top:18px">Notas</h4>${e.notes}</div>`:''}</div>
+    <div class="panel" data-p="ded" hidden><div class="diag grid">${drawDED(e.ded)}</div><p class="cap">Llave = PK (rosa si además es FK) · rombo rosa = FK · rombo hueco = admite NULL · UQ = UNIQUE. Línea continua: la FK forma parte de la PK; discontinua: no.</p></div>
+    <div class="panel" data-p="alt" hidden>${e.alts.map(a=>`<div class="alt"><h4>${esc(a.h)} <small class="${a.k}">${esc(a.kt)}</small></h4><p>${a.p}</p>${a.ded?`<div class="diag grid">${drawDED(a.ded)}</div>`:''}</div>`).join('')}</div>
+  </div></article>`;
+}
+function legend(){
+  const sampleER={W:860,H:270,ents:[
+    {n:'entidad',x:200,y:100,a:[['l',['_Clave','Atributo','Opcional?','~Derivado']],['d',['*Multivalor',{n:'Compuesto',c:['Parte1','Parte2'],cs:'d'}]]]},
+    {n:'debil',x:660,y:100,weak:1,a:[['r',['-ClaveParcial']]]}],
+    rels:[{n:'relacion',t:'1:N',x:430,y:100,id:1,e:[{to:'entidad',c:'(1,1)'},{to:'debil',c:'(0,N)'}]}]};
+  const mk=(many,min0,txt)=>`<div class="key"><svg width="74" height="26" viewBox="0 0 74 26"><line x1="0" y1="13" x2="58" y2="13" class="mk"/><rect x="58" y="2" width="14" height="22" class="ent"/>${marker([58,13],[-1,0],many,min0)}</svg><span>${txt}</span></div>`;
+  document.getElementById('legendIn').innerHTML=`
+  <div><h4>El método que sigue cada conclusión</h4><ol class="method">
+   <li><span><b>Entidades.</b> Subraya los sustantivos con datos propios que hay que distinguir uno de otro. Si algo solo tiene un nombre y no se pide nada más, suele ser un atributo.</span></li>
+   <li><span><b>Relaciones.</b> Busca los verbos que unen entidades. Para cada relación, pregunta desde los dos lados: «<i>uno</i> de estos, ¿con cuántos de los otros como mínimo y como máximo?».</span></li>
+   <li><span><b>Cardinalidad.</b> Lo que contestas se escribe <b>junto a la entidad que estás contando</b>. Los dos máximos dan el tipo: 1 y 1 ⇒ 1:1, 1 y N ⇒ 1:N, N y N ⇒ N:M.</span></li>
+   <li><span><b>Atributos.</b> Elige la PK, marca opcionales, derivados, compuestos y multivaluados, y decide si un dato es de una entidad o de la relación (depende de la pareja).</span></li>
+   <li><span><b>Paso a tablas.</b> 1:N ⇒ FK en el lado N (nula si el mínimo del lado 1 es 0). 1:1 ⇒ FK + UNIQUE. N:M ⇒ tabla nueva con las dos FK (PK compuesta si la pareja no se repite).</span></li></ol></div>
+  <div><h4>Notación del E-R</h4><div class="diag">${drawER(sampleER)}</div>
+   <p class="cap">Subrayado = clave primaria · subrayado discontinuo = clave parcial de una entidad débil · (O) = opcional · óvalo discontinuo = derivado o calculado · doble óvalo = multivaluado · ( ) = compuesto · doble rectángulo = entidad débil · doble rombo = relación identificadora.</p></div>
+  <div><h4>Marcas de las líneas (E-R y DED)</h4><div class="keys">${mk(false,false,'Exactamente uno (1,1)')}${mk(false,true,'Cero o uno (0,1)')}${mk(true,false,'Uno o muchos (1,N)')}${mk(true,true,'Cero o muchos (0,N)')}</div></div>`;
+}
+
+/* ===================== Mini chuleta ===================== */
+function lineSample(dashed){return `<svg width="64" height="14" viewBox="0 0 64 14"><line x1="2" y1="7" x2="62" y2="7" class="lk${dashed?' dash':''}"/></svg>`;}
+function cheatHTML(){
+  const fig=(cap,svg,grid,full)=>`<figure${full?' class="full"':''}><figcaption>${cap}</figcaption><div class="diag${grid?' grid':''}">${svg}</div></figure>`;
+  const er=(a,b,rel,t,ca,cb,attr)=>drawER({W:600,H:attr?150:110,ents:[{n:a,x:110,y:55},{n:b,x:490,y:55}],rels:[{n:rel,t,x:300,y:55,a:attr?[['d',attr]]:undefined,e:[{to:a,c:ca},{to:b,c:cb}]}]});
+  const ded=(W,t)=>drawDED({W,H:Math.max(...t.map(x=>x.y+26+x.c.length*20+8))+14,t});
+  const card=(type,title,when,dgs,res,line)=>`<div class="cs-card"><div class="cs-h"><span class="rtype">${type}</span><h4>${title}</h4></div><p><b>Cuándo:</b> ${when}</p><div class="cs-dg">${dgs}</div><p><b>Qué sale al pasarlo a tablas:</b></p><ul>${res}</ul>${line}</div>`;
+  const LC=(t)=>`<div class="cs-line">${lineSample(false)}<span><b>Línea continua.</b> ${t}</span></div>`;
+  const LD=(t)=>`<div class="cs-line">${lineSample(true)}<span><b>Línea discontinua.</b> ${t}</span></div>`;
+
+  const ents=`<div class="cs-grid">
+   <div class="cs-card"><div class="cs-h"><h4>Entidad</h4></div>
+    <p>Algo del mundo real del que guardamos <b>varios datos</b> y que podemos distinguir de los demás gracias a una <b>clave primaria</b>. Se dibuja como un <b>rectángulo</b> y luego es una tabla.</p>
+    <p><b>Pista:</b> un sustantivo del enunciado con datos propios: «de cada empleado se guarda DNI, nombre…» ⇒ empleado.</p></div>
+   <div class="cs-card"><div class="cs-h"><h4>Entidad que nace de una relación N:M</h4></div>
+    <p>En el E-R es un <b>rombo</b> (una relación). Al pasar al modelo lógico se convierte en una <b>nueva entidad</b> (tabla) con las FK de las dos entidades y los atributos de la relación.</p>
+    <p>Hay que darle un nombre con sentido: <code>ayuda</code>, <code>despachos</code>, <code>esp_mov</code>, <code>asi_alu</code>.</p></div>
+   <div class="cs-card"><div class="cs-h"><h4>¿Atributo o entidad?</h4></div>
+    <p>Si de esa cosa solo guardas <b>un valor</b>, es un atributo (la especie de un animatrónico).</p>
+    <p>Si guardas <b>más datos</b> de ella o se va a repetir en muchas filas, sácala a su propia entidad: así modelas directamente en <b>3FN</b> (ciudad, provincia, polígono, rol).</p></div>
+  </div>`;
+
+  const rels=`<div class="cs-list">
+  ${card('1:N','Uno a muchos','un lado tiene máximo 1 y el otro máximo N. «Un empleado está en un departamento y un departamento tiene muchos empleados».',
+    fig('E-R',er('departamento','empleado','tiene','1:N','(1,1)','(0,N)'))+fig('DED',ded(500,[{n:'departamento',x:10,y:14,c:[['CodDep','INT','pk'],['NomDep','VARCHAR(45)']]},{n:'empleado',x:300,y:14,c:[['CodEmp','INT','pk'],['NomEmp','VARCHAR(45)'],['CodDep','INT','fk:departamento']]}]),1),
+    `<li>Cada entidad es una tabla. No sale ninguna tabla nueva.</li><li>La PK del lado <b>1</b> viaja como <b>FK</b> a la tabla del lado <b>N</b> (la FK va «donde va el mucho»).</li><li>Si el mínimo junto al lado 1 es <b>0</b> (un empleado puede no tener departamento), la FK <b>admite NULL</b>. Si es 1, es <b>NOT NULL</b>.</li>`,
+    LD('La FK es un campo normal de empleado, no forma parte de su PK.'))}
+  ${card('N:M','Muchos a muchos','máximo N en los dos lados. «Un alumno se matricula en muchas asignaturas y una asignatura tiene muchos alumnos».',
+    fig('E-R',er('alumno','asignatura','matricula','N:M','(0,N)','(1,N)',['FecMat']))+fig('DED',ded(600,[{n:'alumno',x:10,y:14,c:[['CodAlu','INT','pk'],['NomAlu','VARCHAR(45)']]},{n:'matricula',x:205,y:14,c:[['CodAlu','INT','pk fk:alumno'],['CodAsi','INT','pk fk:asignatura'],['FecMat','DATE']]},{n:'asignatura',x:400,y:14,c:[['CodAsi','INT','pk'],['NomAsi','VARCHAR(45)']]}]),1),
+    `<li>La <b>relación se convierte en una tabla nueva</b> con las PK de las dos entidades como FK.</li><li>Los atributos de la relación (FecMat, NumDes, HorasJug…) van a esa tabla nueva.</li><li><b>PK de la tabla nueva:</b> las dos FK juntas (PK compuesta) si la pareja nunca se repite. Si se puede repetir, o no estás seguro, se añade una PK propia (CodRes, CodCit…).</li><li>Si eliges mal y lo haces 1:N, tendrías que meter varios valores en un campo ⇒ incumple la <b>1FN</b>.</li>`,
+    LC('Con PK compuesta, las dos FK son parte de la PK: la fila de matricula no existe sin su alumno y su asignatura.')+LD('Si pones una PK propia (CodMat), las FK pasan a ser campos normales y las líneas son discontinuas.'))}
+  ${card('1:1','Uno a uno','máximo 1 y mínimo 1 en los dos lados. «Cada empleado tiene un currículum y cada currículum es de un empleado».',
+    fig('E-R',er('empleado','curriculum','tiene','1:1','(1,1)','(1,1)'),0,1)+fig('DED · FK con UNIQUE',ded(440,[{n:'empleado',x:10,y:14,c:[['CodEmp','INT','pk'],['NomEmp','VARCHAR(45)']]},{n:'curriculum',x:240,y:14,c:[['CodCur','INT','pk'],['ForAca','TEXT'],['CodEmp','INT','uq fk:empleado']]}]),1)+fig('DED · la FK es también PK',ded(440,[{n:'empleado',x:10,y:14,c:[['CodEmp','INT','pk'],['NomEmp','VARCHAR(45)']]},{n:'curriculum',x:240,y:14,c:[['CodEmp','INT','pk fk:empleado'],['ForAca','TEXT']]}]),1),
+    `<li><b>Caso 1:</b> todo en una sola tabla, si casi siempre quieres los datos juntos.</li><li><b>Caso 2:</b> dos tablas y la PK de una pasa como FK a la otra, si casi nunca necesitas los datos juntos. La FK lleva <b>UNIQUE</b> (si no, sería 1:N), o directamente se usa como PK.</li><li><b>Caso 3:</b> la FK al revés (CodCur en empleado). Válido, pero en clase no lo usamos.</li>`,
+    LD('La FK (CodEmp UNIQUE) es un campo normal de curriculum.')+LC('Cuando CodEmp es a la vez PK y FK de curriculum.'))}
+  ${card('1 a 0','Uno a cero (o uno)','máximo 1 en los dos lados, pero un mínimo es 0. «Una entrevista puede acabar en un contrato o en ninguno; un contrato sale de una entrevista».',
+    fig('E-R',er('entrevista','contrato','da_lugar','1:1','(1,1)','(0,1)'),0,1)+fig('DED · caso 1',ded(440,[{n:'entrevista',x:10,y:14,c:[['CodEnt','INT','pk'],['FecEnt','DATE']]},{n:'contrato',x:240,y:14,c:[['CodCon','INT','pk'],['DurCon','INT'],['CodEnt','INT','uq fk:entrevista']]}]),1)+fig('DED · caso 2',ded(440,[{n:'entrevista',x:10,y:14,c:[['CodEnt','INT','pk'],['FecEnt','DATE']]},{n:'contrato',x:240,y:14,c:[['CodEnt','INT','pk fk:entrevista'],['DurCon','INT']]}]),1),
+    `<li>Es un caso particular de la 1:1.</li><li>La FK va en la tabla que <b>siempre</b> participa (contrato siempre tiene entrevista), así nunca queda vacía.</li><li><b>Caso 1:</b> contrato tiene su PK propia y CodEnt es FK (mejor con UNIQUE). <b>Caso 2:</b> CodEnt es a la vez PK y FK.</li>`,
+    LD('Caso 1: la FK no forma parte de la PK.')+LC('Caso 2: la FK es la PK de contrato.'))}
+  ${card('2 relaciones','Dos relaciones entre las mismas entidades','hay dos hechos distintos que unen las mismas entidades. «Un empleado trabaja en un departamento» y además «cada departamento tiene un jefe, que es un empleado».',
+    fig('E-R',drawER({W:600,H:200,ents:[{n:'departamento',x:110,y:100},{n:'empleado',x:490,y:100}],rels:[{n:'tiene',t:'1:N',x:300,y:40,e:[{to:'departamento',c:'(0,1)'},{to:'empleado',c:'(0,N)'}]},{n:'es_jefe',t:'1:1',x:300,y:160,e:[{to:'departamento',c:'(0,1)'},{to:'empleado',c:'(1,1)'}]}]}))+fig('DED',ded(500,[{n:'departamento',x:10,y:14,c:[['CodDep','INT','pk'],['NomDep','VARCHAR(45)'],['CodEmpJefe','INT','uq fk:empleado']]},{n:'empleado',x:290,y:14,c:[['CodEmp','INT','pk'],['NomEmp','VARCHAR(45)'],['CodDep','INT','null fk:departamento']]}]),1),
+    `<li>Cada relación se pasa a tablas según su tipo, por separado. Aquí salen dos FK: CodDep en empleado y CodEmpJefe en departamento.</li><li>Como las dos tablas se apuntan entre sí, no se puede crear ninguna primero: se crea departamento sin la FK, luego empleado y al final <code>ALTER TABLE departamento ADD CONSTRAINT fk_jefe FOREIGN KEY …</code></li><li>Si el jefe puede faltar un tiempo, CodEmpJefe admite NULL.</li>`,
+    LD('Las dos FK son campos normales, ninguna es parte de una PK.'))}
+  </div>`;
+
+  const lines=`<div class="cs-card"><div class="cs-h"><h4>Líneas continuas y discontinuas</h4></div>
+   <p>Solo importan en el <b>DED</b> (MySQL Workbench). En el E-R de ERD Plus las líneas siempre son continuas.</p>
+   <div class="cs-line">${lineSample(false)}<span><b>Continua = relación identificadora.</b> La FK <b>forma parte de la PK</b> de la tabla hija: la fila no se puede identificar sin la tabla padre. Pasa en las tablas de las N:M con PK compuesta (ayuda, despachos, esp_mov) y cuando la FK es también la PK (caso 2 de 1:1 y de 1 a 0).</span></div>
+   <div class="cs-line">${lineSample(true)}<span><b>Discontinua = relación no identificadora.</b> La FK es un <b>campo normal</b>, fuera de la PK. Pasa en las 1:N normales (empleado → departamento) y cuando la tabla tiene su propia PK (CodRes, CodCon…).</span></div>
+   <p><b>Truco:</b> mira la tabla que tiene la FK. ¿La FK lleva la llave de PK? ⇒ continua. ¿Lleva el rombo rojo? ⇒ discontinua.</p>
+   <p><b>Ojo:</b> en el E-R lo discontinuo es el <b>óvalo</b> de un atributo derivado (Edad, Antigüedad), no las líneas.</p></div>`;
+
+  const sum=`<div class="tbw"><table class="cs-sum"><thead><tr><th>Tipo</th><th>Tablas que salen</th><th>Dónde va la FK</th><th>¿Admite NULL?</th><th>Línea en el DED</th></tr></thead><tbody>
+   <tr><td>1:N</td><td>Una por entidad</td><td>En la tabla del lado N</td><td>Sí, si el mínimo del lado 1 es 0</td><td>Discontinua</td></tr>
+   <tr><td>N:M</td><td>Una por entidad + una nueva por la relación</td><td>Las dos FK en la tabla nueva</td><td>No</td><td>Continua con PK compuesta; discontinua con PK propia</td></tr>
+   <tr><td>1:1</td><td>Una sola (caso 1) o dos (caso 2)</td><td>En una de las dos, con UNIQUE o como PK</td><td>No</td><td>Discontinua con UNIQUE; continua si la FK es PK</td></tr>
+   <tr><td>1 a 0</td><td>Dos</td><td>En la tabla que siempre participa</td><td>No</td><td>Discontinua (caso 1); continua (caso 2)</td></tr>
+   <tr><td>2 relaciones</td><td>Una por entidad (+ las de cada N:M)</td><td>Una FK por cada relación</td><td>Según los mínimos</td><td>Según cada relación</td></tr>
+  </tbody></table></div>`;
+
+  const ext=`<div class="cs-card cs-ext"><div class="cs-h"><span class="tag">Ampliación</span><h4>No lo hemos dado en clase, pero sale en los ejercicios 5 y 10</h4></div>
+   <ul><li><b>Entidad débil</b> (doble rectángulo): no se identifica sola, solo junto a la entidad de la que depende. Su PK = PK de esa entidad + su clave parcial. Ejemplo: la habilidad «Q» de un campeón.</li>
+   <li><b>Relación reflexiva</b>: une una entidad consigo misma (un empleado supervisa a otros empleados). La FK apunta a la misma tabla.</li>
+   <li><b>Relación ternaria</b>: une tres entidades a la vez (jugador juega una partida con un campeón).</li></ul></div>`;
+
+  return `<section class="cheat" id="chuleta"><h2>Mini chuleta</h2><p>Lo que hemos dado en clase, en una página. Repásalo antes de empezar los ejercicios.</p>
+   <div class="cs-sec"><h3>Tipos de entidades</h3>${ents}</div>
+   <div class="cs-sec"><h3>Tipos de relaciones y qué sale de cada una</h3>${rels}</div>
+   <div class="cs-sec"><h3>Las líneas del DED</h3>${lines}</div>
+   <div class="cs-sec"><h3>Resumen rápido</h3>${sum}</div>
+   <div class="cs-sec">${ext}</div></section>`;
+}
+
+
+/* ===================== Editor del alumno ===================== */
+const ED_W=1200, ED_H=720;
+const escA=v=>esc(v).replace(/"/g,'&quot;');
+const store={get(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let uidN=0; const uid=()=>'n'+Date.now().toString(36)+(uidN++);
+const parseF=s=>{const o={};(s||'').split(' ').forEach(x=>{if(x==='pk')o.pk=1;else if(x==='null')o.nul=1;else if(x==='uq')o.uq=1;else if(x.startsWith('fk:'))o.fk=x.slice(3);});return o;};
+const joinF=o=>[o.pk&&'pk',o.nul&&'null',o.uq&&'uq',o.fk&&('fk:'+o.fk)].filter(Boolean).join(' ');
+const MODES={er:'E-R',rel:'Relacional',ded:'DED'};
+const TYPES=['INT','SMALLINT','TINYINT','VARCHAR(45)','VARCHAR(100)','CHAR(9)','DATE','TIME','DATETIME','DECIMAL(7,2)','TEXT'];
+let activeEd=null;
+class Editor{
+  constructor(ex,i){
+    this.ex=ex;this.i=i;this.mode='er';this.sel=null;this.connect=false;this.from=null;this.side='enun';this.hist=[];this.editing=false;
+    this.models={er:store.get(this.key('er'))||{nodes:[],links:[]},rel:store.get(this.key('rel'))||{t:[]},ded:store.get(this.key('ded'))||{t:[]}};
+    this.build();
+  }
+  key(m){return `cuadernoER:v1:${this.i}:${m}`}
+  get m(){return this.models[this.mode]}
+  plain(){const m=this.m;return this.mode==='er'?{nodes:m.nodes.map(n=>({id:n.id,k:n.k,n:n.n,x:n.x,y:n.y,f:n.f})),links:m.links}:{t:m.t.map(t=>({id:t.id,n:t.n,x:t.x,y:t.y,c:t.c}))};}
+  save(){store.set(this.key(this.mode),this.plain());}
+  snap(){this.hist.push({mode:this.mode,data:JSON.stringify(this.plain())});if(this.hist.length>80)this.hist.shift();}
+  undo(){for(let k=this.hist.length-1;k>=0;k--){if(this.hist[k].mode===this.mode){const h=this.hist.splice(k,1)[0];this.models[this.mode]=JSON.parse(h.data);this.sel=null;this.save();this.render();this.renderInsp();return;}}this.flash('No hay nada que deshacer.');}
+  build(){
+    const i=this.i,e=this.ex;
+    const r=document.createElement('div');r.className='ws';r.hidden=true;r.setAttribute('role','dialog');r.setAttribute('aria-modal','true');r.setAttribute('aria-label','Mi solución del ejercicio '+(i+1));
+    r.style.setProperty('--tc',`var(${e.tc})`);
+    r.innerHTML=`<div class="ws-head"><span class="exn">Ejercicio ${i+1}</span><b class="ws-title">${esc(e.title)}</b><span class="ws-sp"></span><button class="ebtn" data-act="close">Cerrar</button></div>
+     <div class="ws-body">
+      <aside class="ws-side"><div class="ws-stabs" role="tablist"><button class="ebtn" role="tab" data-side="enun" aria-selected="true">Enunciado</button><button class="ebtn" role="tab" data-side="sol" aria-selected="false">Ver solución</button></div><div class="ws-sc"></div></aside>
+      <section class="ws-center">
+       <div class="ed-modes" role="tablist">${Object.entries(MODES).map(([k,v])=>`<button class="ebtn" role="tab" data-mode="${k}" aria-selected="${k==='er'}">${v}</button>`).join('')}</div>
+       <div class="ed-tools"></div><p class="ed-hint"></p>
+       <div class="ed-cv diag"><svg viewBox="0 0 ${ED_W} ${ED_H}" width="${ED_W}" height="${ED_H}" role="img" aria-label="Tu diagrama"></svg></div>
+      </section>
+      <aside class="ws-insp ed-in"></aside>
+     </div>
+     <datalist id="types${i}">${TYPES.map(t=>`<option value="${t}">`).join('')}</datalist>`;
+    document.body.appendChild(r);this.root=r;
+    this.body=r.querySelector('.ws-body');this.sc=r.querySelector('.ws-sc');
+    this.tools=r.querySelector('.ed-tools');this.hint=r.querySelector('.ed-hint');
+    this.cv=r.querySelector('.ed-cv');this.svg=this.cv.querySelector('svg');this.insp=r.querySelector('.ws-insp');
+    r.addEventListener('click',ev=>this.onClick(ev));
+    this.svg.addEventListener('pointerdown',ev=>this.onDown(ev));
+    this.svg.addEventListener('pointermove',ev=>this.onMove(ev));
+    this.svg.addEventListener('pointerup',ev=>this.onUp(ev));
+    this.svg.addEventListener('pointercancel',ev=>this.onUp(ev));
+    this.insp.addEventListener('focusin',()=>{this.editing=false;});
+    this.insp.addEventListener('input',ev=>{const t=ev.target;if(t.type==='checkbox'||t.tagName==='SELECT')return;if(!this.editing){this.snap();this.editing=true;}this.apply(t);this.save();this.render();});
+    this.insp.addEventListener('change',ev=>{const t=ev.target;if(!(t.type==='checkbox'||t.tagName==='SELECT'))return;this.snap();this.apply(t);this.save();this.render();this.renderInsp();});
+    this.insp.addEventListener('keydown',ev=>{if(ev.key==='Enter'&&ev.target.dataset.f==='aname'){ev.preventDefault();this.addAttr(this.node(this.sel.id));}});
+    this.setMode('er');this.renderSide();
+  }
+  open(){this.root.hidden=false;document.documentElement.style.overflow='hidden';activeEd=this;this.render();}
+  close(){this.root.hidden=true;document.documentElement.style.overflow='';const b=document.querySelector(`.dowork[data-i="${this.i}"]`);if(b)b.focus();}
+  setMode(m){
+    this.mode=m;this.sel=null;this.connect=false;this.from=null;
+    this.root.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mode===m)));
+    this.cv.classList.toggle('grid',m!=='er');
+    this.renderTools();this.render();this.renderInsp();this.renderSide();
+  }
+  renderSide(){
+    this.body.classList.toggle('sol',this.side==='sol');
+    this.root.querySelectorAll('[data-side]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.side===this.side)));
+    const e=this.ex;
+    if(this.side==='enun') this.sc.innerHTML=`<div class="enun">${e.enun}</div>`;
+    else {const sol=this.mode==='er'?drawER(e.er):this.mode==='rel'?drawRef(e.ded):drawDED(e.ded);
+      this.sc.innerHTML=`<div class="ed-so-h">Solución · ${MODES[this.mode]}</div><div class="diag${this.mode==='ded'?' grid':''}">${sol}</div><p class="cap">No tiene que ser idéntica. Comprueba entidades, cardinalidades, PK, FK y nulos. Mira también «Otras soluciones» en la página, por si la tuya es otra válida.</p>`;}
+  }
+  renderTools(){
+    const B=(act,txt,cls='')=>`<button class="ebtn ${cls}" data-act="${act}">${txt}</button>`;
+    let h='';
+    if(this.mode==='er') h=B('ent','Entidad','add')+B('rel','Relación','add')+B('attr','Atributo','add')+`<button class="ebtn" data-act="connect" aria-pressed="${this.connect}">Unir dos elementos</button>`;
+    else h=B('table','Tabla','add')+B('fromer','Pasar entidades de mi E-R')+(this.mode==='ded'?B('copyrel','Copiar mis tablas del relacional'):'');
+    h+=`<span class="ed-sep"></span>`+B('undo','Deshacer')+B('del','Borrar seleccionado')+B('clear','Vaciar lienzo','danger');
+    this.tools.innerHTML=h;this.updHint();
+  }
+  updHint(){
+    let t;
+    if(this.mode==='er'){
+      if(this.connect) t=this.from?'<b>Unir:</b> ahora pulsa el segundo elemento.':'<b>Unir:</b> pulsa el primer elemento. Vuelve a pulsar «Unir dos elementos» para terminar.';
+      else t='Crea una entidad y, con ella seleccionada, añade sus atributos desde el panel: se unen y se colocan solos. Une relación y entidad, y pulsa la línea para poner el mínimo y el máximo.';
+    } else if(this.mode==='rel') t='Añade tablas y escribe sus columnas en el panel. Marca <b>FK</b> y elige a qué tabla apunta: la flecha se dibuja sola, como en ERD Plus.';
+    else t='Añade tablas con sus columnas y tipos. Las líneas continuas o discontinuas y las marcas (||, o|, o&lt;) salen solas según PK, FK, O (NULL) y UQ.';
+    this.hint.innerHTML=t;
+  }
+  flash(msg){this.hint.innerHTML=`<b>${msg}</b>`;clearTimeout(this._ft);this._ft=setTimeout(()=>this.updHint(),msg.length>90?7000:2600);}
+  pt(e){const p=this.svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(this.svg.getScreenCTM().inverse());}
+  viewCenter(){const j=()=>Math.round((Math.random()-.5)*80);return{x:Math.min(ED_W-150,Math.max(150,this.cv.scrollLeft+Math.min(this.cv.clientWidth,ED_W)/2+j())),y:Math.min(ED_H-120,Math.max(90,this.cv.scrollTop+Math.min(this.cv.clientHeight,ED_H)/2+j()))};}
+  node(id){return this.mode==='er'?this.m.nodes.find(n=>n.id===id):this.m.t.find(t=>t.id===id);}
+  select(s){this.sel=s;this.render();this.renderInsp();}
+  isE(n){return n&&(n.k==='ent'||n.k==='weak')} isR(n){return n&&(n.k==='rel'||n.k==='idrel')} isA(n){return n&&n.k==='attr'}
+  size(n){n.f=n.f||{};
+    if(this.isE(n)){n.w=Math.max(110,n.n.length*7.8+34);n.h=40;}
+    else if(this.isR(n)){n.w=Math.max(96,n.n.length*7.6+40);n.h=48;}
+    else {n.lab=(n.f.c?'( '+n.n+' )':n.n)+(n.f.o?' (O)':'');n.rx=rxOf(n.lab);n.w=2*n.rx;n.h=26;}}
+  attrsOf(o){return this.m.links.filter(l=>l.a===o.id||l.b===o.id).map(l=>this.node(l.a===o.id?l.b:l.a)).filter(n=>this.isA(n)&&!(this.isA(o)&&false));}
+  ownedAttrs(o){ // atributos que cuelgan de o (para un atributo compuesto, solo sus hijos)
+    return this.m.links.filter(l=>l.a===o.id||l.b===o.id).map(l=>({n:this.node(l.a===o.id?l.b:l.a),l})).filter(x=>this.isA(x.n)&&(!this.isA(o)||x.l.a===o.id)).map(x=>x.n);}
+  placeAttr(owner,nn){
+    this.m.nodes.forEach(n=>this.size(n));
+    const others=this.m.nodes.filter(n=>n!==nn);
+    const dirs=this.m.links.filter(l=>l.a===owner.id||l.b===owner.id).map(l=>this.node(l.a===owner.id?l.b:l.a)).filter(n=>n&&!this.isA(n)).map(n=>Math.atan2(n.y-owner.y,n.x-owner.x));
+    if(this.isA(owner)){const par=this.m.links.filter(l=>l.b===owner.id).map(l=>this.node(l.a)).find(Boolean);if(par)dirs.push(Math.atan2(par.y-owner.y,par.x-owner.x));}
+    const angd=(a,b)=>{let d=Math.abs(a-b)%(2*Math.PI);return d>Math.PI?2*Math.PI-d:d;};
+    let best=null;
+    for(let ring=0;ring<4;ring++)for(let k=0;k<24;k++){
+      const a=-Math.PI/2+k*Math.PI/12;
+      const x=owner.x+Math.cos(a)*(owner.w/2+nn.rx+22+ring*46), y=owner.y+Math.sin(a)*(owner.h/2+13+26+ring*30);
+      if(x-nn.rx<6||x+nn.rx>ED_W-6||y<20||y>ED_H-20)continue;
+      if(others.some(o=>Math.abs(x-o.x)<(nn.w+o.w)/2+8&&Math.abs(y-o.y)<(26+o.h)/2+6))continue;
+      const away=dirs.length?Math.min(...dirs.map(d=>angd(a,d))):Math.PI;
+      const sc=ring*1.6+(away<0.6?3:0)-away*0.5;
+      if(!best||sc<best.sc)best={x,y,sc};
+    }
+    if(!best)best={x:owner.x,y:owner.y-70};
+    nn.x=Math.round(best.x);nn.y=Math.round(best.y);
+  }
+  addAttr(owner){
+    if(!owner)return;this.snap();
+    const nn={id:uid(),k:'attr',n:'Atributo',x:owner.x,y:owner.y,f:{}};this.size(nn);
+    this.m.nodes.push(nn);this.m.links.push({id:uid(),a:owner.id,b:nn.id,c:null});
+    if(this.isA(owner))owner.f.c=true;
+    this.placeAttr(owner,nn);this.save();
+    this.sel={type:'node',id:owner.id};this.render();this.renderInsp();
+    const ins=this.insp.querySelectorAll('[data-f=aname]');const last=[...ins].find(x=>x.dataset.aid===nn.id);if(last){last.focus();last.select();}
+  }
+  arrange(owner){
+    const at=this.ownedAttrs(owner);if(!at.length)return;this.snap();
+    at.forEach(a=>{a.x=-9999;a.y=-9999;});
+    at.forEach(a=>this.placeAttr(owner,a));this.save();this.render();
+  }
+  onClick(e){
+    if(e.target.closest('[data-act=close]')){this.close();return;}
+    const sd=e.target.closest('[data-side]');if(sd){this.side=sd.dataset.side;this.renderSide();return;}
+    const md=e.target.closest('[data-mode]');if(md){this.setMode(md.dataset.mode);return;}
+    const sg=e.target.closest('[data-card]');if(sg){const l=this.m.links.find(x=>x.id===sg.dataset.link);if(!l)return;this.snap();const cur=this.mm(l);cur[sg.dataset.card]=sg.dataset.v;l.mn=cur.mn;l.mx=cur.mx;l.c=(cur.mn!=null&&cur.mx!=null)?`(${cur.mn},${cur.mx})`:null;this.save();this.render();this.renderInsp();return;}
+    const b=e.target.closest('button[data-act]');if(!b)return;const a=b.dataset.act;activeEd=this;
+    if(a==='ent'||a==='rel'){this.snap();const c=this.viewCenter();const n={id:uid(),k:a,n:a==='ent'?'entidad':'relacion',x:c.x,y:c.y,f:{}};this.m.nodes.push(n);this.save();this.select({type:'node',id:n.id});this.focusName();return;}
+    if(a==='attr'){const s=this.sel&&this.sel.type==='node'?this.node(this.sel.id):null;
+      if(s){this.addAttr(s);return;}
+      this.snap();const c=this.viewCenter();const n={id:uid(),k:'attr',n:'Atributo',x:c.x,y:c.y,f:{}};this.m.nodes.push(n);this.save();this.select({type:'node',id:n.id});this.focusName();this.flash('Consejo: selecciona antes una entidad y el atributo se unirá a ella solo.');return;}
+    if(a==='addattr'){this.addAttr(this.node(this.sel.id));return;}
+    if(a==='delattr'){this.snap();const id=b.dataset.aid;this.m.nodes=this.m.nodes.filter(n=>n.id!==id);this.m.links=this.m.links.filter(l=>l.a!==id&&l.b!==id);this.save();this.render();this.renderInsp();return;}
+    if(a==='arrange'){this.arrange(this.node(this.sel.id));return;}
+    if(a==='table'){this.snap();const c=this.viewCenter();const t={id:uid(),n:'tabla'+(this.m.t.length+1),x:Math.round(c.x-90),y:Math.round(c.y-60),c:[['Cod','INT','pk']]};this.m.t.push(t);this.save();this.select({type:'node',id:t.id});this.focusName();return;}
+    if(a==='connect'){this.connect=!this.connect;this.from=null;b.setAttribute('aria-pressed',String(this.connect));this.updHint();this.render();return;}
+    if(a==='undo'){this.undo();return;}
+    if(a==='del'||a==='delnode'){this.deleteSel();return;}
+    if(a==='clear'){if(b.dataset.armed){this.snap();this.models[this.mode]=this.mode==='er'?{nodes:[],links:[]}:{t:[]};this.sel=null;this.save();this.render();this.renderInsp();this.flash('Lienzo vacío. Puedes recuperarlo con «Deshacer».');delete b.dataset.armed;b.textContent='Vaciar lienzo';}else{b.dataset.armed=1;b.textContent='¿Seguro? Pulsa otra vez';setTimeout(()=>{if(b.isConnected){delete b.dataset.armed;b.textContent='Vaciar lienzo';}},3000);}return;}
+    if(a==='fromer'){this.importER();return;}
+    if(a==='copyrel'){const src=this.models.rel.t;if(!src.length){this.flash('Tu relacional está vacío.');return;}this.snap();this.models.ded={t:src.map(t=>({id:uid(),n:t.n,x:t.x,y:t.y,c:t.c.map(c=>{const f=parseF(c[2]);return[c[0],c[1]&&c[1]!=='INT'?c[1]:(f.pk||f.fk?'INT':'VARCHAR(45)'),c[2]];})}))};this.sel=null;this.save();this.render();this.renderInsp();this.flash('Tablas copiadas. Ahora ajusta los tipos de cada columna.');return;}
+    if(a==='addcol'){const t=this.node(this.sel.id);this.snap();t.c.push(['',this.mode==='ded'?'VARCHAR(45)':'INT','']);this.save();this.render();this.renderInsp();const ins=this.insp.querySelectorAll('[data-f=cname]');ins[ins.length-1]?.focus();return;}
+    if(a==='delcol'){const t=this.node(this.sel.id);this.snap();t.c.splice(+b.dataset.ci,1);this.save();this.render();this.renderInsp();return;}
+  }
+  cardHTML(rl,first){
+    const ls=this.m.links.filter(x=>(x.a===rl.id||x.b===rl.id)&&this.cardable(x)).map(x=>({l:x,e:this.node(x.a===rl.id?x.b:x.a)})).filter(x=>x.e);
+    const segb=(l,k,v)=>{const c=this.mm(l);return `<button class="segb" data-card="${k}" data-v="${v}" data-link="${l.id}" aria-pressed="${c[k]===v}">${v}</button>`;};
+    const q=(from,to,l)=>{const c=this.mm(l);return `<div class="cq"><div class="in-q"><b>${esc(from)}</b>: ¿cuántos <b>${esc(to)}</b> puede tener como…</div>
+      <div class="cardrow"><span><b>máximo</b>?</span><div class="seg">${segb(l,'mx','1')}${segb(l,'mx','N')}</div></div>
+      <div class="cardrow"><span><b>mínimo</b>?</span><div class="seg">${segb(l,'mn','0')}${segb(l,'mn','1')}</div></div>
+      <p class="in-p">Se escribe junto a «${esc(to)}»: <b class="cd">(${c.mn??'?'},${c.mx??'?'})</b></p></div>`;};
+    let h=`<p class="in-p">Relación <b>${esc(rl.n)}</b>. Responde las dos preguntas, una desde cada entidad.</p>`;
+    if(ls.length===2){
+      const A=ls.find(x=>x.e===first)||ls[0],B=ls.find(x=>x!==A);
+      h+=q(A.e.n,B.e.n,B.l)+q(B.e.n,A.e.n,A.l);
+    } else if(ls.length>2){
+      h=`<p class="in-p">Relación <b>${esc(rl.n)}</b> con ${ls.length} entidades (ternaria): fija las otras y cuenta esta.</p>`;
+      ls.forEach(x=>{const o=ls.filter(y=>y!==x).map(y=>y.e.n).join(' + ');h+=q(o,x.e.n,x.l);});
+    } else if(ls.length===1){h+=`<p class="in-p">Une también la relación con la otra entidad para poder poner las cardinalidades.</p>`;}
+    return h+`<p class="in-p">Mínimo 0 = puede no tener ninguno. Mínimo 1 = siempre tiene al menos uno. Máximo N = puede tener muchos.</p>`;
+  }
+  importER(){
+    const er=this.models.er,N={};er.nodes.forEach(n=>N[n.id]=n);
+    const ents=er.nodes.filter(n=>n.k==='ent'||n.k==='weak');
+    if(!ents.length){this.flash('Tu E-R no tiene entidades todavía.');return;}
+    const kids=o=>er.links.filter(l=>l.a===o.id||l.b===o.id).map(l=>({n:N[l.a===o.id?l.b:l.a],l})).filter(x=>x.n&&x.n.k==='attr'&&(o.k!=='attr'||x.l.a===o.id)).map(x=>x.n);
+    const guess=(nm,f)=>f.pk?'INT':/^fec/i.test(nm)?'DATE':'VARCHAR(45)';
+    let skipped=0;
+    const cols=e=>{const out=[];const add=a=>{const f=a.f||{};
+        if(f.d||f.m){skipped++;return;}
+        if(f.c){const parts=kids(a);if(parts.length){parts.forEach(add);return;}}
+        const fl={pk:f.k||f.p?1:0,nul:f.o?1:0};out.push([a.n,guess(a.n,fl),joinF(fl)]);};
+      kids(e).forEach(add);return out;};
+    const have=new Set(this.m.t.map(t=>t.n.toLowerCase()));
+    const nuevos=ents.filter(e=>!have.has(e.n.toLowerCase())).sort((a,b)=>(a.y-b.y)||(a.x-b.x));
+    if(!nuevos.length){this.flash('Ya tienes una tabla para cada entidad de tu E-R.');return;}
+    this.snap();
+    let y0=this.m.t.length?Math.max(...this.m.t.map(t=>t.y+26+t.c.length*20+8))+50:40,col=0,rowH=0;
+    nuevos.forEach(e=>{const c=cols(e);const h=26+c.length*20+8;
+      if(col===4){col=0;y0+=rowH+50;rowH=0;}
+      this.m.t.push({id:uid(),n:e.n,x:40+col*285,y:Math.min(y0,ED_H-60),c});col++;rowH=Math.max(rowH,h);});
+    this.sel=null;this.save();this.render();this.renderInsp();
+    this.flash(`Añadidas ${nuevos.length} tabla(s) con sus atributos.${skipped?' No he pasado los derivados (no se guardan) ni los multivaluados (van en tabla aparte).':''} Ahora pon tú las FK y las tablas de las relaciones.`);
+  }
+  mm(l){if(l.mn!=null||l.mx!=null)return{mn:l.mn??null,mx:l.mx??null};if(l.c){const m=l.c.match(/\((\w),(\w)\)/);return{mn:m[1],mx:m[2]};}return{mn:null,mx:null};}
+  focusName(){const n=this.insp.querySelector('[data-f=name],[data-f=tname]');if(n){n.focus();n.select();}}
+  deleteSel(){
+    const s=this.sel;if(!s){this.flash('Primero pulsa el elemento que quieres borrar.');return;}
+    this.snap();
+    if(this.mode==='er'){if(s.type==='node'){this.m.nodes=this.m.nodes.filter(n=>n.id!==s.id);this.m.links=this.m.links.filter(l=>l.a!==s.id&&l.b!==s.id);}else this.m.links=this.m.links.filter(l=>l.id!==s.id);}
+    else {const t=this.node(s.id);this.m.t=this.m.t.filter(x=>x.id!==s.id);if(t)this.m.t.forEach(o=>o.c.forEach(c=>{const f=parseF(c[2]);if(f.fk===t.n){delete f.fk;c[2]=joinF(f);}}));}
+    this.sel=null;this.save();this.render();this.renderInsp();
+  }
+  onDown(e){
+    activeEd=this;
+    const g=e.target.closest('[data-id]'),hl=e.target.closest('[data-lid]');
+    if(this.mode==='er'&&this.connect){
+      if(g){const id=g.dataset.id;if(!this.from){this.from=id;}else if(id!==this.from){this.addLink(this.from,id);this.from=null;}}
+      else this.from=null;
+      this.updHint();this.render();return;
+    }
+    if(g){const n=this.node(g.dataset.id);if(!n)return;const p=this.pt(e);
+      const kids=this.mode==='er'&&!this.isA(n)?this.ownedAttrs(n).map(a=>({a,dx:a.x-n.x,dy:a.y-n.y})):[];
+      this.drag={n,ox:p.x-n.x,oy:p.y-n.y,moved:false,kids};this.svg.setPointerCapture(e.pointerId);e.preventDefault();if(!this.sel||this.sel.id!==n.id)this.select({type:'node',id:n.id});}
+    else if(hl) this.select({type:'link',id:hl.dataset.lid});
+    else if(this.sel) this.select(null);
+  }
+  onMove(e){
+    const d=this.drag;if(!d)return;const p=this.pt(e);
+    if(!d.moved){this.snap();d.moved=true;}
+    d.n.x=Math.round(Math.min(ED_W-20,Math.max(20,p.x-d.ox)));d.n.y=Math.round(Math.min(ED_H-20,Math.max(20,p.y-d.oy)));
+    d.kids.forEach(k=>{k.a.x=d.n.x+k.dx;k.a.y=d.n.y+k.dy;});
+    this.render();
+  }
+  onUp(){if(this.drag){if(this.drag.moved)this.save();this.drag=null;}}
+  addLink(a,b){
+    const L=this.m.links;if(L.some(l=>(l.a===a&&l.b===b)||(l.a===b&&l.b===a))){this.flash('Esos dos elementos ya están unidos.');return;}
+    this.snap();const l={id:uid(),a,b,c:null};L.push(l);this.save();
+    if(this.cardable(l)){this.sel={type:'link',id:l.id};this.renderInsp();this.flash('Unidos. Ahora elige el mínimo y el máximo en el panel.');}
+  }
+  cardable(l){const a=this.node(l.a),b=this.node(l.b);return (this.isR(a)&&this.isE(b))||(this.isR(b)&&this.isE(a));}
+  relType(r){const cs=this.m.links.filter(l=>(l.a===r.id||l.b===r.id)&&this.cardable(l)).map(l=>this.mm(l).mx);if(cs.length===3)return 'ternaria';if(cs.length!==2||cs.some(c=>c==null))return '';const mx=cs.map(c=>c!=='1');return mx[0]&&mx[1]?'N:M':mx[0]||mx[1]?'1:N':'1:1';}
+  render(){if(this.mode==='er') this.renderER(); else this.renderTables();}
+  renderER(){
+    const m=this.m,N={};m.nodes.forEach(n=>{N[n.id]=n;this.size(n);});
+    let L='',S='',MK='',TX='';const sel=this.sel;
+    m.links.forEach(l=>{const a=N[l.a],b=N[l.b];if(!a||!b)return;const on=sel&&sel.type==='link'&&sel.id===l.id;
+      L+=seg([a.x,a.y],[b.x,b.y],'ln'+(on?' lsel':''))+`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" class="hitl" data-lid="${l.id}"/>`;
+      const r=this.isR(a)&&this.isE(b)?a:this.isR(b)&&this.isE(a)?b:null;
+      if(r){const en=r===a?b:a;const P=hitRect(en.x,en.y,en.w,en.h,r.x-en.x,r.y-en.y);const len=Math.hypot(r.x-P[0],r.y-P[1])||1;const u=[(r.x-P[0])/len,(r.y-P[1])/len];
+        const c=this.mm(l),full=c.mn!=null&&c.mx!=null;
+        if(full)MK+=marker(P,u,c.mx!=='1',c.mn==='0');
+        const n=[-u[1],u[0]],lp=[P[0]+u[0]*32+n[0]*13,P[1]+u[1]*32+n[1]*13],an=n[0]<-.35?'end':n[0]>.35?'start':'middle';
+        TX+=`<text x="${f1(lp[0])}" y="${f1(lp[1]+4)}" text-anchor="${an}" class="card${full?'':' cardq'}">(${c.mn??'?'},${c.mx??'?'})</text>`;}
+    });
+    m.nodes.forEach(n=>{let g='';
+      if(this.isE(n)){g+=`<rect x="${f1(n.x-n.w/2)}" y="${n.y-20}" width="${f1(n.w)}" height="40" class="ent"/>`;if(n.k==='weak')g+=`<rect x="${f1(n.x-n.w/2+4)}" y="${n.y-16}" width="${f1(n.w-8)}" height="32" class="ent" style="fill:none"/>`;g+=`<text x="${n.x}" y="${n.y+4.5}" text-anchor="middle" class="tb">${esc(n.n)}</text>`;}
+      else if(this.isR(n)){const w=n.w/2,h=24;g+=`<polygon points="${n.x},${n.y-h} ${n.x+w},${n.y} ${n.x},${n.y+h} ${n.x-w},${n.y}" class="dia"/>`;if(n.k==='idrel')g+=`<polygon points="${n.x},${n.y-h+6} ${n.x+w-11},${n.y} ${n.x},${n.y+h-6} ${n.x-w+11},${n.y}" class="dia" style="fill:none"/>`;const t=this.relType(n);g+=`<text x="${n.x}" y="${n.y+(t?1:4)}" text-anchor="middle" class="tr">${esc(n.n)}</text>`+(t?`<text x="${n.x}" y="${n.y+14}" text-anchor="middle" class="tt">${t}</text>`:'');}
+      else g+=ovalSVG({x:n.x,y:n.y,rx:n.rx,label:n.lab,k:n.f.k,p:n.f.p,d:n.f.d,m:n.f.m});
+      if(sel&&sel.type==='node'&&sel.id===n.id)g+=`<rect x="${f1(n.x-n.w/2-6)}" y="${n.y-n.h/2-6}" width="${f1(n.w+12)}" height="${n.h+12}" rx="6" class="selbox"/>`;
+      if(this.from===n.id)g+=`<rect x="${f1(n.x-n.w/2-6)}" y="${n.y-n.h/2-6}" width="${f1(n.w+12)}" height="${n.h+12}" rx="6" class="frombox"/>`;
+      S+=`<g class="node" data-id="${n.id}">${g}</g>`;});
+    const empty=m.nodes.length?'':`<text x="${ED_W/2}" y="${ED_H/2}" text-anchor="middle" class="emp">Lienzo vacío. Empieza con «+ Entidad».</text>`;
+    this.svg.innerHTML=L+S+MK+TX+empty;
+  }
+  renderTables(){
+    const spec={W:ED_W,H:ED_H,t:this.m.t};let inner='',boxes=[];
+    if(this.mode==='ded'){inner=drawDED(spec).replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');boxes=this.m.t.map(t=>[t,t.x,t.y,t.w,t.h]);}
+    else {inner=drawRef(spec,true).replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');boxes=this.m.t.map(t=>[t,t.x,t.y,t.rw,18+t.rh]);}
+    let H='';boxes.forEach(([t,x,y,w,h])=>{H+=`<rect x="${x}" y="${y}" width="${f1(w)}" height="${f1(h)}" class="hitbox" data-id="${t.id}"/>`;if(this.sel&&this.sel.id===t.id)H+=`<rect x="${x-6}" y="${y-6}" width="${f1(w+12)}" height="${f1(h+12)}" rx="8" class="selbox" pointer-events="none"/>`;});
+    const empty=this.m.t.length?'':`<text x="${ED_W/2}" y="${ED_H/2}" text-anchor="middle" class="emp">Lienzo vacío. Empieza con «+ Tabla».</text>`;
+    this.svg.innerHTML=inner+H+empty;
+  }
+  renderInsp(){
+    const s=this.sel;let h='';
+    const chk=(f,txt,on)=>`<label class="chk"><input type="checkbox" data-f="${f}" ${on?'checked':''}> ${txt}</label>`;
+    const tg=(f,txt,on,aid,title)=>`<label class="tg" title="${title}"><input type="checkbox" data-f="${f}" data-aid="${aid}" ${on?'checked':''}>${txt}</label>`;
+    if(!s){h=`<div class="in-h">Nada seleccionado</div><p class="in-p">${this.mode==='er'?'Pulsa una entidad, relación, atributo o línea para editarla.':'Pulsa una tabla para editar su nombre y sus columnas.'}</p><p class="in-p">Tu trabajo se guarda solo en este navegador.</p>`;}
+    else if(this.mode==='er'&&s.type==='node'){const n=this.node(s.id);if(!n){this.sel=null;return this.renderInsp();}
+      const kind=this.isE(n)?'Entidad':this.isR(n)?'Relación':'Atributo';
+      h+=`<div class="in-h">${kind}</div><label class="fld">Nombre<input type="text" data-f="name" value="${escA(n.n)}"></label>`;
+      if(this.isE(n)) h+=chk('weak','Entidad débil (doble rectángulo)',n.k==='weak');
+      if(this.isR(n)){h+=chk('idrel','Relación identificadora (doble rombo)',n.k==='idrel');const t=this.relType(n);h+=`<p class="in-p">${t?`Tipo según tus cardinalidades: <b>${t}</b>`:'El tipo (1:1, 1:N, N:M) aparece al poner el mínimo y el máximo de sus dos líneas.'}</p><div class="in-sub">Cardinalidades</div>`+this.cardHTML(n,null);}
+      if(this.isA(n)){const f=n.f;h+=chk('f-k','Clave primaria (subrayado)',f.k)+chk('f-p','Clave parcial (subrayado discontinuo)',f.p)+chk('f-o','Opcional (O)',f.o)+chk('f-d','Derivado o calculado (óvalo discontinuo)',f.d)+chk('f-m','Multivaluado (doble óvalo)',f.m)+chk('f-c','Compuesto ( )',f.c);}
+      const at=this.ownedAttrs(n);
+      h+=`<div class="in-sub">${this.isA(n)?'Partes del atributo compuesto':'Atributos'}</div>`;
+      at.forEach(a=>{const f=a.f||{};h+=`<div class="colrow"><input type="text" data-f="aname" data-aid="${a.id}" value="${escA(a.n)}" aria-label="Nombre del atributo">
+        ${tg('af-k','PK',f.k,a.id,'Clave primaria')}${n.k==='weak'?tg('af-p','Parcial',f.p,a.id,'Clave parcial'):''}${tg('af-o','O',f.o,a.id,'Opcional')}${tg('af-d','Deriv.',f.d,a.id,'Derivado o calculado')}${tg('af-m','Multi',f.m,a.id,'Multivaluado')}
+        <button class="xbtn" data-act="delattr" data-aid="${a.id}" aria-label="Borrar atributo">✕</button></div>`;});
+      h+=`<div class="in-actions"><button class="ebtn add" data-act="addattr">Atributo</button>${at.length>1?'<button class="ebtn" data-act="arrange">Recolocar atributos</button>':''}</div>
+        <p class="in-p">Escribe el nombre y pulsa <b>Intro</b> para crear el siguiente. Se unen y se colocan solos; al mover ${this.isA(n)?'el atributo':kind==='Entidad'?'la entidad':'la relación'}, se mueven con ${this.isA(n)?'él':'ella'}.</p>
+        <div class="in-actions"><button class="ebtn danger" data-act="delnode">Borrar ${kind.toLowerCase()}</button></div>`;}
+    else if(this.mode==='er'){const l=this.m.links.find(x=>x.id===s.id);if(!l){this.sel=null;return this.renderInsp();}
+      h+=`<div class="in-h">Línea</div>`;
+      if(this.cardable(l)){const a=this.node(l.a),b=this.node(l.b),en=this.isE(a)?a:b,rl=this.isE(a)?b:a;
+        h+=this.cardHTML(rl,en);}
+      else h+=`<p class="in-p">Línea simple (une un atributo con su entidad o relación).</p>`;
+      h+=`<div class="in-actions"><button class="ebtn danger" data-act="delnode">Borrar línea</button></div>`;}
+    else {const t=this.node(s.id);if(!t){this.sel=null;return this.renderInsp();}const ded=this.mode==='ded',names=this.m.t.map(x=>x.n);
+      h+=`<div class="in-h">Tabla</div><label class="fld">Nombre<input type="text" data-f="tname" value="${escA(t.n)}"></label><div class="in-sub">Columnas</div>`;
+      t.c.forEach((c,k)=>{const f=parseF(c[2]);
+        h+=`<div class="colrow"><input type="text" data-f="cname" data-ci="${k}" value="${escA(c[0])}" placeholder="Columna" aria-label="Nombre de la columna">${ded?`<input type="text" data-f="ctype" data-ci="${k}" value="${escA(c[1])}" list="types${this.i}" placeholder="Tipo" aria-label="Tipo">`:''}
+        <label class="tg"><input type="checkbox" data-f="pk" data-ci="${k}" ${f.pk?'checked':''}>PK</label><label class="tg"><input type="checkbox" data-f="fk" data-ci="${k}" ${f.fk?'checked':''}>FK</label><label class="tg"><input type="checkbox" data-f="nul" data-ci="${k}" ${f.nul?'checked':''}>O</label><label class="tg"><input type="checkbox" data-f="uq" data-ci="${k}" ${f.uq?'checked':''}>UQ</label>
+        <button class="xbtn" data-act="delcol" data-ci="${k}" aria-label="Borrar columna">✕</button>
+        ${f.fk?`<select data-f="fkt" data-ci="${k}" aria-label="Tabla a la que apunta">${names.map(nm=>`<option ${nm===f.fk?'selected':''}>${esc(nm)}</option>`).join('')}</select>`:''}</div>`;});
+      h+=`<div class="in-actions"><button class="ebtn add" data-act="addcol">Columna</button><button class="ebtn danger" data-act="delnode">Borrar tabla</button></div>
+      <p class="in-p">PK = clave primaria · FK = clave ajena (elige la tabla) · O = admite NULL · UQ = UNIQUE.</p>`;}
+    this.insp.innerHTML=h;
+  }
+  apply(el){
+    const f=el.dataset.f,s=this.sel;if(!s)return;
+    if(this.mode==='er'){
+      if(el.dataset.aid){const a=this.node(el.dataset.aid);if(!a)return;a.f=a.f||{};
+        if(f==='aname')a.n=el.value;else{const k=f.slice(3);a.f[k]=el.checked;if(k==='k'&&el.checked)a.f.p=false;if(k==='p'&&el.checked)a.f.k=false;}return;}
+      const n=this.node(s.id);if(!n)return;
+      if(f==='name')n.n=el.value;else if(f==='weak')n.k=el.checked?'weak':'ent';else if(f==='idrel')n.k=el.checked?'idrel':'rel';
+      else if(f.startsWith('f-')){n.f[f.slice(2)]=el.checked;if(f==='f-k'&&el.checked)n.f.p=false;if(f==='f-p'&&el.checked)n.f.k=false;}
+      return;
+    }
+    const t=this.node(s.id);if(!t)return;
+    if(f==='tname'){const old=t.n;t.n=el.value;this.m.t.forEach(o=>o.c.forEach(c=>{const g=parseF(c[2]);if(g.fk===old){g.fk=t.n;c[2]=joinF(g);}}));return;}
+    const c=t.c[+el.dataset.ci];if(!c)return;
+    if(f==='cname')c[0]=el.value;else if(f==='ctype')c[1]=el.value;
+    else {const g=parseF(c[2]);
+      if(f==='pk'||f==='nul'||f==='uq')g[f]=el.checked?1:0;
+      else if(f==='fk')g.fk=el.checked?(this.m.t.find(o=>o!==t)||t).n:null;
+      else if(f==='fkt')g.fk=el.value;
+      c[2]=joinF(g);}
+  }
+}
+document.addEventListener('keydown',e=>{
+  if(!activeEd||activeEd.root.hidden)return;
+  const tg=e.target.tagName,typing=tg==='INPUT'||tg==='SELECT'||tg==='TEXTAREA';
+  if(e.key==='Escape'&&!typing){activeEd.close();return;}
+  if(typing||!activeEd.sel)return;
+  if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();activeEd.deleteSel();}
+});
+
+function build(){
+  nav(); legend();
+  const main=document.getElementById('app');
+  let html=cheatHTML();
+  [[1,'Parte 1 · Ejercicios temáticos','FNAF, Valorant, Genshin Impact, Fortnite y League of Legends. Uno fácil, dos de dificultad media y dos difíciles.'],
+   [2,'Parte 2 · Ejercicios clásicos','El tipo de enunciado que cae en el examen, con la misma progresión de dificultad.']].forEach(([p,h,d])=>{
+    html+=`<section class="part"><h2>${h}</h2><p>${d}</p>${EX.map((e,i)=>e.part===p?article(e,i):'').join('')}</section>`;
+  });
+  main.innerHTML=html;
+  main.addEventListener('click',ev=>{
+    const dw=ev.target.closest('.dowork');
+    if(dw){const i=+dw.dataset.i;if(!EX[i]._ed)EX[i]._ed=new Editor(EX[i],i);EX[i]._ed.open();return;}
+    const rv=ev.target.closest('.reveal');
+    if(rv){const sol=document.getElementById('sol'+rv.dataset.i);sol.hidden=!sol.hidden;rv.textContent=sol.hidden?'Ver solución':'Ocultar solución';rv.setAttribute('aria-expanded',String(!sol.hidden));return;}
+    const tb=ev.target.closest('.tab');
+    if(tb){const sol=tb.closest('.sol');sol.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',String(b===tb)));sol.querySelectorAll('.panel').forEach(p=>p.hidden=p.dataset.p!==tb.dataset.p);}
+  });
+}
+build();
+</script>
+
+</body></html>
