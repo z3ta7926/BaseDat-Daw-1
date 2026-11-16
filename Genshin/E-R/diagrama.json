@@ -152,7 +152,7 @@
    "id": "nmwjwsf7k1l7d4sb",
    "k": "ent",
    "n": "rareza",
-   "x": 2480,
+   "x": 2485,
    "y": 1830,
    "f": {}
   },
@@ -160,7 +160,7 @@
    "id": "nmwjwsq6g1l8y5un",
    "k": "attr",
    "n": "CodRareza",
-   "x": 2342,
+   "x": 2347,
    "y": 1788,
    "f": {
     "k": true,
@@ -171,7 +171,7 @@
    "id": "nmwjwsy341le5o4d",
    "k": "attr",
    "n": "NombreRareza",
-   "x": 2608,
+   "x": 2613,
    "y": 1775,
    "f": {}
   },
