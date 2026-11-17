@@ -1,0 +1,28 @@
+{
+ "nodes": [
+  {
+   "id": "nmwjwjgdo1kmu0xo",
+   "k": "ent",
+   "n": "Especies",
+   "x": 2860,
+   "y": 2000,
+   "f": {}
+  },
+  {
+   "id": "nmwjwjgdo1knaniz",
+   "k": "ent",
+   "n": "Hábitats",
+   "x": 3140,
+   "y": 2000,
+   "f": {
+    "at": [
+     "; naturales",
+     "continente",
+     "distintas zonas del parque y que una zona puede ser recorrida por diferentes"
+    ]
+   }
+  }
+ ],
+ "links": [],
+ "notes": []
+}
