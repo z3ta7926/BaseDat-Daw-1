@@ -148,8 +148,8 @@
    "id": "nmwmi3kmf51jxje",
    "k": "attr",
    "n": "CodVehiculo",
-   "x": 2780,
-   "y": 1990,
+   "x": 2778,
+   "y": 1979,
    "f": {}
   },
   {
@@ -164,16 +164,24 @@
    "id": "nmwmi4m2t551h8a",
    "k": "attr",
    "n": "MarcaVehiculo",
-   "x": 2770,
+   "x": 2778,
    "y": 2068,
    "f": {}
   },
   {
    "id": "nmwmi5d3357tlys",
    "k": "attr",
-   "n": "atributo",
+   "n": "ModeloVehiculo",
    "x": 2664,
    "y": 2105,
+   "f": {}
+  },
+  {
+   "id": "nmwmi6y4t590tg7",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2785,
+   "y": 2025,
    "f": {}
   }
  ],
@@ -318,6 +326,14 @@
    "id": "nmwmi5d3358i0ne",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmi5d3357tlys",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi6y4t5aput2",
+   "a": "nmwmi2cq74yrbnu",
+   "b": "nmwmi6y4t590tg7",
    "c": null,
    "mn": null,
    "mx": null
