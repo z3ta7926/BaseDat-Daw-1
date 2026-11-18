@@ -130,8 +130,8 @@
    "id": "nmwmm0hhz1oo2zof",
    "k": "attr",
    "n": "CodRecorrido",
-   "x": 2184,
-   "y": 1579,
+   "x": 2168,
+   "y": 1569,
    "f": {
     "k": true,
     "p": false
@@ -165,9 +165,11 @@
    "id": "nmwmm30rn1owrddh",
    "k": "attr",
    "n": "NumEspecies",
-   "x": 2150,
-   "y": 1613,
-   "f": {}
+   "x": 2095,
+   "y": 1610,
+   "f": {
+    "d": true
+   }
   },
   {
    "id": "nmwmm43j01oyr75p",
@@ -181,8 +183,8 @@
    "id": "nmwmm4cck1ozzlka",
    "k": "attr",
    "n": "NombreMonitor",
-   "x": 2950,
-   "y": 1687,
+   "x": 2896,
+   "y": 1745,
    "f": {}
   },
   {
@@ -207,32 +209,32 @@
    "id": "nmwmm55un1p5k8r1",
    "k": "attr",
    "n": "FechaTrabajo",
-   "x": 2813,
-   "y": 1693,
+   "x": 2802,
+   "y": 1700,
    "f": {}
   },
   {
    "id": "nmwmm5zat1p78uws",
    "k": "attr",
    "n": "TipoVia",
-   "x": 3219,
-   "y": 1635,
+   "x": 3227,
+   "y": 1591,
    "f": {}
   },
   {
    "id": "nmwmm63gt1p9plnq",
    "k": "attr",
    "n": "NomVia",
-   "x": 3077,
-   "y": 1690,
+   "x": 3230,
+   "y": 1700,
    "f": {}
   },
   {
    "id": "nmwmm668f1pbqrzq",
    "k": "attr",
    "n": "CodPost",
-   "x": 3175,
-   "y": 1680,
+   "x": 3265,
+   "y": 1643,
    "f": {}
   },
   {
@@ -413,8 +415,8 @@
    "id": "nmwmmup371qqpa2k",
    "k": "attr",
    "n": "HorasRecorrido",
-   "x": 2970,
-   "y": 1720,
+   "x": 3026,
+   "y": 1719,
    "f": {}
   },
   {
