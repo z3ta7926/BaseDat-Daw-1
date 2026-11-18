@@ -163,9 +163,17 @@
   {
    "id": "nmwmi4m2t551h8a",
    "k": "attr",
-   "n": "atributo",
+   "n": "MarcaVehiculo",
    "x": 2770,
    "y": 2068,
+   "f": {}
+  },
+  {
+   "id": "nmwmi5d3357tlys",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2664,
+   "y": 2105,
    "f": {}
   }
  ],
@@ -302,6 +310,14 @@
    "id": "nmwmi4m2t56km96",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmi4m2t551h8a",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi5d3358i0ne",
+   "a": "nmwmi2cq74yrbnu",
+   "b": "nmwmi5d3357tlys",
    "c": null,
    "mn": null,
    "mx": null
