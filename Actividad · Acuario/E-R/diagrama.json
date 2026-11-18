@@ -1,5 +1,63 @@
 {
- "nodes": [],
- "links": [],
+ "nodes": [
+  {
+   "id": "nmwmlq3st1nugp1q",
+   "k": "ent",
+   "n": "especies",
+   "x": 2341,
+   "y": 1633,
+   "f": {}
+  },
+  {
+   "id": "nmwmlq9kf1nv612j",
+   "k": "attr",
+   "n": "NombreComun",
+   "x": 2341,
+   "y": 1549,
+   "f": {}
+  },
+  {
+   "id": "nmwmlqhdt1nxv91i",
+   "k": "attr",
+   "n": "NomCient",
+   "x": 2426,
+   "y": 1590,
+   "f": {}
+  },
+  {
+   "id": "nmwmlqosf1nzrpx4",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2462,
+   "y": 1633,
+   "f": {}
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwmlq9kf1nw1izp",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmlq9kf1nv612j",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlqhdt1nyjmu5",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmlqhdt1nxv91i",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlqosf1o0yg2b",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmlqosf1nzrpx4",
+   "c": null,
+   "mn": null,
+   "mx": null
+  }
+ ],
  "notes": []
 }
