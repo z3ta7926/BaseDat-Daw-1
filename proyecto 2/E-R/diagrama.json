@@ -127,6 +127,22 @@
    "x": 2301,
    "y": 2118,
    "f": {}
+  },
+  {
+   "id": "nmwmi2cq74yrbnu",
+   "k": "ent",
+   "n": "vehiculos",
+   "x": 2664,
+   "y": 2025,
+   "f": {}
+  },
+  {
+   "id": "nmwmi2nv34ztt1i",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2664,
+   "y": 1964,
+   "f": {}
   }
  ],
  "links": [
@@ -230,6 +246,14 @@
    "id": "nmwmi0gy84xfjtx",
    "a": "nmwmhxjzb4pf9rv",
    "b": "nmwmi0gy84w97ze",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi2nv350ane0",
+   "a": "nmwmi2cq74yrbnu",
+   "b": "nmwmi2nv34ztt1i",
    "c": null,
    "mn": null,
    "mx": null
