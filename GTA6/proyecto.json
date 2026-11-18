@@ -1,7 +1,8 @@
 {
   "app": "modelado-bases",
   "version": 2,
-  "name": "proyecto 2",
+  "name": "GTA6",
   "created": 1795028678743,
-  "updated": 1795035084230
+  "updated": 1795035269844,
+  "icon": "👽"
 }
