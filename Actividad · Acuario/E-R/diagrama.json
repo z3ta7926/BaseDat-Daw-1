@@ -711,17 +711,17 @@
    "id": "nmwmmmo701qdphfo",
    "a": "nmwmmmo701qcfmvz",
    "b": "nmwmmlkwk1q7lmry",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   },
   {
    "id": "nmwmmmo701qe8kb6",
    "a": "nmwmmmo701qcfmvz",
    "b": "nmwmlsuwk1o544am",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(0,N)",
+   "mn": "0",
+   "mx": "N"
   }
  ],
  "notes": []
