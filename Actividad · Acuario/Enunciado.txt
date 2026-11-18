@@ -1,0 +1,13 @@
+Un acuario necesita una aplicación informática para organizar las especies marinas que tiene, sus empleados (monitores y biólogos marinos) y los recorridos de visita que ofrece. La información está estructurada de la siguiente manera:
+
+● Especies: de las especies interesa saber el nombre común, el nombre científico, una descripción general y el número de ejemplares que hay de cada especie. Hay que tener en cuenta que una especie puede vivir en diferentes ecosistemas marinos y que en un ecosistema pueden vivir diferentes especies. Las especies están repartidas en distintos tanques del acuario, de manera que cada especie está en un solo tanque y en un tanque hay varias especies.
+
+● Ecosistemas: los ecosistemas marinos se definen por el nombre, la temperatura media del agua y el tipo de fondo predominante, así como por el océano u océanos en los que se encuentran. Es evidente que en un océano puede haber diferentes ecosistemas.
+
+● Tanques: los tanques del acuario en los que están las especies se definen por el nombre y la capacidad en litros.
+
+● Recorridos: los recorridos pasan por distintos tanques del acuario. La información de interés de los recorridos es: código de recorrido, nombre, duración, longitud del recorrido, número máximo de visitantes permitido y número de especies distintas que se ven. Hay que tener en cuenta que un recorrido pasa por distintos tanques y que un tanque puede formar parte de diferentes recorridos.
+
+● Monitores: los monitores del acuario se definen por el nombre y apellidos, la dirección, el teléfono y la fecha en la que empezaron a trabajar en el acuario. Interesa saber qué monitores llevan qué recorridos. Un monitor puede llevar varios recorridos y un recorrido puede asignarse a diferentes monitores a diferentes horas, y esa hora es un dato que interesa guardar.
+
+● Biólogos marinos: los biólogos se definen por el nombre y apellidos, la dirección, el teléfono y la fecha de ingreso en el acuario. Hay que tener en cuenta que un biólogo puede encargarse de varias especies y que una especie puede estar atendida por varios biólogos. Interesa guardar la fecha en la que un biólogo se hace cargo de una especie.
