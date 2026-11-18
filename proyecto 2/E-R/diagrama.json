@@ -89,7 +89,9 @@
    "n": "JugableSioNo",
    "x": 2368,
    "y": 1812,
-   "f": {}
+   "f": {
+    "o": true
+   }
   },
   {
    "id": "nmwmhxjzb4pf9rv",
