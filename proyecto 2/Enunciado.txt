@@ -1,0 +1,20 @@
+Rockstar quiere organizar la información de su mundo abierto de Leonida. Diseña el modelo
+entidad-relación a partir de estas reglas:
+1.  El mundo se divide en zonas (Vice City, Grassrivers, Port Gellhorn…). De cada zona interesa un
+código, el nombre, el tipo (urbana, rural, costera) y el nivel de peligrosidad.
+2.  Cada personaje tiene un identificador, un alias, el nombre real, la fecha de nacimiento y si es jugable o
+no. Un personaje pertenece como máximo a una banda, y una banda tiene muchos personajes.
+3.  De cada banda interesa su código, el nombre, el año de fundación y la zona donde tiene su base. En
+una zona puede haber varias bandas, pero cada banda tiene una sola base.
+4.  Un personaje posee varios vehículos, pero cada vehículo pertenece a un único personaje. De los
+vehículos se guarda la matrícula, la marca, el modelo, el tipo (coche, moto, lancha, helicóptero) y la
+velocidad máxima.
+5.  Un personaje lleva varias armas en su inventario, y cada arma concreta pertenece a un solo
+personaje. De cada arma se guarda el número de serie, el nombre, el tipo y el calibre.
+6.  Un personaje tiene exactamente una cuenta bancaria, y cada cuenta pertenece a un solo personaje.
+De la cuenta se guarda el número, el saldo y la fecha de apertura.
+7.  Las misiones se desarrollan en una zona concreta, y en una zona se desarrollan muchas misiones.
+De cada misión se guarda el código, el título, la dificultad y la recompensa.
+8.  Cada misión es encargada por un único personaje, y un personaje puede encargar muchas misiones.
+9.  Las propiedades (casas, garajes, negocios) están situadas en una zona. Cada propiedad tiene un
+código, un tipo, una dirección y un precio, y pertenece a un solo personaje, que puede tener varias
