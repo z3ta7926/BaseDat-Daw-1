@@ -134,9 +134,11 @@
    "id": "nmwmi0gy84w97ze",
    "k": "attr",
    "n": "ZonaBase",
-   "x": 1848,
-   "y": 1773,
-   "f": {}
+   "x": 1844,
+   "y": 1779,
+   "f": {
+    "c": true
+   }
   },
   {
    "id": "nmwmi2cq74yrbnu",
@@ -442,6 +444,22 @@
    "n": "relacion8",
    "x": 2266,
    "y": 2156,
+   "f": {}
+  },
+  {
+   "id": "nmwmk94qd74w22w",
+   "k": "attr",
+   "n": "Direccbase",
+   "x": 1844,
+   "y": 1839,
+   "f": {}
+  },
+  {
+   "id": "nmwmk9z2m76ukq5",
+   "k": "attr",
+   "n": "TipoBase",
+   "x": 1705,
+   "y": 1779,
    "f": {}
   }
  ],
@@ -858,6 +876,22 @@
    "id": "nmwmk074e72jkgs",
    "a": "nmwmk074e708on4",
    "b": "nmwmiwxrr6474jo",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmk94qd75spqd",
+   "a": "nmwmi0gy84w97ze",
+   "b": "nmwmk94qd74w22w",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmk9z2m77aiky",
+   "a": "nmwmi0gy84w97ze",
+   "b": "nmwmk9z2m76ukq5",
    "c": null,
    "mn": null,
    "mx": null
