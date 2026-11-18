@@ -4,40 +4,40 @@
    "id": "nmwmhqvag3xdsrz",
    "k": "ent",
    "n": "zonas",
-   "x": 2246,
-   "y": 1795,
+   "x": 2093,
+   "y": 2051,
    "f": {}
   },
   {
    "id": "nmwmhrrtz46f440",
    "k": "attr",
    "n": "CodZona",
-   "x": 2153,
-   "y": 1744,
+   "x": 2000,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 2102,
-   "y": 1795,
+   "x": 1949,
+   "y": 2051,
    "f": {}
   },
   {
    "id": "nmwmhse6k4avtgo",
    "k": "attr",
    "n": "TipoZona",
-   "x": 2223,
-   "y": 1707,
+   "x": 2070,
+   "y": 1963,
    "f": {}
   },
   {
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 2150,
-   "y": 1851,
+   "x": 1997,
+   "y": 2107,
    "f": {}
   },
   {
@@ -92,64 +92,64 @@
    "id": "nmwmhxjzb4pf9rv",
    "k": "ent",
    "n": "bandas",
-   "x": 2246,
-   "y": 2025,
+   "x": 2122,
+   "y": 1809,
    "f": {}
   },
   {
    "id": "nmwmhxsy74qo5d7",
    "k": "attr",
    "n": "CodBanda",
-   "x": 2306,
-   "y": 1953,
+   "x": 2182,
+   "y": 1737,
    "f": {}
   },
   {
    "id": "nmwmhy7ny4s7mmz",
    "k": "attr",
    "n": "NombreBanda",
-   "x": 2382,
-   "y": 1992,
+   "x": 2258,
+   "y": 1776,
    "f": {}
   },
   {
    "id": "nmwmhzwdd4umxmz",
    "k": "attr",
    "n": "AñoDeFundacion",
-   "x": 2372,
-   "y": 2068,
+   "x": 2248,
+   "y": 1852,
    "f": {}
   },
   {
    "id": "nmwmi0gy84w97ze",
    "k": "attr",
    "n": "ZonaBase",
-   "x": 2301,
-   "y": 2118,
+   "x": 2177,
+   "y": 1902,
    "f": {}
   },
   {
    "id": "nmwmi2cq74yrbnu",
    "k": "ent",
    "n": "vehiculos",
-   "x": 2664,
-   "y": 2025,
+   "x": 2931,
+   "y": 1802,
    "f": {}
   },
   {
    "id": "nmwmi2nv34ztt1i",
    "k": "attr",
    "n": "Matricula",
-   "x": 2664,
-   "y": 1964,
+   "x": 2931,
+   "y": 1741,
    "f": {}
   },
   {
    "id": "nmwmi3kmf51jxje",
    "k": "attr",
    "n": "CodVehiculo",
-   "x": 2778,
-   "y": 1979,
+   "x": 3045,
+   "y": 1756,
    "f": {}
   },
   {
@@ -164,24 +164,24 @@
    "id": "nmwmi4m2t551h8a",
    "k": "attr",
    "n": "MarcaVehiculo",
-   "x": 2778,
-   "y": 2068,
+   "x": 3045,
+   "y": 1845,
    "f": {}
   },
   {
    "id": "nmwmi5d3357tlys",
    "k": "attr",
    "n": "ModeloVehiculo",
-   "x": 2664,
-   "y": 2105,
+   "x": 2931,
+   "y": 1882,
    "f": {}
   },
   {
    "id": "nmwmi6y4t590tg7",
    "k": "attr",
    "n": "TipoVehiculo",
-   "x": 2837,
-   "y": 2025,
+   "x": 3104,
+   "y": 1802,
    "f": {}
   }
  ],
