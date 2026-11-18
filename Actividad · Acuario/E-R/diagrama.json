@@ -41,11 +41,19 @@
    "f": {}
   },
   {
-   "id": "nmwmlsedz1o3fi74",
+   "id": "nmwmlsuwk1o544am",
+   "k": "ent",
+   "n": "ecosistemas",
+   "x": 2834,
+   "y": 1633,
+   "f": {}
+  },
+  {
+   "id": "nmwmlt76j1o6eex8",
    "k": "attr",
-   "n": "atributo",
-   "x": 2310,
-   "y": 1692,
+   "n": "Nom",
+   "x": 2834,
+   "y": 1572,
    "f": {}
   }
  ],
@@ -83,9 +91,9 @@
    "mx": null
   },
   {
-   "id": "nmwmlsedz1o464ge",
-   "a": "nmwmlq3st1nugp1q",
-   "b": "nmwmlsedz1o3fi74",
+   "id": "nmwmlt76j1o7ueig",
+   "a": "nmwmlsuwk1o544am",
+   "b": "nmwmlt76j1o6eex8",
    "c": null,
    "mn": null,
    "mx": null
