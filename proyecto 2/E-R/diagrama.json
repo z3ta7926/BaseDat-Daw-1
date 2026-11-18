@@ -1,5 +1,135 @@
 {
- "nodes": [],
- "links": [],
+ "nodes": [
+  {
+   "id": "nmwmhqvag3xdsrz",
+   "k": "ent",
+   "n": "zonas",
+   "x": 2246,
+   "y": 1795,
+   "f": {}
+  },
+  {
+   "id": "nmwmhrrtz46f440",
+   "k": "attr",
+   "n": "CodZona",
+   "x": 2153,
+   "y": 1744,
+   "f": {}
+  },
+  {
+   "id": "nmwmhs1pz4838rc",
+   "k": "attr",
+   "n": "NombreZona",
+   "x": 2102,
+   "y": 1795,
+   "f": {}
+  },
+  {
+   "id": "nmwmhse6k4avtgo",
+   "k": "attr",
+   "n": "TipoZona",
+   "x": 2223,
+   "y": 1707,
+   "f": {}
+  },
+  {
+   "id": "nmwmhsl8x4cs0xw",
+   "k": "attr",
+   "n": "NivelPeligrosidad",
+   "x": 2150,
+   "y": 1851,
+   "f": {}
+  },
+  {
+   "id": "nmwmhtg534eof8d",
+   "k": "ent",
+   "n": "personajes",
+   "x": 2581,
+   "y": 1802,
+   "f": {}
+  },
+  {
+   "id": "nmwmhtvoe4fcd3s",
+   "k": "attr",
+   "n": "IdPersonaje",
+   "x": 2581,
+   "y": 1741,
+   "f": {}
+  },
+  {
+   "id": "nmwmhtzp54hasp6",
+   "k": "attr",
+   "n": "AliasPersonaje",
+   "x": 2733,
+   "y": 1775,
+   "f": {}
+  },
+  {
+   "id": "nmwmhu9s44jnxp9",
+   "k": "attr",
+   "n": "",
+   "x": 2712,
+   "y": 1851,
+   "f": {}
+  }
+ ],
+ "links": [
+  {
+   "id": "nmwmhrrtz47modd",
+   "a": "nmwmhqvag3xdsrz",
+   "b": "nmwmhrrtz46f440",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhs1pz49ahsy",
+   "a": "nmwmhqvag3xdsrz",
+   "b": "nmwmhs1pz4838rc",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhse6k4biaeb",
+   "a": "nmwmhqvag3xdsrz",
+   "b": "nmwmhse6k4avtgo",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhsl8x4dr3lu",
+   "a": "nmwmhqvag3xdsrz",
+   "b": "nmwmhsl8x4cs0xw",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhtvoe4gl4s7",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmhtvoe4fcd3s",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhtzp54i5w6k",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmhtzp54hasp6",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhu9s44kvr0m",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmhu9s44jnxp9",
+   "c": null,
+   "mn": null,
+   "mx": null
+  }
+ ],
  "notes": []
 }
