@@ -99,16 +99,16 @@
    "id": "nmwmhxjzb4pf9rv",
    "k": "ent",
    "n": "bandas",
-   "x": 2026,
-   "y": 1779,
+   "x": 2025,
+   "y": 1776,
    "f": {}
   },
   {
    "id": "nmwmhxsy74qo5d7",
    "k": "attr",
    "n": "CodBanda",
-   "x": 1943,
-   "y": 1674,
+   "x": 1942,
+   "y": 1671,
    "f": {
     "k": true,
     "p": false
@@ -118,24 +118,24 @@
    "id": "nmwmhy7ny4s7mmz",
    "k": "attr",
    "n": "NombreBanda",
-   "x": 2026,
-   "y": 1635,
+   "x": 2025,
+   "y": 1632,
    "f": {}
   },
   {
    "id": "nmwmhzwdd4umxmz",
    "k": "attr",
    "n": "AñoDeFundacion",
-   "x": 2123,
-   "y": 1674,
+   "x": 2122,
+   "y": 1671,
    "f": {}
   },
   {
    "id": "nmwmi0gy84w97ze",
    "k": "attr",
    "n": "ZonaBase",
-   "x": 1844,
-   "y": 1779,
+   "x": 1843,
+   "y": 1776,
    "f": {
     "c": true
    }
@@ -214,16 +214,16 @@
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
    "n": "NumSerie",
-   "x": 2582,
-   "y": 2080,
+   "x": 2602,
+   "y": 2095,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2512,
-   "y": 2132,
+   "x": 2513,
+   "y": 2130,
    "f": {}
   },
   {
@@ -231,15 +231,15 @@
    "k": "attr",
    "n": "TipoCalibre",
    "x": 2350,
-   "y": 2054,
+   "y": 2064,
    "f": {}
   },
   {
    "id": "nmwmie3675k2tdn",
    "k": "attr",
    "n": "CodArmas",
-   "x": 2444,
-   "y": 2080,
+   "x": 2426,
+   "y": 2093,
    "f": {
     "k": true,
     "p": false
@@ -434,8 +434,8 @@
    "id": "nmwmjythq6xg17k",
    "k": "rel",
    "n": "relacion7",
-   "x": 2268,
-   "y": 2008,
+   "x": 2286,
+   "y": 2017,
    "f": {}
   },
   {
@@ -450,16 +450,16 @@
    "id": "nmwmk94qd74w22w",
    "k": "attr",
    "n": "Direccbase",
-   "x": 1789,
-   "y": 1828,
+   "x": 1788,
+   "y": 1825,
    "f": {}
   },
   {
    "id": "nmwmk9z2m76ukq5",
    "k": "attr",
    "n": "TipoBase",
-   "x": 1789,
-   "y": 1718,
+   "x": 1788,
+   "y": 1715,
    "f": {}
   }
  ],
