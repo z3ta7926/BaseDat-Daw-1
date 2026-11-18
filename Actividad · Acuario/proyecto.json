@@ -3,23 +3,5 @@
   "version": 2,
   "name": "Actividad · Acuario",
   "created": 1795035348553,
-  "updated": 1795037098516,
-  "act": {
-    "title": "Acuario",
-    "mins": 30,
-    "parts": [
-      "bo",
-      "er",
-      "ded"
-    ],
-    "state": "run",
-    "show": [
-      "enun",
-      "bo",
-      "er",
-      "ded"
-    ],
-    "start": 1795035354445,
-    "end": 1795037154445
-  }
+  "updated": 1795037167972
 }
