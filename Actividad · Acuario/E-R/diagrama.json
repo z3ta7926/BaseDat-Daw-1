@@ -668,9 +668,9 @@
    "id": "nmwmminrg1q6qc0g",
    "a": "nmwmminrg1q44jqm",
    "b": "nmwmlyn111oi5120",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   }
  ],
  "notes": []
