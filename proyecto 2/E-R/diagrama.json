@@ -55,8 +55,8 @@
    "id": "nmwmhtvoe4fcd3s",
    "k": "attr",
    "n": "IdPersonaje",
-   "x": 2509,
-   "y": 1649,
+   "x": 2513,
+   "y": 1648,
    "f": {}
   },
   {
@@ -71,8 +71,8 @@
    "id": "nmwmhu9s44jnxp9",
    "k": "attr",
    "n": "NombreReal",
-   "x": 2673,
-   "y": 1721,
+   "x": 2688,
+   "y": 1707,
    "f": {}
   },
   {
@@ -89,8 +89,8 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 2334,
-   "y": 1714,
+   "x": 2339,
+   "y": 1707,
    "f": {
     "o": true
    }
@@ -169,8 +169,8 @@
    "id": "nmwmi402d53smqh",
    "k": "attr",
    "n": "CodPersonaje",
-   "x": 2378,
-   "y": 1662,
+   "x": 2389,
+   "y": 1661,
    "f": {
     "k": true,
     "p": false
@@ -400,8 +400,8 @@
    "id": "nmwmjowra6lotfp",
    "k": "rel",
    "n": "relacion3",
-   "x": 2727,
-   "y": 1773,
+   "x": 2721,
+   "y": 1770,
    "f": {}
   }
  ],
