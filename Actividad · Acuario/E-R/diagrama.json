@@ -271,6 +271,14 @@
    "x": 2975,
    "y": 1967,
    "f": {}
+  },
+  {
+   "id": "nmwmmatmr1pmsmsg",
+   "k": "attr",
+   "n": "Direccion",
+   "x": 2975,
+   "y": 2022,
+   "f": {}
   }
  ],
  "links": [
@@ -486,6 +494,14 @@
    "id": "nmwmm8v6o1pl6695",
    "a": "nmwmm81181pholdc",
    "b": "nmwmm8v6o1pkcwz3",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmatmr1pnxodj",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmmatmr1pmsmsg",
    "c": null,
    "mn": null,
    "mx": null
