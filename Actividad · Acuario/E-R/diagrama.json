@@ -370,8 +370,8 @@
    "id": "nmwmmm03o1q8o4i6",
    "k": "attr",
    "n": "CodOceano",
-   "x": 2167,
-   "y": 2377,
+   "x": 2157,
+   "y": 2358,
    "f": {
     "k": true,
     "p": false
@@ -381,7 +381,7 @@
    "id": "nmwmmm4691qa7ywm",
    "k": "attr",
    "n": "NomOceano",
-   "x": 2267,
+   "x": 2278,
    "y": 2467,
    "f": {}
   },
@@ -767,9 +767,9 @@
    "id": "nmwmmmo701qe8kb6",
    "a": "nmwmmmo701qcfmvz",
    "b": "nmwmlsuwk1o544am",
-   "c": "(0,N)",
-   "mn": "0",
-   "mx": "N"
+   "c": "(1,1)",
+   "mn": "1",
+   "mx": "1"
   },
   {
    "id": "nmwmmoo6b1qg3ish",
