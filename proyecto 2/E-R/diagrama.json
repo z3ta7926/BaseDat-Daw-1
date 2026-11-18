@@ -325,9 +325,25 @@
   {
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
-   "n": "entidad",
+   "n": "propiedades",
    "x": 2274,
    "y": 2269,
+   "f": {}
+  },
+  {
+   "id": "nmwmj46ri65fsi7",
+   "k": "attr",
+   "n": "CodPropiedad",
+   "x": 2274,
+   "y": 2208,
+   "f": {}
+  },
+  {
+   "id": "nmwmj4fdq67bwgb",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2406,
+   "y": 2230,
    "f": {}
   }
  ],
@@ -576,6 +592,22 @@
    "id": "nmwmisx1w63uotg",
    "a": "nmwmio5i75v8jmj",
    "b": "nmwmisx1w62qcp3",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmj46ri6661cq",
+   "a": "nmwmiwxrr6474jo",
+   "b": "nmwmj46ri65fsi7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmj4fdq68a9rd",
+   "a": "nmwmiwxrr6474jo",
+   "b": "nmwmj4fdq67bwgb",
    "c": null,
    "mn": null,
    "mx": null
