@@ -188,40 +188,56 @@
    "id": "nmwmia2g75bo3id",
    "k": "ent",
    "n": "armas",
-   "x": 2711,
-   "y": 2005,
+   "x": 2365,
+   "y": 2069,
    "f": {}
   },
   {
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
    "n": "NumSerie",
-   "x": 2711,
-   "y": 1928,
+   "x": 2365,
+   "y": 1992,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2834,
-   "y": 1957,
+   "x": 2488,
+   "y": 2045,
    "f": {}
   },
   {
    "id": "nmwmic04b5gq8px",
    "k": "attr",
    "n": "TipoCalibre",
-   "x": 2834,
-   "y": 2056,
+   "x": 2488,
+   "y": 2095,
    "f": {}
   },
   {
-   "id": "nmwmicrht5ij6e5",
+   "id": "nmwmie3675k2tdn",
+   "k": "attr",
+   "n": "CodArmas",
+   "x": 2364,
+   "y": 2145,
+   "f": {}
+  },
+  {
+   "id": "nmwmieuhb5myfep",
+   "k": "ent",
+   "n": "cuenta_bancaria",
+   "x": 2814,
+   "y": 2075,
+   "f": {}
+  },
+  {
+   "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "atributo",
-   "x": 2845,
-   "y": 2005,
+   "x": 2814,
+   "y": 2014,
    "f": {}
   }
  ],
@@ -403,9 +419,17 @@
    "mx": null
   },
   {
-   "id": "nmwmicrht5jj4rt",
+   "id": "nmwmie3675lf34o",
    "a": "nmwmia2g75bo3id",
-   "b": "nmwmicrht5ij6e5",
+   "b": "nmwmie3675k2tdn",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmifxlj5o6kk8",
+   "a": "nmwmieuhb5myfep",
+   "b": "nmwmifxlj5nexyy",
    "c": null,
    "mn": null,
    "mx": null
