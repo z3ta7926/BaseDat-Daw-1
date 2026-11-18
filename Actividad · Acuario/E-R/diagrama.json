@@ -735,17 +735,17 @@
    "id": "nmwmmoo6b1qg3ish",
    "a": "nmwmmoo6b1qfdfnk",
    "b": "nmwmm04rg1on2ew7",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(0,N)",
+   "mn": "0",
+   "mx": "N"
   },
   {
    "id": "nmwmmoo6b1qhyke7",
    "a": "nmwmmoo6b1qfdfnk",
    "b": "nmwmlyn111oi5120",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(0,N)",
+   "mn": "0",
+   "mx": "N"
   }
  ],
  "notes": []
