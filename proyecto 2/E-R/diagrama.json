@@ -47,40 +47,40 @@
    "id": "nmwmhtg534eof8d",
    "k": "ent",
    "n": "personajes",
-   "x": 2516,
-   "y": 1766,
+   "x": 2513,
+   "y": 1780,
    "f": {}
   },
   {
    "id": "nmwmhtvoe4fcd3s",
    "k": "attr",
    "n": "IdPersonaje",
-   "x": 2512,
-   "y": 1635,
+   "x": 2509,
+   "y": 1649,
    "f": {}
   },
   {
    "id": "nmwmhtzp54hasp6",
    "k": "attr",
    "n": "AliasPersonaje",
-   "x": 2662,
-   "y": 1648,
+   "x": 2659,
+   "y": 1662,
    "f": {}
   },
   {
    "id": "nmwmhu9s44jnxp9",
    "k": "attr",
    "n": "NombreReal",
-   "x": 2676,
-   "y": 1707,
+   "x": 2673,
+   "y": 1721,
    "f": {}
   },
   {
    "id": "nmwmhvhij4l5lyf",
    "k": "attr",
    "n": "FechaNacimiento",
-   "x": 2516,
-   "y": 1839,
+   "x": 2513,
+   "y": 1853,
    "f": {
     "d": false
    }
@@ -89,8 +89,8 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 2337,
-   "y": 1700,
+   "x": 2334,
+   "y": 1714,
    "f": {
     "o": true
    }
@@ -169,8 +169,8 @@
    "id": "nmwmi402d53smqh",
    "k": "attr",
    "n": "CodPersonaje",
-   "x": 2381,
-   "y": 1648,
+   "x": 2378,
+   "y": 1662,
    "f": {
     "k": true,
     "p": false
@@ -378,6 +378,14 @@
    "n": "VelocidadMax",
    "x": 2902,
    "y": 1854,
+   "f": {}
+  },
+  {
+   "id": "nmwmjmfhi6frj9i",
+   "k": "rel",
+   "n": "relacion",
+   "x": 2270,
+   "y": 1780,
    "f": {}
   }
  ],
@@ -666,6 +674,22 @@
    "id": "nmwmjht0x6eqo29",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmjht0x6dnj06",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjmfhi6gyle6",
+   "a": "nmwmjmfhi6frj9i",
+   "b": "nmwmhtg534eof8d",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjmfhi6hlojk",
+   "a": "nmwmjmfhi6frj9i",
+   "b": "nmwmhxjzb4pf9rv",
    "c": null,
    "mn": null,
    "mx": null
