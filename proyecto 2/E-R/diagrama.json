@@ -12,8 +12,8 @@
    "id": "nmwmhrrtz46f440",
    "k": "attr",
    "n": "CodZona",
-   "x": 1930,
-   "y": 1947,
+   "x": 1806,
+   "y": 1952,
    "f": {
     "k": true,
     "p": false
@@ -23,7 +23,7 @@
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 1879,
+   "x": 1806,
    "y": 1998,
    "f": {}
   },
@@ -31,16 +31,16 @@
    "id": "nmwmhse6k4avtgo",
    "k": "attr",
    "n": "TipoZona",
-   "x": 2023,
-   "y": 2077,
+   "x": 1813,
+   "y": 2106,
    "f": {}
   },
   {
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 1909,
-   "y": 2054,
+   "x": 1806,
+   "y": 2051,
    "f": {}
   },
   {
@@ -290,16 +290,16 @@
    "id": "nmwmio5i75v8jmj",
    "k": "ent",
    "n": "misiones",
-   "x": 2897,
-   "y": 2243,
+   "x": 2023,
+   "y": 2236,
    "f": {}
   },
   {
    "id": "nmwmiow465w8po8",
    "k": "attr",
    "n": "CodMision",
-   "x": 2897,
-   "y": 2331,
+   "x": 2023,
+   "y": 2324,
    "f": {
     "k": true,
     "p": false
@@ -309,40 +309,40 @@
    "id": "nmwmir5ci5yhlv1",
    "k": "attr",
    "n": "TituloMision",
-   "x": 3012,
-   "y": 2197,
+   "x": 2138,
+   "y": 2190,
    "f": {}
   },
   {
    "id": "nmwmirrxe60nf3k",
    "k": "attr",
    "n": "DificultadMision",
-   "x": 3062,
-   "y": 2243,
+   "x": 2188,
+   "y": 2236,
    "f": {}
   },
   {
    "id": "nmwmisx1w62qcp3",
    "k": "attr",
    "n": "RecompensaMision",
-   "x": 3021,
-   "y": 2292,
+   "x": 2147,
+   "y": 2285,
    "f": {}
   },
   {
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
    "n": "propiedades",
-   "x": 2021,
-   "y": 2250,
+   "x": 2804,
+   "y": 2243,
    "f": {}
   },
   {
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 1919,
-   "y": 2171,
+   "x": 2702,
+   "y": 2164,
    "f": {
     "k": true,
     "p": false
@@ -352,24 +352,24 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 1848,
-   "y": 2210,
+   "x": 2631,
+   "y": 2203,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 1862,
-   "y": 2292,
+   "x": 2645,
+   "y": 2285,
    "f": {}
   },
   {
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 1799,
-   "y": 2250,
+   "x": 2582,
+   "y": 2243,
    "f": {}
   },
   {
