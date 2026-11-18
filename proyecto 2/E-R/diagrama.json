@@ -200,40 +200,40 @@
    "id": "nmwmia2g75bo3id",
    "k": "ent",
    "n": "armas",
-   "x": 2365,
-   "y": 2069,
+   "x": 2406,
+   "y": 2062,
    "f": {}
   },
   {
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
    "n": "NumSerie",
-   "x": 2365,
-   "y": 1992,
+   "x": 2406,
+   "y": 1985,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2488,
-   "y": 2045,
+   "x": 2529,
+   "y": 2038,
    "f": {}
   },
   {
    "id": "nmwmic04b5gq8px",
    "k": "attr",
    "n": "TipoCalibre",
-   "x": 2488,
-   "y": 2095,
+   "x": 2529,
+   "y": 2088,
    "f": {}
   },
   {
    "id": "nmwmie3675k2tdn",
    "k": "attr",
    "n": "CodArmas",
-   "x": 2364,
-   "y": 2145,
+   "x": 2405,
+   "y": 2138,
    "f": {
     "k": true,
     "p": false
@@ -243,24 +243,24 @@
    "id": "nmwmieuhb5myfep",
    "k": "ent",
    "n": "cuenta_bancaria",
-   "x": 2814,
-   "y": 2075,
+   "x": 2728,
+   "y": 2062,
    "f": {}
   },
   {
    "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "NumCuentaBanco",
-   "x": 2814,
-   "y": 2007,
+   "x": 2728,
+   "y": 1994,
    "f": {}
   },
   {
    "id": "nmwmih6ur5pqn8f",
    "k": "attr",
    "n": "CodCuentaBanco",
-   "x": 2976,
-   "y": 2031,
+   "x": 2890,
+   "y": 2018,
    "f": {
     "k": true,
     "p": false
@@ -269,17 +269,17 @@
   {
    "id": "nmwmih70n5rkz42",
    "k": "attr",
-   "n": "SaldoFechaApertura",
-   "x": 2976,
-   "y": 2121,
+   "n": "FechaApertura",
+   "x": 2890,
+   "y": 2108,
    "f": {}
   },
   {
    "id": "nmwmilzss5tyocj",
    "k": "attr",
-   "n": "atributo",
-   "x": 2814,
-   "y": 2151,
+   "n": "SaldoCuanto",
+   "x": 2728,
+   "y": 2138,
    "f": {}
   }
  ],
