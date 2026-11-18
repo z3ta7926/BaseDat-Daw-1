@@ -44,7 +44,7 @@
    "id": "nmwmlsuwk1o544am",
    "k": "ent",
    "n": "ecosistemas",
-   "x": 2834,
+   "x": 3048,
    "y": 1633,
    "f": {}
   },
@@ -52,7 +52,7 @@
    "id": "nmwmlt76j1o6eex8",
    "k": "attr",
    "n": "NomEcosistemas",
-   "x": 3012,
+   "x": 3226,
    "y": 1577,
    "f": {}
   },
@@ -71,7 +71,7 @@
    "id": "nmwmluhgc1oa9xli",
    "k": "attr",
    "n": "CodEcosistemas",
-   "x": 2833,
+   "x": 3047,
    "y": 1549,
    "f": {
     "k": true,
@@ -82,7 +82,7 @@
    "id": "nmwmlutc41ocqgp9",
    "k": "attr",
    "n": "TemperaturaMedia",
-   "x": 3012,
+   "x": 3226,
    "y": 1689,
    "f": {}
   },
@@ -90,16 +90,8 @@
    "id": "nmwmlv8u81oe6z0t",
    "k": "attr",
    "n": "TipoFondo",
-   "x": 3074,
+   "x": 3288,
    "y": 1633,
-   "f": {}
-  },
-  {
-   "id": "nmwmlxa2h1og22fq",
-   "k": "attr",
-   "n": "TipoOceano",
-   "x": 2835,
-   "y": 1718,
    "f": {}
   },
   {
@@ -365,6 +357,41 @@
    "x": 2343,
    "y": 1825,
    "f": {}
+  },
+  {
+   "id": "nmwmmlkwk1q7lmry",
+   "k": "ent",
+   "n": "Oceano",
+   "x": 2606,
+   "y": 1640,
+   "f": {}
+  },
+  {
+   "id": "nmwmmm03o1q8o4i6",
+   "k": "attr",
+   "n": "CodOceano",
+   "x": 2606,
+   "y": 1579,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwmmm4691qa7ywm",
+   "k": "attr",
+   "n": "NomOceano",
+   "x": 2737,
+   "y": 1592,
+   "f": {}
+  },
+  {
+   "id": "nmwmmmo701qcfmvz",
+   "k": "rel",
+   "n": "relacion2",
+   "x": 2835,
+   "y": 1637,
+   "f": {}
   }
  ],
  "links": [
@@ -436,14 +463,6 @@
    "id": "nmwmlv8u81ofijol",
    "a": "nmwmlsuwk1o544am",
    "b": "nmwmlv8u81oe6z0t",
-   "c": null,
-   "mn": null,
-   "mx": null
-  },
-  {
-   "id": "nmwmlxa2h1oh17lb",
-   "a": "nmwmlsuwk1o544am",
-   "b": "nmwmlxa2h1og22fq",
    "c": null,
    "mn": null,
    "mx": null
@@ -671,6 +690,38 @@
    "c": "(0,N)",
    "mn": "0",
    "mx": "N"
+  },
+  {
+   "id": "nmwmmm03o1q9vxr6",
+   "a": "nmwmmlkwk1q7lmry",
+   "b": "nmwmmm03o1q8o4i6",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmm4691qb20bo",
+   "a": "nmwmmlkwk1q7lmry",
+   "b": "nmwmmm4691qa7ywm",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmmo701qdphfo",
+   "a": "nmwmmmo701qcfmvz",
+   "b": "nmwmmlkwk1q7lmry",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmmo701qe8kb6",
+   "a": "nmwmmmo701qcfmvz",
+   "b": "nmwmlsuwk1o544am",
+   "c": null,
+   "mn": null,
+   "mx": null
   }
  ],
  "notes": []
