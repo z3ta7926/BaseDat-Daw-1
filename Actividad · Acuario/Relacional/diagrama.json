@@ -1,4 +1,236 @@
 {
- "t": [],
+ "t": [
+  {
+   "id": "nmwmoe7wm1r4p4vx",
+   "n": "especies",
+   "x": 2874,
+   "y": 1953,
+   "c": [
+    [
+     "NombreComun",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "NomCient",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Descrip",
+     "TEXT",
+     ""
+    ],
+    [
+     "NumEjemplar",
+     "INT",
+     ""
+    ],
+    [
+     "CodEspecie",
+     "INT",
+     "pk"
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1r5wkc8",
+   "n": "ecosistemas",
+   "x": 2874,
+   "y": 2237,
+   "c": [
+    [
+     "NomEcosistemas",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodEcosistemas",
+     "INT",
+     "pk"
+    ],
+    [
+     "TemperaturaMedia",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "TipoFondo",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1r6i6mv",
+   "n": "tanques",
+   "x": 2525,
+   "y": 1953,
+   "c": [
+    [
+     "NomTanque",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CapacidadLitros",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodTanques",
+     "INT",
+     "pk"
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1r7u0s4",
+   "n": "recorridos",
+   "x": 2525,
+   "y": 1649,
+   "c": [
+    [
+     "CodRecorrido",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomDuracion",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "LongRecorrido",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "NumMaxVisit",
+     "INT",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1r8sqge",
+   "n": "monitores",
+   "x": 2874,
+   "y": 1649,
+   "c": [
+    [
+     "NombreMonitor",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "apellidoMonitor",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "TipoVia",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "NomVia",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodPost",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "FechaTrabajo",
+     "DATE",
+     ""
+    ],
+    [
+     "MonitorRecorrido",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodMonitor",
+     "INT",
+     "pk"
+    ],
+    [
+     "HorasRecorrido",
+     "TIME",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1r90xr6",
+   "n": "biologos",
+   "x": 3229,
+   "y": 1953,
+   "c": [
+    [
+     "NombreBiologo",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "ApellidosBiologo",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "CodPost",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "TipoVia",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "NomVia",
+     "VARCHAR(45)",
+     ""
+    ],
+    [
+     "Telf",
+     "VARCHAR(15)",
+     ""
+    ],
+    [
+     "FechaIngreso",
+     "DATE",
+     ""
+    ],
+    [
+     "CodBiol",
+     "INT",
+     "pk"
+    ]
+   ]
+  },
+  {
+   "id": "nmwmoe7wm1ra4oka",
+   "n": "Oceano",
+   "x": 2525,
+   "y": 2237,
+   "c": [
+    [
+     "CodOceano",
+     "INT",
+     "pk"
+    ],
+    [
+     "NomOceano",
+     "VARCHAR(45)",
+     ""
+    ]
+   ]
+  }
+ ],
  "notes": []
 }
