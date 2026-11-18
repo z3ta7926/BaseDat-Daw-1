@@ -398,7 +398,7 @@
    "k": "rel",
    "n": "relacion3",
    "x": 2278,
-   "y": 1819,
+   "y": 1786,
    "f": {}
   },
   {
@@ -775,16 +775,16 @@
    "id": "nmwmmoo6b1qg3ish",
    "a": "nmwmmoo6b1qfdfnk",
    "b": "nmwmm04rg1on2ew7",
-   "c": "(0,N)",
-   "mn": "0",
+   "c": "(1,N)",
+   "mn": "1",
    "mx": "N"
   },
   {
    "id": "nmwmmoo6b1qhyke7",
    "a": "nmwmmoo6b1qfdfnk",
    "b": "nmwmlyn111oi5120",
-   "c": "(0,N)",
-   "mn": "0",
+   "c": "(1,N)",
+   "mn": "1",
    "mx": "N"
   },
   {
