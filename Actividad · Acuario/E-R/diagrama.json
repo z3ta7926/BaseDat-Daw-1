@@ -354,8 +354,8 @@
    "id": "nmwmminrg1q44jqm",
    "k": "rel",
    "n": "relacion",
-   "x": 2608,
-   "y": 2014,
+   "x": 2604,
+   "y": 2018,
    "f": {}
   },
   {
@@ -727,16 +727,16 @@
    "id": "nmwmminrg1q51657",
    "a": "nmwmminrg1q44jqm",
    "b": "nmwmlq3st1nugp1q",
-   "c": "(0,1)",
-   "mn": "0",
+   "c": "(1,1)",
+   "mn": "1",
    "mx": "1"
   },
   {
    "id": "nmwmminrg1q6qc0g",
    "a": "nmwmminrg1q44jqm",
    "b": "nmwmlyn111oi5120",
-   "c": "(0,N)",
-   "mn": "0",
+   "c": "(1,N)",
+   "mn": "1",
    "mx": "N"
   },
   {
