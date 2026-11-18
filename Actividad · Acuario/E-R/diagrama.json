@@ -422,8 +422,8 @@
   {
    "id": "nmwmmvlzg1qscxcj",
    "k": "rel",
-   "n": "cuidann",
-   "x": 3268,
+   "n": "cuidan",
+   "x": 3288,
    "y": 2014,
    "f": {}
   },
@@ -450,7 +450,7 @@
    "id": "nmwmnvy2j1r2lmol",
    "k": "attr",
    "n": "FechaCargo",
-   "x": 3268,
+   "x": 3288,
    "y": 1949,
    "f": {
     "k": true,
