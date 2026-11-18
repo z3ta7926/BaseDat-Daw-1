@@ -27,9 +27,25 @@
   {
    "id": "nmwmlqosf1nzrpx4",
    "k": "attr",
-   "n": "atributo",
+   "n": "Descrip",
    "x": 2462,
    "y": 1633,
+   "f": {}
+  },
+  {
+   "id": "nmwmls3cg1o16fms",
+   "k": "attr",
+   "n": "NumEjemplar",
+   "x": 2426,
+   "y": 1676,
+   "f": {}
+  },
+  {
+   "id": "nmwmlsedz1o3fi74",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2310,
+   "y": 1692,
    "f": {}
   }
  ],
@@ -54,6 +70,22 @@
    "id": "nmwmlqosf1o0yg2b",
    "a": "nmwmlq3st1nugp1q",
    "b": "nmwmlqosf1nzrpx4",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmls3cg1o26nvd",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmls3cg1o16fms",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlsedz1o464ge",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmlsedz1o3fi74",
    "c": null,
    "mn": null,
    "mx": null
