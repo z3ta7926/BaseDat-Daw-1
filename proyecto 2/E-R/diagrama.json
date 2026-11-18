@@ -259,8 +259,8 @@
    "id": "nmwmih6ur5pqn8f",
    "k": "attr",
    "n": "CodCuentaBanco",
-   "x": 2961,
-   "y": 2044,
+   "x": 2976,
+   "y": 2031,
    "f": {
     "k": true,
     "p": false
@@ -269,9 +269,17 @@
   {
    "id": "nmwmih70n5rkz42",
    "k": "attr",
-   "n": "atributo2",
-   "x": 2948,
-   "y": 2112,
+   "n": "SaldoFechaApertura",
+   "x": 2976,
+   "y": 2121,
+   "f": {}
+  },
+  {
+   "id": "nmwmilzss5tyocj",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2814,
+   "y": 2151,
    "f": {}
   }
  ],
@@ -480,6 +488,14 @@
    "id": "nmwmih70n5sfuub",
    "a": "nmwmieuhb5myfep",
    "b": "nmwmih70n5rkz42",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmilzss5u74s5",
+   "a": "nmwmieuhb5myfep",
+   "b": "nmwmilzss5tyocj",
    "c": null,
    "mn": null,
    "mx": null
