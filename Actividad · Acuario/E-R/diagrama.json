@@ -55,6 +55,33 @@
    "x": 2834,
    "y": 1572,
    "f": {}
+  },
+  {
+   "id": "nmwmlu9zg1o8m304",
+   "k": "attr",
+   "n": "CodEspecie",
+   "x": 2310,
+   "y": 1692,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwmluhgc1oa9xli",
+   "k": "attr",
+   "n": "CodEcosistemas",
+   "x": 3000,
+   "y": 1598,
+   "f": {}
+  },
+  {
+   "id": "nmwmlutc41ocqgp9",
+   "k": "attr",
+   "n": "Temperatu",
+   "x": 2989,
+   "y": 1676,
+   "f": {}
   }
  ],
  "links": [
@@ -94,6 +121,30 @@
    "id": "nmwmlt76j1o7ueig",
    "a": "nmwmlsuwk1o544am",
    "b": "nmwmlt76j1o6eex8",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlu9zg1o98xz7",
+   "a": "nmwmlq3st1nugp1q",
+   "b": "nmwmlu9zg1o8m304",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmluhgc1ob7kfj",
+   "a": "nmwmlsuwk1o544am",
+   "b": "nmwmluhgc1oa9xli",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlutc41odtpjs",
+   "a": "nmwmlsuwk1o544am",
+   "b": "nmwmlutc41ocqgp9",
    "c": null,
    "mn": null,
    "mx": null
