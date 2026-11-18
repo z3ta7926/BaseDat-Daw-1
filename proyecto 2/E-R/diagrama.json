@@ -14,7 +14,10 @@
    "n": "CodZona",
    "x": 2029,
    "y": 2018,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmhs1pz4838rc",
@@ -102,7 +105,10 @@
    "n": "CodBanda",
    "x": 2182,
    "y": 1737,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmhy7ny4s7mmz",
@@ -150,7 +156,10 @@
    "n": "CodVehiculo",
    "x": 3045,
    "y": 1756,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmi402d53smqh",
@@ -158,7 +167,10 @@
    "n": "CodPersonaje",
    "x": 2461,
    "y": 1757,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmi4m2t551h8a",
@@ -222,7 +234,10 @@
    "n": "CodArmas",
    "x": 2364,
    "y": 2145,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmieuhb5myfep",
@@ -246,7 +261,10 @@
    "n": "CodCuentaBanco",
    "x": 2961,
    "y": 2044,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmih70n5rkz42",
