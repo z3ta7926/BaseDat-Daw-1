@@ -79,8 +79,8 @@
    "id": "nmwmhvhij4l5lyf",
    "k": "attr",
    "n": "FechaNacimiento",
-   "x": 2513,
-   "y": 1853,
+   "x": 2348,
+   "y": 1841,
    "f": {
     "d": false
    }
@@ -212,32 +212,32 @@
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
    "n": "NumSerie",
-   "x": 2512,
-   "y": 1905,
+   "x": 2582,
+   "y": 2080,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2624,
-   "y": 1905,
+   "x": 2512,
+   "y": 2132,
    "f": {}
   },
   {
    "id": "nmwmic04b5gq8px",
    "k": "attr",
    "n": "TipoCalibre",
-   "x": 2398,
-   "y": 1905,
+   "x": 2334,
+   "y": 2080,
    "f": {}
   },
   {
    "id": "nmwmie3675k2tdn",
    "k": "attr",
    "n": "CodArmas",
-   "x": 2512,
-   "y": 2090,
+   "x": 2444,
+   "y": 2080,
    "f": {
     "k": true,
     "p": false
@@ -402,6 +402,14 @@
    "n": "relacion3",
    "x": 2721,
    "y": 1770,
+   "f": {}
+  },
+  {
+   "id": "nmwmjrzby6oci5u",
+   "k": "rel",
+   "n": "relacion4",
+   "x": 2512,
+   "y": 1891,
    "f": {}
   }
  ],
@@ -738,6 +746,22 @@
    "id": "nmwmjowra6nfez0",
    "a": "nmwmjowra6lotfp",
    "b": "nmwmi2cq74yrbnu",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjrzby6pn82m",
+   "a": "nmwmjrzby6oci5u",
+   "b": "nmwmhtg534eof8d",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjrzby6qci6a",
+   "a": "nmwmjrzby6oci5u",
+   "b": "nmwmia2g75bo3id",
    "c": null,
    "mn": null,
    "mx": null
