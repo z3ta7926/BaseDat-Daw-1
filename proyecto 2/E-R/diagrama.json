@@ -5,7 +5,7 @@
    "k": "ent",
    "n": "zonas",
    "x": 2674,
-   "y": 2390,
+   "y": 2480,
    "f": {}
   },
   {
@@ -13,7 +13,7 @@
    "k": "attr",
    "n": "CodZona",
    "x": 2593,
-   "y": 2345,
+   "y": 2435,
    "f": {
     "k": true,
     "p": false
@@ -24,7 +24,7 @@
    "k": "attr",
    "n": "NombreZona",
    "x": 2674,
-   "y": 2460,
+   "y": 2550,
    "f": {}
   },
   {
@@ -32,7 +32,7 @@
    "k": "attr",
    "n": "TipoZona",
    "x": 2584,
-   "y": 2430,
+   "y": 2520,
    "f": {}
   },
   {
@@ -40,7 +40,7 @@
    "k": "attr",
    "n": "NivelPeligrosidad",
    "x": 2801,
-   "y": 2318,
+   "y": 2408,
    "f": {}
   },
   {
@@ -335,16 +335,16 @@
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
    "n": "propiedades",
-   "x": 2025,
-   "y": 2390,
+   "x": 2018,
+   "y": 2375,
    "f": {}
   },
   {
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 1901,
-   "y": 2363,
+   "x": 1894,
+   "y": 2348,
    "f": {
     "k": true,
     "p": false
@@ -354,24 +354,24 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 2013,
-   "y": 2453,
+   "x": 2006,
+   "y": 2438,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2075,
-   "y": 2331,
+   "x": 2068,
+   "y": 2316,
    "f": {}
   },
   {
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 1891,
-   "y": 2417,
+   "x": 1884,
+   "y": 2402,
    "f": {}
   },
   {
@@ -442,8 +442,8 @@
    "id": "nmwmk074e708on4",
    "k": "rel",
    "n": "relacion8",
-   "x": 2350,
-   "y": 2390,
+   "x": 2332,
+   "y": 2424,
    "f": {}
   }
  ],
