@@ -343,8 +343,8 @@
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 1894,
-   "y": 2348,
+   "x": 1884,
+   "y": 2342,
    "f": {
     "k": true,
     "p": false
@@ -354,16 +354,16 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 2006,
-   "y": 2438,
+   "x": 2017,
+   "y": 2458,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2068,
-   "y": 2316,
+   "x": 2017,
+   "y": 2292,
    "f": {}
   },
   {
