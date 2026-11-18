@@ -355,7 +355,7 @@
   {
    "id": "nmwmminrg1q44jqm",
    "k": "rel",
-   "n": "relacion",
+   "n": "vive",
    "x": 2604,
    "y": 2018,
    "f": {}
@@ -390,7 +390,7 @@
   {
    "id": "nmwmmmo701qcfmvz",
    "k": "rel",
-   "n": "relacion2",
+   "n": "esta",
    "x": 2608,
    "y": 2404,
    "f": {}
@@ -398,7 +398,7 @@
   {
    "id": "nmwmmoo6b1qfdfnk",
    "k": "rel",
-   "n": "relacion3",
+   "n": "pasa",
    "x": 2278,
    "y": 1786,
    "f": {}
@@ -406,7 +406,7 @@
   {
    "id": "nmwmmqplg1qj8svq",
    "k": "rel",
-   "n": "relacion4",
+   "n": "monitorea",
    "x": 2608,
    "y": 1624,
    "f": {}
@@ -422,7 +422,7 @@
   {
    "id": "nmwmmvlzg1qscxcj",
    "k": "rel",
-   "n": "relacion5",
+   "n": "cuidann",
    "x": 3268,
    "y": 2014,
    "f": {}
@@ -438,7 +438,7 @@
   {
    "id": "nmwmn0x4b1qxklrm",
    "k": "rel",
-   "n": "relacion6",
+   "n": "vive",
    "x": 2938,
    "y": 2209,
    "f": {}
