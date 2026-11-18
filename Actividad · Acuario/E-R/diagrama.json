@@ -839,17 +839,17 @@
    "id": "nmwmn0x4c1qyqrkg",
    "a": "nmwmn0x4b1qxklrm",
    "b": "nmwmlsuwk1o544am",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   },
   {
    "id": "nmwmn0x4c1qzuyap",
    "a": "nmwmn0x4b1qxklrm",
    "b": "nmwmlq3st1nugp1q",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   }
  ],
  "notes": []
