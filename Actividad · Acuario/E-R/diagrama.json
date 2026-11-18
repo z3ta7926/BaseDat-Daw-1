@@ -52,8 +52,8 @@
    "id": "nmwmlt76j1o6eex8",
    "k": "attr",
    "n": "NomEcosistemas",
-   "x": 2834,
-   "y": 1572,
+   "x": 3012,
+   "y": 1577,
    "f": {}
   },
   {
@@ -71,24 +71,35 @@
    "id": "nmwmluhgc1oa9xli",
    "k": "attr",
    "n": "CodEcosistemas",
-   "x": 2996,
-   "y": 1585,
-   "f": {}
+   "x": 2834,
+   "y": 1549,
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmlutc41ocqgp9",
    "k": "attr",
    "n": "TemperaturaMedia",
-   "x": 2996,
-   "y": 1676,
+   "x": 3012,
+   "y": 1689,
    "f": {}
   },
   {
    "id": "nmwmlv8u81oe6z0t",
    "k": "attr",
-   "n": "atributo",
+   "n": "TipoFondo",
    "x": 3074,
    "y": 1633,
+   "f": {}
+  },
+  {
+   "id": "nmwmlxa2h1og22fq",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2834,
+   "y": 1718,
    "f": {}
   }
  ],
@@ -161,6 +172,14 @@
    "id": "nmwmlv8u81ofijol",
    "a": "nmwmlsuwk1o544am",
    "b": "nmwmlv8u81oe6z0t",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlxa2h1oh17lb",
+   "a": "nmwmlsuwk1o544am",
+   "b": "nmwmlxa2h1og22fq",
    "c": null,
    "mn": null,
    "mx": null
