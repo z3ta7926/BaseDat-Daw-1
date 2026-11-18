@@ -87,6 +87,30 @@
    "x": 2447,
    "y": 1835,
    "f": {}
+  },
+  {
+   "id": "nmwmhxjzb4pf9rv",
+   "k": "ent",
+   "n": "bandas",
+   "x": 2246,
+   "y": 2025,
+   "f": {}
+  },
+  {
+   "id": "nmwmhxsy74qo5d7",
+   "k": "attr",
+   "n": "CodBanda",
+   "x": 2246,
+   "y": 1957,
+   "f": {}
+  },
+  {
+   "id": "nmwmhy7ny4s7mmz",
+   "k": "attr",
+   "n": "NombreBanda",
+   "x": 2362,
+   "y": 2009,
+   "f": {}
   }
  ],
  "links": [
@@ -158,6 +182,22 @@
    "id": "nmwmhw2st4o2vde",
    "a": "nmwmhtg534eof8d",
    "b": "nmwmhw2st4nqzpn",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhxsy74r4u4k",
+   "a": "nmwmhxjzb4pf9rv",
+   "b": "nmwmhxsy74qo5d7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhy7ny4ttszw",
+   "a": "nmwmhxjzb4pf9rv",
+   "b": "nmwmhy7ny4s7mmz",
    "c": null,
    "mn": null,
    "mx": null
