@@ -23,8 +23,8 @@
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 2686,
-   "y": 2453,
+   "x": 2674,
+   "y": 2460,
    "f": {}
   },
   {
@@ -39,8 +39,8 @@
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 2771,
-   "y": 2342,
+   "x": 2801,
+   "y": 2318,
    "f": {}
   },
   {
@@ -458,8 +458,8 @@
    "id": "nmwmk9z2m76ukq5",
    "k": "attr",
    "n": "TipoBase",
-   "x": 2754,
-   "y": 2103,
+   "x": 2768,
+   "y": 2110,
    "f": {}
   }
  ],
