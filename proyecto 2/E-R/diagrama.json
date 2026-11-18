@@ -290,16 +290,16 @@
    "id": "nmwmio5i75v8jmj",
    "k": "ent",
    "n": "misiones",
-   "x": 2023,
-   "y": 2236,
+   "x": 2022,
+   "y": 2282,
    "f": {}
   },
   {
    "id": "nmwmiow465w8po8",
    "k": "attr",
    "n": "CodMision",
-   "x": 1856,
-   "y": 2236,
+   "x": 1855,
+   "y": 2282,
    "f": {
     "k": true,
     "p": false
@@ -309,40 +309,40 @@
    "id": "nmwmir5ci5yhlv1",
    "k": "attr",
    "n": "TituloMision",
-   "x": 2022,
-   "y": 2406,
+   "x": 2021,
+   "y": 2452,
    "f": {}
   },
   {
    "id": "nmwmirrxe60nf3k",
    "k": "attr",
    "n": "DificultadMision",
-   "x": 1902,
-   "y": 2369,
+   "x": 1901,
+   "y": 2415,
    "f": {}
   },
   {
    "id": "nmwmisx1w62qcp3",
    "k": "attr",
    "n": "RecompensaMision",
-   "x": 1832,
-   "y": 2311,
+   "x": 1831,
+   "y": 2357,
    "f": {}
   },
   {
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
    "n": "propiedades",
-   "x": 2504,
-   "y": 2298,
+   "x": 2450,
+   "y": 2282,
    "f": {}
   },
   {
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 2656,
-   "y": 2248,
+   "x": 2602,
+   "y": 2232,
    "f": {
     "k": true,
     "p": false
@@ -352,24 +352,24 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 2697,
-   "y": 2298,
+   "x": 2643,
+   "y": 2282,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2504,
-   "y": 2398,
+   "x": 2450,
+   "y": 2382,
    "f": {}
   },
   {
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 2653,
-   "y": 2353,
+   "x": 2599,
+   "y": 2337,
    "f": {}
   },
   {
