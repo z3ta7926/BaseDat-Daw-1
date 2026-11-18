@@ -141,7 +141,7 @@
    "k": "attr",
    "n": "Matricula",
    "x": 2931,
-   "y": 1741,
+   "y": 1724,
    "f": {}
   },
   {
@@ -195,9 +195,17 @@
   {
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
-   "n": "atributo",
+   "n": "NumSerie",
    "x": 2711,
    "y": 1944,
+   "f": {}
+  },
+  {
+   "id": "nmwmiasoj5eu1sq",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2827,
+   "y": 1989,
    "f": {}
   }
  ],
@@ -358,6 +366,14 @@
    "id": "nmwmia8na5dv6df",
    "a": "nmwmia2g75bo3id",
    "b": "nmwmia8na5ce6x1",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmiasoj5f2zqn",
+   "a": "nmwmia2g75bo3id",
+   "b": "nmwmiasoj5eu1sq",
    "c": null,
    "mn": null,
    "mx": null
