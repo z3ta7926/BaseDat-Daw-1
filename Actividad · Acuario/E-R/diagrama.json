@@ -71,16 +71,24 @@
    "id": "nmwmluhgc1oa9xli",
    "k": "attr",
    "n": "CodEcosistemas",
-   "x": 3000,
-   "y": 1598,
+   "x": 2996,
+   "y": 1585,
    "f": {}
   },
   {
    "id": "nmwmlutc41ocqgp9",
    "k": "attr",
-   "n": "Temperatu",
-   "x": 2989,
+   "n": "TemperaturaMedia",
+   "x": 2996,
    "y": 1676,
+   "f": {}
+  },
+  {
+   "id": "nmwmlv8u81oe6z0t",
+   "k": "attr",
+   "n": "atributo",
+   "x": 3074,
+   "y": 1633,
    "f": {}
   }
  ],
@@ -145,6 +153,14 @@
    "id": "nmwmlutc41odtpjs",
    "a": "nmwmlsuwk1o544am",
    "b": "nmwmlutc41ocqgp9",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlv8u81ofijol",
+   "a": "nmwmlsuwk1o544am",
+   "b": "nmwmlv8u81oe6z0t",
    "c": null,
    "mn": null,
    "mx": null
