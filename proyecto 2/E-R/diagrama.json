@@ -281,6 +281,22 @@
    "x": 2728,
    "y": 2138,
    "f": {}
+  },
+  {
+   "id": "nmwmio5i75v8jmj",
+   "k": "ent",
+   "n": "misiones",
+   "x": 2584,
+   "y": 2276,
+   "f": {}
+  },
+  {
+   "id": "nmwmiow465w8po8",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2584,
+   "y": 2194,
+   "f": {}
   }
  ],
  "links": [
@@ -496,6 +512,14 @@
    "id": "nmwmilzss5u74s5",
    "a": "nmwmieuhb5myfep",
    "b": "nmwmilzss5tyocj",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmiow465xnbd2",
+   "a": "nmwmio5i75v8jmj",
+   "b": "nmwmiow465w8po8",
    "c": null,
    "mn": null,
    "mx": null
