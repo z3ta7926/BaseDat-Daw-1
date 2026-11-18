@@ -139,15 +139,39 @@
    "k": "attr",
    "n": "CodRecorrido",
    "x": 2344,
-   "y": 1935,
+   "y": 1922,
    "f": {}
   },
   {
    "id": "nmwmm0rak1oq5dvb",
    "k": "attr",
-   "n": "No",
-   "x": 2461,
-   "y": 1980,
+   "n": "NomDuracion",
+   "x": 2476,
+   "y": 1935,
+   "f": {}
+  },
+  {
+   "id": "nmwmm1q3u1os6477",
+   "k": "attr",
+   "n": "LongRecorrido",
+   "x": 2492,
+   "y": 1996,
+   "f": {}
+  },
+  {
+   "id": "nmwmm2jk21ou8le7",
+   "k": "attr",
+   "n": "NumMaxVisit",
+   "x": 2465,
+   "y": 2053,
+   "f": {}
+  },
+  {
+   "id": "nmwmm30rn1owrddh",
+   "k": "attr",
+   "n": "Num",
+   "x": 2344,
+   "y": 2066,
    "f": {}
   }
  ],
@@ -260,6 +284,30 @@
    "id": "nmwmm0rak1orzktd",
    "a": "nmwmm04rg1on2ew7",
    "b": "nmwmm0rak1oq5dvb",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm1q3u1otlmr7",
+   "a": "nmwmm04rg1on2ew7",
+   "b": "nmwmm1q3u1os6477",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm2jk21ovgmq8",
+   "a": "nmwmm04rg1on2ew7",
+   "b": "nmwmm2jk21ou8le7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm30rn1oxc2k0",
+   "a": "nmwmm04rg1on2ew7",
+   "b": "nmwmm30rn1owrddh",
    "c": null,
    "mn": null,
    "mx": null
