@@ -12,8 +12,8 @@
    "id": "nmwmhrrtz46f440",
    "k": "attr",
    "n": "CodZona",
-   "x": 2593,
-   "y": 2435,
+   "x": 2552,
+   "y": 2408,
    "f": {
     "k": true,
     "p": false
@@ -23,24 +23,24 @@
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 2674,
-   "y": 2550,
+   "x": 2601,
+   "y": 2582,
    "f": {}
   },
   {
    "id": "nmwmhse6k4avtgo",
    "k": "attr",
    "n": "TipoZona",
-   "x": 2584,
-   "y": 2520,
+   "x": 2562,
+   "y": 2524,
    "f": {}
   },
   {
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 2801,
-   "y": 2408,
+   "x": 2573,
+   "y": 2355,
    "f": {}
   },
   {
@@ -410,8 +410,8 @@
    "id": "nmwmjrzby6oci5u",
    "k": "rel",
    "n": "relacion4",
-   "x": 3324,
-   "y": 2195,
+   "x": 3323,
+   "y": 2171,
    "f": {}
   },
   {
@@ -426,8 +426,8 @@
    "id": "nmwmjv7rp6uawza",
    "k": "rel",
    "n": "relacion6",
-   "x": 3324,
-   "y": 2255,
+   "x": 3159,
+   "y": 2318,
    "f": {}
   },
   {
