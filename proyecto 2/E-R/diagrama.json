@@ -107,8 +107,8 @@
    "id": "nmwmhxsy74qo5d7",
    "k": "attr",
    "n": "CodBanda",
-   "x": 2591,
-   "y": 1955,
+   "x": 2555,
+   "y": 1958,
    "f": {
     "k": true,
     "p": false
@@ -126,18 +126,18 @@
    "id": "nmwmhzwdd4umxmz",
    "k": "attr",
    "n": "AñoDeFundacion",
-   "x": 2548,
-   "y": 2027,
+   "x": 2558,
+   "y": 2040,
    "f": {}
   },
   {
    "id": "nmwmi0gy84w97ze",
    "k": "attr",
    "n": "ZonaBase",
-   "x": 2768,
-   "y": 2045,
+   "x": 2735,
+   "y": 2058,
    "f": {
-    "c": true
+    "c": false
    }
   },
   {
@@ -444,22 +444,6 @@
    "n": "relacion8",
    "x": 2350,
    "y": 2390,
-   "f": {}
-  },
-  {
-   "id": "nmwmk94qd74w22w",
-   "k": "attr",
-   "n": "Direccbase",
-   "x": 2896,
-   "y": 2045,
-   "f": {}
-  },
-  {
-   "id": "nmwmk9z2m76ukq5",
-   "k": "attr",
-   "n": "TipoBase",
-   "x": 2768,
-   "y": 2110,
    "f": {}
   }
  ],
@@ -876,22 +860,6 @@
    "id": "nmwmk074e72jkgs",
    "a": "nmwmk074e708on4",
    "b": "nmwmiwxrr6474jo",
-   "c": null,
-   "mn": null,
-   "mx": null
-  },
-  {
-   "id": "nmwmk94qd75spqd",
-   "a": "nmwmi0gy84w97ze",
-   "b": "nmwmk94qd74w22w",
-   "c": null,
-   "mn": null,
-   "mx": null
-  },
-  {
-   "id": "nmwmk9z2m77aiky",
-   "a": "nmwmi0gy84w97ze",
-   "b": "nmwmk9z2m76ukq5",
    "c": null,
    "mn": null,
    "mx": null
