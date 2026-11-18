@@ -89,8 +89,8 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 2333,
-   "y": 1862,
+   "x": 2678,
+   "y": 1606,
    "f": {
     "o": true
    }
@@ -142,15 +142,15 @@
    "id": "nmwmi2cq74yrbnu",
    "k": "ent",
    "n": "vehiculos",
-   "x": 2882,
-   "y": 1586,
+   "x": 2865,
+   "y": 1599,
    "f": {}
   },
   {
    "id": "nmwmi2nv34ztt1i",
    "k": "attr",
    "n": "Matricula",
-   "x": 3053,
+   "x": 3040,
    "y": 1514,
    "f": {}
   },
@@ -158,8 +158,8 @@
    "id": "nmwmi3kmf51jxje",
    "k": "attr",
    "n": "CodVehiculo",
-   "x": 3057,
-   "y": 1553,
+   "x": 3040,
+   "y": 1566,
    "f": {
     "k": true,
     "p": false
@@ -180,24 +180,24 @@
    "id": "nmwmi4m2t551h8a",
    "k": "attr",
    "n": "MarcaVehiculo",
-   "x": 3063,
-   "y": 1632,
+   "x": 3040,
+   "y": 1644,
    "f": {}
   },
   {
    "id": "nmwmi5d3357tlys",
    "k": "attr",
    "n": "ModeloVehiculo",
-   "x": 3023,
-   "y": 1674,
+   "x": 3006,
+   "y": 1687,
    "f": {}
   },
   {
    "id": "nmwmi6y4t590tg7",
    "k": "attr",
    "n": "TipoVehiculo",
-   "x": 3063,
-   "y": 1593,
+   "x": 3040,
+   "y": 1606,
    "f": {}
   },
   {
@@ -247,24 +247,24 @@
    "id": "nmwmieuhb5myfep",
    "k": "ent",
    "n": "cuenta_bancaria",
-   "x": 2878,
-   "y": 1915,
+   "x": 2903,
+   "y": 1887,
    "f": {}
   },
   {
    "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "NumCuentaBanco",
-   "x": 2957,
-   "y": 1852,
+   "x": 2982,
+   "y": 1824,
    "f": {}
   },
   {
    "id": "nmwmih6ur5pqn8f",
    "k": "attr",
    "n": "CodCuentaBanco",
-   "x": 3050,
-   "y": 1889,
+   "x": 3075,
+   "y": 1861,
    "f": {
     "k": true,
     "p": false
@@ -274,16 +274,16 @@
    "id": "nmwmih70n5rkz42",
    "k": "attr",
    "n": "FechaApertura",
-   "x": 3054,
-   "y": 1935,
+   "x": 3079,
+   "y": 1907,
    "f": {}
   },
   {
    "id": "nmwmilzss5tyocj",
    "k": "attr",
    "n": "SaldoCuanto",
-   "x": 2997,
-   "y": 1991,
+   "x": 3022,
+   "y": 1963,
    "f": {}
   },
   {
@@ -376,8 +376,8 @@
    "id": "nmwmjht0x6dnj06",
    "k": "attr",
    "n": "VelocidadMax",
-   "x": 2883,
-   "y": 1674,
+   "x": 2866,
+   "y": 1687,
    "f": {}
   },
   {
@@ -417,7 +417,7 @@
    "k": "rel",
    "n": "relacion5",
    "x": 2678,
-   "y": 1849,
+   "y": 1828,
    "f": {}
   },
   {
@@ -426,6 +426,14 @@
    "n": "relacion6",
    "x": 2023,
    "y": 2119,
+   "f": {}
+  },
+  {
+   "id": "nmwmjythq6xg17k",
+   "k": "rel",
+   "n": "relacion7",
+   "x": 2268,
+   "y": 2008,
    "f": {}
   }
  ],
@@ -810,6 +818,22 @@
    "id": "nmwmjv7rp6wexov",
    "a": "nmwmjv7rp6uawza",
    "b": "nmwmhqvag3xdsrz",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjythq6ynobc",
+   "a": "nmwmjythq6xg17k",
+   "b": "nmwmhtg534eof8d",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjythq6z14q7",
+   "a": "nmwmjythq6xg17k",
+   "b": "nmwmio5i75v8jmj",
    "c": null,
    "mn": null,
    "mx": null
