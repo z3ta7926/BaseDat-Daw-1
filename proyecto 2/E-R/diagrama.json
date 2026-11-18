@@ -147,9 +147,25 @@
   {
    "id": "nmwmi3kmf51jxje",
    "k": "attr",
-   "n": "atributo",
+   "n": "CodVehiculo",
    "x": 2780,
-   "y": 2009,
+   "y": 1990,
+   "f": {}
+  },
+  {
+   "id": "nmwmi402d53smqh",
+   "k": "attr",
+   "n": "CodPersonaje",
+   "x": 2461,
+   "y": 1757,
+   "f": {}
+  },
+  {
+   "id": "nmwmi4m2t551h8a",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2770,
+   "y": 2068,
    "f": {}
   }
  ],
@@ -270,6 +286,22 @@
    "id": "nmwmi3kmf528te0",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmi3kmf51jxje",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi402d542xx4",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmi402d53smqh",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi4m2t56km96",
+   "a": "nmwmi2cq74yrbnu",
+   "b": "nmwmi4m2t551h8a",
    "c": null,
    "mn": null,
    "mx": null
