@@ -140,7 +140,10 @@
    "n": "CodRecorrido",
    "x": 2344,
    "y": 1922,
-   "f": {}
+   "f": {
+    "k": true,
+    "p": false
+   }
   },
   {
    "id": "nmwmm0rak1oq5dvb",
@@ -185,7 +188,7 @@
   {
    "id": "nmwmm4cck1ozzlka",
    "k": "attr",
-   "n": "NombreMon",
+   "n": "NombreMonitor",
    "x": 2834,
    "y": 1769,
    "f": {}
@@ -193,7 +196,7 @@
   {
    "id": "nmwmm4saa1p1wcw0",
    "k": "attr",
-   "n": "apellidoMon",
+   "n": "apellidoMonitor",
    "x": 2937,
    "y": 1789,
    "f": {}
@@ -201,7 +204,7 @@
   {
    "id": "nmwmm4ufe1p3042t",
    "k": "attr",
-   "n": "direccion",
+   "n": "direccionMonitor",
    "x": 2979,
    "y": 1863,
    "f": {
@@ -259,7 +262,7 @@
   {
    "id": "nmwmm88qc1pio2yb",
    "k": "attr",
-   "n": "NombreBiol",
+   "n": "NombreBiologo",
    "x": 2834,
    "y": 1941,
    "f": {}
@@ -267,7 +270,7 @@
   {
    "id": "nmwmm8v6o1pkcwz3",
    "k": "attr",
-   "n": "ApellidosBiol",
+   "n": "ApellidosBiologo",
    "x": 2975,
    "y": 1967,
    "f": {}
@@ -275,10 +278,85 @@
   {
    "id": "nmwmmatmr1pmsmsg",
    "k": "attr",
-   "n": "Direccion",
+   "n": "DireccionBiologo",
    "x": 2975,
    "y": 2022,
+   "f": {
+    "c": true
+   }
+  },
+  {
+   "id": "nmwmmcl0l1porlhl",
+   "k": "attr",
+   "n": "Telf",
+   "x": 2865,
+   "y": 2055,
    "f": {}
+  },
+  {
+   "id": "nmwmmcs231pqok2a",
+   "k": "attr",
+   "n": "FechaIngreso",
+   "x": 2774,
+   "y": 2049,
+   "f": {}
+  },
+  {
+   "id": "nmwmmd6381pssyfu",
+   "k": "attr",
+   "n": "CodBiol",
+   "x": 2669,
+   "y": 2029,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwmmdeic1puypxf",
+   "k": "attr",
+   "n": "CodMonitor",
+   "x": 2686,
+   "y": 1830,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwmme4u41pwlxij",
+   "k": "attr",
+   "n": "CodPost",
+   "x": 3105,
+   "y": 1980,
+   "f": {}
+  },
+  {
+   "id": "nmwmmf36c1pyyq8l",
+   "k": "attr",
+   "n": "TipoVia",
+   "x": 3119,
+   "y": 2036,
+   "f": {}
+  },
+  {
+   "id": "nmwmmfeh71q05hvk",
+   "k": "attr",
+   "n": "NomVia",
+   "x": 3013,
+   "y": 2074,
+   "f": {}
+  },
+  {
+   "id": "nmwmmgbbo1q2vvmu",
+   "k": "attr",
+   "n": "CodTanques",
+   "x": 2343,
+   "y": 1756,
+   "f": {
+    "k": true,
+    "p": false
+   }
   }
  ],
  "links": [
@@ -502,6 +580,70 @@
    "id": "nmwmmatmr1pnxodj",
    "a": "nmwmm81181pholdc",
    "b": "nmwmmatmr1pmsmsg",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmcl0l1pp795v",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmmcl0l1porlhl",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmcs231prnx0g",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmmcs231pqok2a",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmd6381ptrbxg",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmmd6381pssyfu",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmdeic1pvqq0h",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmmdeic1puypxf",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmme4u41pxscc5",
+   "a": "nmwmmatmr1pmsmsg",
+   "b": "nmwmme4u41pwlxij",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmf36c1pzmd3v",
+   "a": "nmwmmatmr1pmsmsg",
+   "b": "nmwmmf36c1pyyq8l",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmfeh71q1lsgr",
+   "a": "nmwmmatmr1pmsmsg",
+   "b": "nmwmmfeh71q05hvk",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmgbbo1q3xspj",
+   "a": "nmwmlyn111oi5120",
+   "b": "nmwmmgbbo1q2vvmu",
    "c": null,
    "mn": null,
    "mx": null
