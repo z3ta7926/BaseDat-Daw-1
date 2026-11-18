@@ -442,6 +442,17 @@
    "x": 2938,
    "y": 2209,
    "f": {}
+  },
+  {
+   "id": "nmwmnn7or1r0skuz",
+   "k": "attr",
+   "n": "Hora",
+   "x": 2608,
+   "y": 1559,
+   "f": {
+    "k": true,
+    "p": false
+   }
   }
  ],
  "links": [
@@ -852,6 +863,14 @@
    "c": "(1,N)",
    "mn": "1",
    "mx": "N"
+  },
+  {
+   "id": "nmwmnn7or1r117km",
+   "a": "nmwmmqplg1qj8svq",
+   "b": "nmwmnn7or1r0skuz",
+   "c": null,
+   "mn": null,
+   "mx": null
   }
  ],
  "notes": []
