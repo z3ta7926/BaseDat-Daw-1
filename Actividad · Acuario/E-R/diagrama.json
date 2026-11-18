@@ -428,14 +428,6 @@
    "f": {}
   },
   {
-   "id": "nmwmmwbv81qvvnjq",
-   "k": "attr",
-   "n": "FechaEspecie",
-   "x": 3628,
-   "y": 2110,
-   "f": {}
-  },
-  {
    "id": "nmwmn0x4b1qxklrm",
    "k": "rel",
    "n": "vive",
@@ -449,6 +441,17 @@
    "n": "Hora",
    "x": 2608,
    "y": 1559,
+   "f": {
+    "k": true,
+    "p": false
+   }
+  },
+  {
+   "id": "nmwmnvy2j1r2lmol",
+   "k": "attr",
+   "n": "FechaCargo",
+   "x": 3268,
+   "y": 1949,
    "f": {
     "k": true,
     "p": false
@@ -841,14 +844,6 @@
    "mx": "N"
   },
   {
-   "id": "nmwmmwbv81qwae0s",
-   "a": "nmwmm81181pholdc",
-   "b": "nmwmmwbv81qvvnjq",
-   "c": null,
-   "mn": null,
-   "mx": null
-  },
-  {
    "id": "nmwmn0x4c1qyqrkg",
    "a": "nmwmn0x4b1qxklrm",
    "b": "nmwmlsuwk1o544am",
@@ -868,6 +863,14 @@
    "id": "nmwmnn7or1r117km",
    "a": "nmwmmqplg1qj8svq",
    "b": "nmwmnn7or1r0skuz",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmnvy2j1r3x72s",
+   "a": "nmwmmvlzg1qscxcj",
+   "b": "nmwmnvy2j1r2lmol",
    "c": null,
    "mn": null,
    "mx": null
