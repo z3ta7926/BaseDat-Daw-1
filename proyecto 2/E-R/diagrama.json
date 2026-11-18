@@ -4,16 +4,16 @@
    "id": "nmwmhqvag3xdsrz",
    "k": "ent",
    "n": "zonas",
-   "x": 2023,
-   "y": 1998,
+   "x": 2674,
+   "y": 2390,
    "f": {}
   },
   {
    "id": "nmwmhrrtz46f440",
    "k": "attr",
    "n": "CodZona",
-   "x": 1806,
-   "y": 1952,
+   "x": 2593,
+   "y": 2345,
    "f": {
     "k": true,
     "p": false
@@ -23,64 +23,64 @@
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 1806,
-   "y": 1998,
+   "x": 2686,
+   "y": 2453,
    "f": {}
   },
   {
    "id": "nmwmhse6k4avtgo",
    "k": "attr",
    "n": "TipoZona",
-   "x": 1813,
-   "y": 2106,
+   "x": 2584,
+   "y": 2430,
    "f": {}
   },
   {
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 1806,
-   "y": 2051,
+   "x": 2771,
+   "y": 2342,
    "f": {}
   },
   {
    "id": "nmwmhtg534eof8d",
    "k": "ent",
    "n": "personajes",
-   "x": 2513,
-   "y": 1780,
+   "x": 3324,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmhtvoe4fcd3s",
    "k": "attr",
    "n": "IdPersonaje",
-   "x": 2350,
-   "y": 1606,
+   "x": 3416,
+   "y": 2045,
    "f": {}
   },
   {
    "id": "nmwmhtzp54hasp6",
    "k": "attr",
    "n": "AliasPersonaje",
-   "x": 2402,
-   "y": 1553,
+   "x": 3225,
+   "y": 2045,
    "f": {}
   },
   {
    "id": "nmwmhu9s44jnxp9",
    "k": "attr",
    "n": "NombreReal",
-   "x": 2612,
-   "y": 1553,
+   "x": 3261,
+   "y": 1945,
    "f": {}
   },
   {
    "id": "nmwmhvhij4l5lyf",
    "k": "attr",
    "n": "FechaNacimiento",
-   "x": 2510,
-   "y": 1599,
+   "x": 3418,
+   "y": 1916,
    "f": {
     "d": false
    }
@@ -89,8 +89,8 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 2678,
-   "y": 1606,
+   "x": 3420,
+   "y": 2084,
    "f": {
     "o": true
    }
@@ -99,16 +99,16 @@
    "id": "nmwmhxjzb4pf9rv",
    "k": "ent",
    "n": "bandas",
-   "x": 2025,
-   "y": 1776,
+   "x": 2674,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmhxsy74qo5d7",
    "k": "attr",
    "n": "CodBanda",
-   "x": 1942,
-   "y": 1671,
+   "x": 2591,
+   "y": 1955,
    "f": {
     "k": true,
     "p": false
@@ -118,24 +118,24 @@
    "id": "nmwmhy7ny4s7mmz",
    "k": "attr",
    "n": "NombreBanda",
-   "x": 2025,
-   "y": 1632,
+   "x": 2739,
+   "y": 1945,
    "f": {}
   },
   {
    "id": "nmwmhzwdd4umxmz",
    "k": "attr",
    "n": "AñoDeFundacion",
-   "x": 2122,
-   "y": 1671,
+   "x": 2548,
+   "y": 2027,
    "f": {}
   },
   {
    "id": "nmwmi0gy84w97ze",
    "k": "attr",
    "n": "ZonaBase",
-   "x": 1843,
-   "y": 1776,
+   "x": 2768,
+   "y": 2045,
    "f": {
     "c": true
    }
@@ -144,24 +144,24 @@
    "id": "nmwmi2cq74yrbnu",
    "k": "ent",
    "n": "vehiculos",
-   "x": 2865,
-   "y": 1599,
+   "x": 3324,
+   "y": 1610,
    "f": {}
   },
   {
    "id": "nmwmi2nv34ztt1i",
    "k": "attr",
    "n": "Matricula",
-   "x": 3040,
-   "y": 1514,
+   "x": 3204,
+   "y": 1621,
    "f": {}
   },
   {
    "id": "nmwmi3kmf51jxje",
    "k": "attr",
    "n": "CodVehiculo",
-   "x": 3040,
-   "y": 1566,
+   "x": 3324,
+   "y": 1547,
    "f": {
     "k": true,
     "p": false
@@ -171,8 +171,8 @@
    "id": "nmwmi402d53smqh",
    "k": "attr",
    "n": "CodPersonaje",
-   "x": 2319,
-   "y": 1670,
+   "x": 3419,
+   "y": 1955,
    "f": {
     "k": true,
     "p": false
@@ -182,64 +182,64 @@
    "id": "nmwmi4m2t551h8a",
    "k": "attr",
    "n": "MarcaVehiculo",
-   "x": 3040,
-   "y": 1644,
+   "x": 3458,
+   "y": 1621,
    "f": {}
   },
   {
    "id": "nmwmi5d3357tlys",
    "k": "attr",
    "n": "ModeloVehiculo",
-   "x": 3006,
-   "y": 1687,
+   "x": 3404,
+   "y": 1662,
    "f": {}
   },
   {
    "id": "nmwmi6y4t590tg7",
    "k": "attr",
    "n": "TipoVehiculo",
-   "x": 3040,
-   "y": 1606,
+   "x": 3248,
+   "y": 1662,
    "f": {}
   },
   {
    "id": "nmwmia2g75bo3id",
    "k": "ent",
    "n": "armas",
-   "x": 2512,
-   "y": 1998,
+   "x": 3324,
+   "y": 2390,
    "f": {}
   },
   {
    "id": "nmwmia8na5ce6x1",
    "k": "attr",
    "n": "NumSerie",
-   "x": 2602,
-   "y": 2095,
+   "x": 3206,
+   "y": 2395,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2513,
-   "y": 2130,
+   "x": 3445,
+   "y": 2368,
    "f": {}
   },
   {
    "id": "nmwmic04b5gq8px",
    "k": "attr",
    "n": "TipoCalibre",
-   "x": 2350,
-   "y": 2064,
+   "x": 3270,
+   "y": 2447,
    "f": {}
   },
   {
    "id": "nmwmie3675k2tdn",
    "k": "attr",
    "n": "CodArmas",
-   "x": 2426,
-   "y": 2093,
+   "x": 3384,
+   "y": 2445,
    "f": {
     "k": true,
     "p": false
@@ -249,24 +249,24 @@
    "id": "nmwmieuhb5myfep",
    "k": "ent",
    "n": "cuenta_bancaria",
-   "x": 2903,
-   "y": 1887,
+   "x": 2674,
+   "y": 1610,
    "f": {}
   },
   {
    "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "NumCuentaBanco",
-   "x": 2982,
-   "y": 1824,
+   "x": 2583,
+   "y": 1662,
    "f": {}
   },
   {
    "id": "nmwmih6ur5pqn8f",
    "k": "attr",
    "n": "CodCuentaBanco",
-   "x": 3075,
-   "y": 1861,
+   "x": 2595,
+   "y": 1555,
    "f": {
     "k": true,
     "p": false
@@ -276,32 +276,32 @@
    "id": "nmwmih70n5rkz42",
    "k": "attr",
    "n": "FechaApertura",
-   "x": 3079,
-   "y": 1907,
+   "x": 2794,
+   "y": 1570,
    "f": {}
   },
   {
    "id": "nmwmilzss5tyocj",
    "k": "attr",
    "n": "SaldoCuanto",
-   "x": 3022,
-   "y": 1963,
+   "x": 2526,
+   "y": 1605,
    "f": {}
   },
   {
    "id": "nmwmio5i75v8jmj",
    "k": "ent",
    "n": "misiones",
-   "x": 2022,
-   "y": 2282,
+   "x": 3974,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmiow465w8po8",
    "k": "attr",
    "n": "CodMision",
-   "x": 1855,
-   "y": 2282,
+   "x": 4084,
+   "y": 1973,
    "f": {
     "k": true,
     "p": false
@@ -311,40 +311,40 @@
    "id": "nmwmir5ci5yhlv1",
    "k": "attr",
    "n": "TituloMision",
-   "x": 2021,
-   "y": 2452,
+   "x": 4008,
+   "y": 2061,
    "f": {}
   },
   {
    "id": "nmwmirrxe60nf3k",
    "k": "attr",
    "n": "DificultadMision",
-   "x": 1901,
-   "y": 2415,
+   "x": 3924,
+   "y": 1941,
    "f": {}
   },
   {
    "id": "nmwmisx1w62qcp3",
    "k": "attr",
    "n": "RecompensaMision",
-   "x": 1831,
-   "y": 2357,
+   "x": 4106,
+   "y": 2027,
    "f": {}
   },
   {
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
    "n": "propiedades",
-   "x": 2450,
-   "y": 2282,
+   "x": 2025,
+   "y": 2390,
    "f": {}
   },
   {
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 2602,
-   "y": 2232,
+   "x": 1901,
+   "y": 2363,
    "f": {
     "k": true,
     "p": false
@@ -354,112 +354,112 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 2643,
-   "y": 2282,
+   "x": 2013,
+   "y": 2453,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2450,
-   "y": 2382,
+   "x": 2075,
+   "y": 2331,
    "f": {}
   },
   {
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 2599,
-   "y": 2337,
+   "x": 1891,
+   "y": 2417,
    "f": {}
   },
   {
    "id": "nmwmjht0x6dnj06",
    "k": "attr",
    "n": "VelocidadMax",
-   "x": 2866,
-   "y": 1687,
+   "x": 3444,
+   "y": 1583,
    "f": {}
   },
   {
    "id": "nmwmjmfhi6frj9i",
    "k": "rel",
    "n": "relacion",
-   "x": 2270,
-   "y": 1780,
+   "x": 2999,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmjmt126iqzcu",
    "k": "rel",
    "n": "relacion2",
-   "x": 2025,
-   "y": 1891,
+   "x": 2674,
+   "y": 2195,
    "f": {}
   },
   {
    "id": "nmwmjowra6lotfp",
    "k": "rel",
    "n": "relacion3",
-   "x": 2682,
-   "y": 1694,
+   "x": 3324,
+   "y": 1805,
    "f": {}
   },
   {
    "id": "nmwmjrzby6oci5u",
    "k": "rel",
    "n": "relacion4",
-   "x": 2512,
-   "y": 1891,
+   "x": 3324,
+   "y": 2195,
    "f": {}
   },
   {
    "id": "nmwmjtid26r4xvv",
    "k": "rel",
    "n": "relacion5",
-   "x": 2678,
-   "y": 1828,
+   "x": 2999,
+   "y": 1805,
    "f": {}
   },
   {
    "id": "nmwmjv7rp6uawza",
    "k": "rel",
    "n": "relacion6",
-   "x": 2023,
-   "y": 2119,
+   "x": 3324,
+   "y": 2255,
    "f": {}
   },
   {
    "id": "nmwmjythq6xg17k",
    "k": "rel",
    "n": "relacion7",
-   "x": 2286,
-   "y": 2017,
+   "x": 3649,
+   "y": 2000,
    "f": {}
   },
   {
    "id": "nmwmk074e708on4",
    "k": "rel",
    "n": "relacion8",
-   "x": 2266,
-   "y": 2156,
+   "x": 2350,
+   "y": 2390,
    "f": {}
   },
   {
    "id": "nmwmk94qd74w22w",
    "k": "attr",
    "n": "Direccbase",
-   "x": 1788,
-   "y": 1825,
+   "x": 2885,
+   "y": 2041,
    "f": {}
   },
   {
    "id": "nmwmk9z2m76ukq5",
    "k": "attr",
    "n": "TipoBase",
-   "x": 1788,
-   "y": 1715,
+   "x": 2730,
+   "y": 2086,
    "f": {}
   }
  ],
