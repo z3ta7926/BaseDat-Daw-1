@@ -309,9 +309,17 @@
   {
    "id": "nmwmirrxe60nf3k",
    "k": "attr",
-   "n": "atributo",
+   "n": "DificultadMision",
    "x": 2749,
    "y": 2276,
+   "f": {}
+  },
+  {
+   "id": "nmwmisx1w62qcp3",
+   "k": "attr",
+   "n": "RecompensaMision",
+   "x": 2699,
+   "y": 2326,
    "f": {}
   }
  ],
@@ -552,6 +560,14 @@
    "id": "nmwmirrxe61j8kf",
    "a": "nmwmio5i75v8jmj",
    "b": "nmwmirrxe60nf3k",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmisx1w63uotg",
+   "a": "nmwmio5i75v8jmj",
+   "b": "nmwmisx1w62qcp3",
    "c": null,
    "mn": null,
    "mx": null
