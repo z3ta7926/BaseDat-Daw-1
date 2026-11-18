@@ -4,40 +4,40 @@
    "id": "nmwmhqvag3xdsrz",
    "k": "ent",
    "n": "zonas",
-   "x": 2093,
-   "y": 2051,
+   "x": 2122,
+   "y": 2069,
    "f": {}
   },
   {
    "id": "nmwmhrrtz46f440",
    "k": "attr",
    "n": "CodZona",
-   "x": 2000,
-   "y": 2000,
+   "x": 2029,
+   "y": 2018,
    "f": {}
   },
   {
    "id": "nmwmhs1pz4838rc",
    "k": "attr",
    "n": "NombreZona",
-   "x": 1949,
-   "y": 2051,
+   "x": 1978,
+   "y": 2069,
    "f": {}
   },
   {
    "id": "nmwmhse6k4avtgo",
    "k": "attr",
    "n": "TipoZona",
-   "x": 2070,
-   "y": 1963,
+   "x": 2099,
+   "y": 1981,
    "f": {}
   },
   {
    "id": "nmwmhsl8x4cs0xw",
    "k": "attr",
    "n": "NivelPeligrosidad",
-   "x": 1997,
-   "y": 2107,
+   "x": 2026,
+   "y": 2125,
    "f": {}
   },
   {
@@ -182,6 +182,22 @@
    "n": "TipoVehiculo",
    "x": 3104,
    "y": 1802,
+   "f": {}
+  },
+  {
+   "id": "nmwmia2g75bo3id",
+   "k": "ent",
+   "n": "armas",
+   "x": 2711,
+   "y": 2005,
+   "f": {}
+  },
+  {
+   "id": "nmwmia8na5ce6x1",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2711,
+   "y": 1944,
    "f": {}
   }
  ],
@@ -334,6 +350,14 @@
    "id": "nmwmi6y4t5aput2",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmi6y4t590tg7",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmia8na5dv6df",
+   "a": "nmwmia2g75bo3id",
+   "b": "nmwmia8na5ce6x1",
    "c": null,
    "mn": null,
    "mx": null
