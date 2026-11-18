@@ -255,8 +255,8 @@
    "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "NumCuentaBanco",
-   "x": 2903,
-   "y": 1921,
+   "x": 2981,
+   "y": 1928,
    "f": {}
   },
   {
@@ -282,7 +282,7 @@
    "id": "nmwmilzss5tyocj",
    "k": "attr",
    "n": "SaldoCuanto",
-   "x": 2902,
+   "x": 3021,
    "y": 2067,
    "f": {}
   },
@@ -298,8 +298,8 @@
    "id": "nmwmiow465w8po8",
    "k": "attr",
    "n": "CodMision",
-   "x": 2898,
-   "y": 2158,
+   "x": 2897,
+   "y": 2331,
    "f": {
     "k": true,
     "p": false
@@ -410,6 +410,14 @@
    "n": "relacion4",
    "x": 2512,
    "y": 1891,
+   "f": {}
+  },
+  {
+   "id": "nmwmjtid26r4xvv",
+   "k": "rel",
+   "n": "relacion5",
+   "x": 2708,
+   "y": 1886,
    "f": {}
   }
  ],
@@ -762,6 +770,22 @@
    "id": "nmwmjrzby6qci6a",
    "a": "nmwmjrzby6oci5u",
    "b": "nmwmia2g75bo3id",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjtid26sq65n",
+   "a": "nmwmjtid26r4xvv",
+   "b": "nmwmhtg534eof8d",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjtid26t7pmp",
+   "a": "nmwmjtid26r4xvv",
+   "b": "nmwmieuhb5myfep",
    "c": null,
    "mn": null,
    "mx": null
