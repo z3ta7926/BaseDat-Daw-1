@@ -105,9 +105,49 @@
   {
    "id": "nmwmlyn111oi5120",
    "k": "ent",
-   "n": "T",
+   "n": "tanques",
    "x": 2344,
    "y": 1837,
+   "f": {}
+  },
+  {
+   "id": "nmwmlz73o1ojqecn",
+   "k": "attr",
+   "n": "NomTanque",
+   "x": 2241,
+   "y": 1776,
+   "f": {}
+  },
+  {
+   "id": "nmwmlzhpm1olqsv8",
+   "k": "attr",
+   "n": "CapacidadLitros",
+   "x": 2450,
+   "y": 1776,
+   "f": {}
+  },
+  {
+   "id": "nmwmm04rg1on2ew7",
+   "k": "ent",
+   "n": "recorridos",
+   "x": 2344,
+   "y": 1996,
+   "f": {}
+  },
+  {
+   "id": "nmwmm0hhz1oo2zof",
+   "k": "attr",
+   "n": "CodRecorrido",
+   "x": 2344,
+   "y": 1935,
+   "f": {}
+  },
+  {
+   "id": "nmwmm0rak1oq5dvb",
+   "k": "attr",
+   "n": "No",
+   "x": 2461,
+   "y": 1980,
    "f": {}
   }
  ],
@@ -188,6 +228,38 @@
    "id": "nmwmlxa2h1oh17lb",
    "a": "nmwmlsuwk1o544am",
    "b": "nmwmlxa2h1og22fq",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlz73o1okxz9j",
+   "a": "nmwmlyn111oi5120",
+   "b": "nmwmlz73o1ojqecn",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmlzhpm1omb064",
+   "a": "nmwmlyn111oi5120",
+   "b": "nmwmlzhpm1olqsv8",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm0hhz1opnn38",
+   "a": "nmwmm04rg1on2ew7",
+   "b": "nmwmm0hhz1oo2zof",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm0rak1orzktd",
+   "a": "nmwmm04rg1on2ew7",
+   "b": "nmwmm0rak1oq5dvb",
    "c": null,
    "mn": null,
    "mx": null
