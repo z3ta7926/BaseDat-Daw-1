@@ -341,7 +341,7 @@
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 2021,
+   "x": 1919,
    "y": 2171,
    "f": {
     "k": true,
@@ -352,15 +352,15 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 2153,
-   "y": 2202,
+   "x": 1848,
+   "y": 2210,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2155,
+   "x": 1862,
    "y": 2292,
    "f": {}
   },
@@ -368,8 +368,8 @@
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 2021,
-   "y": 2331,
+   "x": 1799,
+   "y": 2250,
    "f": {}
   },
   {
