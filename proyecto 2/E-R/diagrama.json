@@ -139,9 +139,17 @@
   {
    "id": "nmwmi2nv34ztt1i",
    "k": "attr",
-   "n": "atributo",
+   "n": "Matricula",
    "x": 2664,
    "y": 1964,
+   "f": {}
+  },
+  {
+   "id": "nmwmi3kmf51jxje",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2780,
+   "y": 2009,
    "f": {}
   }
  ],
@@ -254,6 +262,14 @@
    "id": "nmwmi2nv350ane0",
    "a": "nmwmi2cq74yrbnu",
    "b": "nmwmi2nv34ztt1i",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmi3kmf528te0",
+   "a": "nmwmi2cq74yrbnu",
+   "b": "nmwmi3kmf51jxje",
    "c": null,
    "mn": null,
    "mx": null
