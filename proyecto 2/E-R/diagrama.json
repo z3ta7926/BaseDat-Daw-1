@@ -197,23 +197,31 @@
    "k": "attr",
    "n": "NumSerie",
    "x": 2711,
-   "y": 1944,
+   "y": 1928,
    "f": {}
   },
   {
    "id": "nmwmiasoj5eu1sq",
    "k": "attr",
    "n": "NombreArmas",
-   "x": 2827,
-   "y": 1968,
+   "x": 2834,
+   "y": 1957,
    "f": {}
   },
   {
    "id": "nmwmic04b5gq8px",
    "k": "attr",
-   "n": "T",
-   "x": 2827,
-   "y": 2049,
+   "n": "TipoCalibre",
+   "x": 2834,
+   "y": 2056,
+   "f": {}
+  },
+  {
+   "id": "nmwmicrht5ij6e5",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2845,
+   "y": 2005,
    "f": {}
   }
  ],
@@ -390,6 +398,14 @@
    "id": "nmwmic04b5hcywd",
    "a": "nmwmia2g75bo3id",
    "b": "nmwmic04b5gq8px",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmicrht5jj4rt",
+   "a": "nmwmia2g75bo3id",
+   "b": "nmwmicrht5ij6e5",
    "c": null,
    "mn": null,
    "mx": null
