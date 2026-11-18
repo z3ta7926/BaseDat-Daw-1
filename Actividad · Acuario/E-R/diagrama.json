@@ -169,9 +169,25 @@
   {
    "id": "nmwmm30rn1owrddh",
    "k": "attr",
-   "n": "Num",
+   "n": "NumEspecies",
    "x": 2344,
    "y": 2066,
+   "f": {}
+  },
+  {
+   "id": "nmwmm43j01oyr75p",
+   "k": "ent",
+   "n": "monitores",
+   "x": 2834,
+   "y": 1830,
+   "f": {}
+  },
+  {
+   "id": "nmwmm4cck1ozzlka",
+   "k": "attr",
+   "n": "atributo",
+   "x": 2834,
+   "y": 1769,
    "f": {}
   }
  ],
@@ -308,6 +324,14 @@
    "id": "nmwmm30rn1oxc2k0",
    "a": "nmwmm04rg1on2ew7",
    "b": "nmwmm30rn1owrddh",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm4cck1p0rnhb",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmm4cck1ozzlka",
    "c": null,
    "mn": null,
    "mx": null
