@@ -432,6 +432,14 @@
    "x": 3628,
    "y": 2110,
    "f": {}
+  },
+  {
+   "id": "nmwmn0x4b1qxklrm",
+   "k": "rel",
+   "n": "relacion6",
+   "x": 2938,
+   "y": 2209,
+   "f": {}
   }
  ],
  "links": [
@@ -823,6 +831,22 @@
    "id": "nmwmmwbv81qwae0s",
    "a": "nmwmm81181pholdc",
    "b": "nmwmmwbv81qvvnjq",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmn0x4c1qyqrkg",
+   "a": "nmwmn0x4b1qxklrm",
+   "b": "nmwmlsuwk1o544am",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmn0x4c1qzuyap",
+   "a": "nmwmn0x4b1qxklrm",
+   "b": "nmwmlq3st1nugp1q",
    "c": null,
    "mn": null,
    "mx": null
