@@ -55,16 +55,16 @@
    "id": "nmwmhtvoe4fcd3s",
    "k": "attr",
    "n": "IdPersonaje",
-   "x": 3416,
-   "y": 2045,
+   "x": 3442,
+   "y": 2053,
    "f": {}
   },
   {
    "id": "nmwmhtzp54hasp6",
    "k": "attr",
    "n": "AliasPersonaje",
-   "x": 3241,
-   "y": 2061,
+   "x": 3193,
+   "y": 2071,
    "f": {}
   },
   {
@@ -79,8 +79,8 @@
    "id": "nmwmhvhij4l5lyf",
    "k": "attr",
    "n": "FechaNacimiento",
-   "x": 3418,
-   "y": 1916,
+   "x": 3442,
+   "y": 1903,
    "f": {
     "d": false
    }
@@ -89,8 +89,8 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 3420,
-   "y": 2084,
+   "x": 3399,
+   "y": 2107,
    "f": {
     "o": true
    }
@@ -171,8 +171,8 @@
    "id": "nmwmi402d53smqh",
    "k": "attr",
    "n": "CodPersonaje",
-   "x": 3419,
-   "y": 1955,
+   "x": 3481,
+   "y": 1954,
    "f": {
     "k": true,
     "p": false
