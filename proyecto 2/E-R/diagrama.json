@@ -53,23 +53,39 @@
    "k": "attr",
    "n": "IdPersonaje",
    "x": 2581,
-   "y": 1741,
+   "y": 1731,
    "f": {}
   },
   {
    "id": "nmwmhtzp54hasp6",
    "k": "attr",
    "n": "AliasPersonaje",
-   "x": 2733,
-   "y": 1775,
+   "x": 2741,
+   "y": 1769,
    "f": {}
   },
   {
    "id": "nmwmhu9s44jnxp9",
    "k": "attr",
-   "n": "",
-   "x": 2712,
+   "n": "NombreReal",
+   "x": 2719,
    "y": 1851,
+   "f": {}
+  },
+  {
+   "id": "nmwmhvhij4l5lyf",
+   "k": "attr",
+   "n": "FechaNacimiento",
+   "x": 2581,
+   "y": 1877,
+   "f": {}
+  },
+  {
+   "id": "nmwmhw2st4nqzpn",
+   "k": "attr",
+   "n": "JugableSioNo",
+   "x": 2447,
+   "y": 1835,
    "f": {}
   }
  ],
@@ -126,6 +142,22 @@
    "id": "nmwmhu9s44kvr0m",
    "a": "nmwmhtg534eof8d",
    "b": "nmwmhu9s44jnxp9",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhvhij4mqbv0",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmhvhij4l5lyf",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmhw2st4o2vde",
+   "a": "nmwmhtg534eof8d",
+   "b": "nmwmhw2st4nqzpn",
    "c": null,
    "mn": null,
    "mx": null
