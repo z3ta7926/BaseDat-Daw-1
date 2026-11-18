@@ -333,16 +333,16 @@
    "id": "nmwmiwxrr6474jo",
    "k": "ent",
    "n": "propiedades",
-   "x": 2811,
-   "y": 2216,
+   "x": 2504,
+   "y": 2298,
    "f": {}
   },
   {
    "id": "nmwmj46ri65fsi7",
    "k": "attr",
    "n": "CodPropiedad",
-   "x": 2963,
-   "y": 2166,
+   "x": 2656,
+   "y": 2248,
    "f": {
     "k": true,
     "p": false
@@ -352,24 +352,24 @@
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
    "n": "TipoPropiedad",
-   "x": 3004,
-   "y": 2216,
+   "x": 2697,
+   "y": 2298,
    "f": {}
   },
   {
    "id": "nmwmj5cyw692ayh",
    "k": "attr",
    "n": "direccPropiedad",
-   "x": 2811,
-   "y": 2316,
+   "x": 2504,
+   "y": 2398,
    "f": {}
   },
   {
    "id": "nmwmj8ovs6bwnpc",
    "k": "attr",
    "n": "PrecioPropiedad",
-   "x": 2960,
-   "y": 2271,
+   "x": 2653,
+   "y": 2353,
    "f": {}
   },
   {
@@ -434,6 +434,14 @@
    "n": "relacion7",
    "x": 2268,
    "y": 2008,
+   "f": {}
+  },
+  {
+   "id": "nmwmk074e708on4",
+   "k": "rel",
+   "n": "relacion8",
+   "x": 2266,
+   "y": 2156,
    "f": {}
   }
  ],
@@ -834,6 +842,22 @@
    "id": "nmwmjythq6z14q7",
    "a": "nmwmjythq6xg17k",
    "b": "nmwmio5i75v8jmj",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmk074e71i3fa",
+   "a": "nmwmk074e708on4",
+   "b": "nmwmhqvag3xdsrz",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmk074e72jkgs",
+   "a": "nmwmk074e708on4",
+   "b": "nmwmiwxrr6474jo",
    "c": null,
    "mn": null,
    "mx": null
