@@ -387,6 +387,14 @@
    "x": 2270,
    "y": 1780,
    "f": {}
+  },
+  {
+   "id": "nmwmjmt126iqzcu",
+   "k": "rel",
+   "n": "relacion2",
+   "x": 2025,
+   "y": 1891,
+   "f": {}
   }
  ],
  "links": [
@@ -689,6 +697,22 @@
   {
    "id": "nmwmjmfhi6hlojk",
    "a": "nmwmjmfhi6frj9i",
+   "b": "nmwmhxjzb4pf9rv",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjmt126jt3h7",
+   "a": "nmwmjmt126iqzcu",
+   "b": "nmwmhqvag3xdsrz",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmjmt126k7l2o",
+   "a": "nmwmjmt126iqzcu",
    "b": "nmwmhxjzb4pf9rv",
    "c": null,
    "mn": null,
