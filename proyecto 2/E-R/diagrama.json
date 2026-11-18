@@ -89,7 +89,7 @@
    "id": "nmwmhw2st4nqzpn",
    "k": "attr",
    "n": "JugableSioNo",
-   "x": 2368,
+   "x": 2367,
    "y": 1812,
    "f": {
     "o": true
@@ -169,8 +169,8 @@
    "id": "nmwmi402d53smqh",
    "k": "attr",
    "n": "CodPersonaje",
-   "x": 2382,
-   "y": 1734,
+   "x": 2367,
+   "y": 1746,
    "f": {
     "k": true,
     "p": false
