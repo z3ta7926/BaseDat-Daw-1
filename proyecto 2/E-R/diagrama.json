@@ -738,17 +738,17 @@
    "id": "nmwmjmfhi6gyle6",
    "a": "nmwmjmfhi6frj9i",
    "b": "nmwmhtg534eof8d",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(0,1)",
+   "mn": "0",
+   "mx": "1"
   },
   {
    "id": "nmwmjmfhi6hlojk",
    "a": "nmwmjmfhi6frj9i",
    "b": "nmwmhxjzb4pf9rv",
-   "c": null,
-   "mn": null,
-   "mx": null
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
   },
   {
    "id": "nmwmjmt126jt3h7",
