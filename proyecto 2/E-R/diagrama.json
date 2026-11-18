@@ -81,7 +81,9 @@
    "n": "FechaNacimiento",
    "x": 2502,
    "y": 1854,
-   "f": {}
+   "f": {
+    "d": true
+   }
   },
   {
    "id": "nmwmhw2st4nqzpn",
