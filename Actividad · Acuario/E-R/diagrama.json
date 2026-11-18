@@ -185,9 +185,33 @@
   {
    "id": "nmwmm4cck1ozzlka",
    "k": "attr",
-   "n": "atributo",
+   "n": "Nombre",
    "x": 2834,
    "y": 1769,
+   "f": {}
+  },
+  {
+   "id": "nmwmm4saa1p1wcw0",
+   "k": "attr",
+   "n": "apellido",
+   "x": 2937,
+   "y": 1789,
+   "f": {}
+  },
+  {
+   "id": "nmwmm4ufe1p3042t",
+   "k": "attr",
+   "n": "direccion",
+   "x": 2934,
+   "y": 1870,
+   "f": {}
+  },
+  {
+   "id": "nmwmm55un1p5k8r1",
+   "k": "attr",
+   "n": "",
+   "x": 2834,
+   "y": 1899,
    "f": {}
   }
  ],
@@ -332,6 +356,30 @@
    "id": "nmwmm4cck1p0rnhb",
    "a": "nmwmm43j01oyr75p",
    "b": "nmwmm4cck1ozzlka",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm4saa1p2c6dn",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmm4saa1p1wcw0",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm4ufe1p4fdln",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmm4ufe1p3042t",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm55un1p6ceg0",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmm55un1p5k8r1",
    "c": null,
    "mn": null,
    "mx": null
