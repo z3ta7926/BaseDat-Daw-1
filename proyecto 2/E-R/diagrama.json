@@ -341,9 +341,17 @@
   {
    "id": "nmwmj4fdq67bwgb",
    "k": "attr",
-   "n": "atributo",
+   "n": "TipoPropiedad",
    "x": 2406,
    "y": 2230,
+   "f": {}
+  },
+  {
+   "id": "nmwmj5cyw692ayh",
+   "k": "attr",
+   "n": "",
+   "x": 2392,
+   "y": 2309,
    "f": {}
   }
  ],
@@ -608,6 +616,14 @@
    "id": "nmwmj4fdq68a9rd",
    "a": "nmwmiwxrr6474jo",
    "b": "nmwmj4fdq67bwgb",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmj5cyw6afvcv",
+   "a": "nmwmiwxrr6474jo",
+   "b": "nmwmj5cyw692ayh",
    "c": null,
    "mn": null,
    "mx": null
