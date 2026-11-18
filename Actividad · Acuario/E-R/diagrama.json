@@ -252,7 +252,7 @@
    "id": "nmwmm81181pholdc",
    "k": "ent",
    "n": "biologos",
-   "x": 2829,
+   "x": 2834,
    "y": 1996,
    "f": {}
   },
@@ -260,7 +260,7 @@
    "id": "nmwmm88qc1pio2yb",
    "k": "attr",
    "n": "NombreBiol",
-   "x": 2829,
+   "x": 2834,
    "y": 1941,
    "f": {}
   },
@@ -268,7 +268,7 @@
    "id": "nmwmm8v6o1pkcwz3",
    "k": "attr",
    "n": "ApellidosBiol",
-   "x": 2970,
+   "x": 2975,
    "y": 1967,
    "f": {}
   }
