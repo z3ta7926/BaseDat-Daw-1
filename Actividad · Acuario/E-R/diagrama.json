@@ -185,7 +185,7 @@
   {
    "id": "nmwmm4cck1ozzlka",
    "k": "attr",
-   "n": "Nombre",
+   "n": "NombreMon",
    "x": 2834,
    "y": 1769,
    "f": {}
@@ -193,7 +193,7 @@
   {
    "id": "nmwmm4saa1p1wcw0",
    "k": "attr",
-   "n": "apellido",
+   "n": "apellidoMon",
    "x": 2937,
    "y": 1789,
    "f": {}
@@ -202,8 +202,8 @@
    "id": "nmwmm4ufe1p3042t",
    "k": "attr",
    "n": "direccion",
-   "x": 2934,
-   "y": 1870,
+   "x": 2979,
+   "y": 1863,
    "f": {
     "c": true
    }
@@ -220,24 +220,56 @@
    "id": "nmwmm5zat1p78uws",
    "k": "attr",
    "n": "TipoVia",
-   "x": 3054,
-   "y": 1884,
+   "x": 3099,
+   "y": 1877,
    "f": {}
   },
   {
    "id": "nmwmm63gt1p9plnq",
    "k": "attr",
    "n": "NomVia",
-   "x": 2966,
-   "y": 1922,
+   "x": 3011,
+   "y": 1915,
    "f": {}
   },
   {
    "id": "nmwmm668f1pbqrzq",
    "k": "attr",
    "n": "CodPost",
-   "x": 3022,
-   "y": 1832,
+   "x": 3067,
+   "y": 1825,
+   "f": {}
+  },
+  {
+   "id": "nmwmm7n781pf4ok1",
+   "k": "attr",
+   "n": "MonitorRecorrido",
+   "x": 2686,
+   "y": 1884,
+   "f": {}
+  },
+  {
+   "id": "nmwmm81181pholdc",
+   "k": "ent",
+   "n": "biologos",
+   "x": 2829,
+   "y": 1996,
+   "f": {}
+  },
+  {
+   "id": "nmwmm88qc1pio2yb",
+   "k": "attr",
+   "n": "NombreBiol",
+   "x": 2829,
+   "y": 1941,
+   "f": {}
+  },
+  {
+   "id": "nmwmm8v6o1pkcwz3",
+   "k": "attr",
+   "n": "ApellidosBiol",
+   "x": 2970,
+   "y": 1967,
    "f": {}
   }
  ],
@@ -430,6 +462,30 @@
    "id": "nmwmm668f1pc7z81",
    "a": "nmwmm4ufe1p3042t",
    "b": "nmwmm668f1pbqrzq",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm7n781pgek6z",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmm7n781pf4ok1",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm88qc1pj3uns",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmm88qc1pio2yb",
+   "c": null,
+   "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmm8v6o1pl6695",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmm8v6o1pkcwz3",
    "c": null,
    "mn": null,
    "mx": null
