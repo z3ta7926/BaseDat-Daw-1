@@ -1,10 +1,10 @@
 {
  "t": [
   {
-   "id": "nmwmoe8uu1rbg78q",
+   "id": "nmwmosfi21rixkij",
    "n": "especies",
-   "x": 2892,
-   "y": 1906,
+   "x": 2895,
+   "y": 2075,
    "c": [
     [
      "NombreComun",
@@ -30,14 +30,19 @@
      "CodEspecie",
      "INT",
      "pk"
+    ],
+    [
+     "CodTanques",
+     "INT",
+     "pmin fk:tanques"
     ]
    ]
   },
   {
-   "id": "nmwmoe8uv1rcyh0j",
+   "id": "nmwmosfi21rjtxq4",
    "n": "ecosistemas",
-   "x": 3204,
-   "y": 1906,
+   "x": 3233,
+   "y": 2085,
    "c": [
     [
      "NomEcosistemas",
@@ -58,14 +63,19 @@
      "TipoFondo",
      "VARCHAR(45)",
      ""
+    ],
+    [
+     "CodOceano",
+     "INT",
+     "pmin fk:Oceano"
     ]
    ]
   },
   {
-   "id": "nmwmoe8uv1rd1xrn",
+   "id": "nmwmosfi21rkx7zb",
    "n": "tanques",
-   "x": 2532,
-   "y": 1916,
+   "x": 2881,
+   "y": 2319,
    "c": [
     [
      "NomTanque",
@@ -85,10 +95,10 @@
    ]
   },
   {
-   "id": "nmwmoe8uv1reba58",
+   "id": "nmwmosfi21rleeaw",
    "n": "recorridos",
-   "x": 2539,
-   "y": 1659,
+   "x": 2532,
+   "y": 2095,
    "c": [
     [
      "CodRecorrido",
@@ -113,10 +123,10 @@
    ]
   },
   {
-   "id": "nmwmoe8uv1rfjmkx",
+   "id": "nmwmosfi21rm0lqm",
    "n": "monitores",
-   "x": 2874,
-   "y": 1649,
+   "x": 2522,
+   "y": 1587,
    "c": [
     [
      "NombreMonitor",
@@ -166,10 +176,10 @@
    ]
   },
   {
-   "id": "nmwmoe8uv1rg2xa3",
+   "id": "nmwmosfi21rn5k8v",
    "n": "biologos",
-   "x": 3204,
-   "y": 1649,
+   "x": 2877,
+   "y": 1597,
    "c": [
     [
      "NombreBiologo",
@@ -214,10 +224,10 @@
    ]
   },
   {
-   "id": "nmwmoe8uv1rh9fny",
+   "id": "nmwmosfi21roma5l",
    "n": "Oceano",
-   "x": 2899,
-   "y": 2104,
+   "x": 3258,
+   "y": 2329,
    "c": [
     [
      "CodOceano",
@@ -228,6 +238,88 @@
      "NomOceano",
      "VARCHAR(45)",
      ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmosfi31rplnhx",
+   "n": "pasa",
+   "x": 2565,
+   "y": 2329,
+   "c": [
+    [
+     "CodRecorrido",
+     "INT",
+     "pk fk:recorridos"
+    ],
+    [
+     "CodTanques",
+     "INT",
+     "pk fk:tanques"
+    ]
+   ]
+  },
+  {
+   "id": "nmwmosfi31rqele6",
+   "n": "monitorea",
+   "x": 2565,
+   "y": 1891,
+   "c": [
+    [
+     "CodMonitor",
+     "INT",
+     "pk fk:monitores"
+    ],
+    [
+     "CodRecorrido",
+     "INT",
+     "pk fk:recorridos"
+    ],
+    [
+     "Hora",
+     "INT",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmosfi31rr4i0i",
+   "n": "cuidan",
+   "x": 2925,
+   "y": 1891,
+   "c": [
+    [
+     "CodEspecie",
+     "INT",
+     "pk fk:especies"
+    ],
+    [
+     "CodBiol",
+     "INT",
+     "pk fk:biologos"
+    ],
+    [
+     "FechaCargo",
+     "INT",
+     ""
+    ]
+   ]
+  },
+  {
+   "id": "nmwmosfi31rsd072",
+   "n": "vive",
+   "x": 3269,
+   "y": 1901,
+   "c": [
+    [
+     "CodEcosistemas",
+     "INT",
+     "pk fk:ecosistemas"
+    ],
+    [
+     "CodEspecie",
+     "INT",
+     "pk fk:especies"
     ]
    ]
   }
