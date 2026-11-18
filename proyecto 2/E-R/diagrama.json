@@ -247,7 +247,7 @@
    "id": "nmwmieuhb5myfep",
    "k": "ent",
    "n": "cuenta_bancaria",
-   "x": 2897,
+   "x": 2902,
    "y": 1991,
    "f": {}
   },
@@ -255,7 +255,7 @@
    "id": "nmwmifxlj5nexyy",
    "k": "attr",
    "n": "NumCuentaBanco",
-   "x": 2898,
+   "x": 2903,
    "y": 1921,
    "f": {}
   },
@@ -263,7 +263,7 @@
    "id": "nmwmih6ur5pqn8f",
    "k": "attr",
    "n": "CodCuentaBanco",
-   "x": 3069,
+   "x": 3074,
    "y": 1965,
    "f": {
     "k": true,
@@ -274,7 +274,7 @@
    "id": "nmwmih70n5rkz42",
    "k": "attr",
    "n": "FechaApertura",
-   "x": 3073,
+   "x": 3078,
    "y": 2011,
    "f": {}
   },
@@ -282,7 +282,7 @@
    "id": "nmwmilzss5tyocj",
    "k": "attr",
    "n": "SaldoCuanto",
-   "x": 2897,
+   "x": 2902,
    "y": 2067,
    "f": {}
   },
