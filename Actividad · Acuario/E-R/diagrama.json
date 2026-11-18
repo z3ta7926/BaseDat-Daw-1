@@ -408,6 +408,30 @@
    "x": 2697,
    "y": 2009,
    "f": {}
+  },
+  {
+   "id": "nmwmmup371qqpa2k",
+   "k": "attr",
+   "n": "HorasRecorrido",
+   "x": 2897,
+   "y": 1728,
+   "f": {}
+  },
+  {
+   "id": "nmwmmvlzg1qscxcj",
+   "k": "rel",
+   "n": "relacion5",
+   "x": 2695,
+   "y": 1843,
+   "f": {}
+  },
+  {
+   "id": "nmwmmwbv81qvvnjq",
+   "k": "attr",
+   "n": "FechaEspecie",
+   "x": 3164,
+   "y": 2132,
+   "f": {}
   }
  ],
  "links": [
@@ -759,17 +783,49 @@
    "id": "nmwmmqplg1qkiv92",
    "a": "nmwmmqplg1qj8svq",
    "b": "nmwmm43j01oyr75p",
-   "c": null,
-   "mn": null,
+   "c": "(1,N)",
+   "mn": "1",
    "mx": "N"
   },
   {
    "id": "nmwmmqplg1qlg3uj",
    "a": "nmwmmqplg1qj8svq",
    "b": "nmwmm04rg1on2ew7",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwmmup371qrdp8a",
+   "a": "nmwmm43j01oyr75p",
+   "b": "nmwmmup371qqpa2k",
    "c": null,
    "mn": null,
+   "mx": null
+  },
+  {
+   "id": "nmwmmvlzg1qtueac",
+   "a": "nmwmmvlzg1qscxcj",
+   "b": "nmwmlq3st1nugp1q",
+   "c": "(1,N)",
+   "mn": "1",
    "mx": "N"
+  },
+  {
+   "id": "nmwmmvlzg1qu574z",
+   "a": "nmwmmvlzg1qscxcj",
+   "b": "nmwmm81181pholdc",
+   "c": "(1,N)",
+   "mn": "1",
+   "mx": "N"
+  },
+  {
+   "id": "nmwmmwbv81qwae0s",
+   "a": "nmwmm81181pholdc",
+   "b": "nmwmmwbv81qvvnjq",
+   "c": null,
+   "mn": null,
+   "mx": null
   }
  ],
  "notes": []
